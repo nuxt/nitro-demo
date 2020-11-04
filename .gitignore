@@ -2,3 +2,5 @@ node_modules
 .nuxt
 dist
 *.log*
+
+.vercel
