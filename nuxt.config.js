@@ -1,7 +1,9 @@
 export default {
   serverless: {
     targets: [
-      'vercel'
+      'vercel',
+      'sw',
+      'cloudflare'
     ]
   }
 }
