@@ -1,0 +1,11 @@
+{
+  "private": true,
+  "scripts": {
+    "build": "nuxt build && nuxt-sls . --minify",
+    "dev": "nuxt dev"
+  },
+  "devDependencies": {
+    "@nuxt/serverless": "^0.0.5",
+    "nuxt": "^2.14.7"
+  }
+}

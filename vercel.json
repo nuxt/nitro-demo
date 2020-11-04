@@ -1,0 +1,41 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "package.json",
+      "use": "@vercel/static-build"
+    },
+    {
+      "src": ".nuxt/sls/vercel/index.js",
+      "use": "@vercel/node",
+      "config": {
+        "includeFiles": [
+          ".nuxt/sls/vercel/server/*.*"
+        ]
+      }
+    }
+  ],
+  "routes": [
+    {
+      "src": "/sw.js",
+      "headers": {
+        "cache-control": "public, max-age=0, must-revalidate"
+      },
+      "continue": true
+    },
+    {
+      "src": "/_nuxt/(.*)",
+      "headers": {
+        "cache-control": "public,max-age=31536000,immutable"
+      },
+      "continue": true
+    },
+    {
+      "handle": "filesystem"
+    },
+    {
+      "src": "(.*)",
+      "dest": ".nuxt/sls/vercel/index.js"
+    }
+  ]
+}
