@@ -6,5 +6,8 @@ export default {
   ],
 
   serverless: {
+    static: [
+      '/1'
+    ]
   }
 }
