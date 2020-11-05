@@ -1,9 +1,10 @@
 export default {
+  target: 'static',
+
+  buildModules: [
+    '@nuxt/serverless'
+  ],
+
   serverless: {
-    targets: [
-      'vercel',
-      'sw',
-      'cloudflare'
-    ]
   }
 }

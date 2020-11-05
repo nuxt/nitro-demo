@@ -1,11 +1,11 @@
 {
   "private": true,
   "scripts": {
-    "build": "nuxt build && nuxt-sls . --minify",
-    "dev": "nuxt dev"
+    "build": "yarn genetate",
+    "generate": "nuxt generate && cp .sls/node/server.js api/server.js"
   },
   "devDependencies": {
-    "@nuxt/serverless": "^0.0.5",
+    "@nuxt/serverless": "^0.0.9",
     "nuxt": "^2.14.7"
   }
 }

@@ -1,20 +1,10 @@
 {
   "version": 2,
-  "builds": [
-    {
-      "src": "package.json",
-      "use": "@vercel/static-build"
-    },
-    {
-      "src": ".nuxt/sls/vercel/index.js",
-      "use": "@vercel/node",
-      "config": {
-        "includeFiles": [
-          ".nuxt/sls/vercel/server/*.*"
-        ]
-      }
+  "functions": {
+    "api/server.js": {
+      "includeFiles": ".sls/**/*.js"
     }
-  ],
+  },
   "routes": [
     {
       "src": "/sw.js",
@@ -35,7 +25,7 @@
     },
     {
       "src": "(.*)",
-      "dest": ".nuxt/sls/vercel/index.js"
+      "dest": "/api/server"
     }
   ]
 }

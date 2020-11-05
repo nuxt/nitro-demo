@@ -35,16 +35,13 @@ jobs:
         if: steps.cache.outputs.cache-hit != 'true'
         run: yarn
 
-      - name: nuxt build
-        run: yarn nuxt build
+      - name: generate
+        run: yarn nuxt generate
 
-      - name: sls build
-        run: yarn nuxt-sls . --minify
-
-      - name: sw (gh pages)
-        uses: JamesIves/github-pages-deploy-action@3.7.1
-        with:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          BRANCH: gh-pages
-          FOLDER: '.nuxt/sls/sw'
-          CLEAN: true
+      # - name: sw (gh pages)
+      #   uses: JamesIves/github-pages-deploy-action@3.7.1
+      #   with:
+      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      #     BRANCH: gh-pages
+      #     FOLDER: '.nuxt/sls/sw'
+      #     CLEAN: true
