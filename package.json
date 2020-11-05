@@ -1,7 +1,7 @@
 {
   "private": true,
   "scripts": {
-    "build": "yarn genetate",
+    "build": "yarn generate",
     "generate": "nuxt generate && cp .sls/node/server.js api/server.js"
   },
   "devDependencies": {
