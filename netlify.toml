@@ -1,0 +1,19 @@
+[dev]
+  command = "../node_modules/.bin/nuxt start"
+  framework = "#custom"
+  functions = ".sls/lambda"
+  port = 8888
+  targetPort = 3000
+
+[build]
+  command = "yarn generate"
+  publish = "dist"
+  functions = ".sls/lambda"
+
+[build.environment]
+  NUXT_SLS_TARGET = "lambda"
+
+[[redirects]]
+  from = "/*"
+  to = "/.netlify/functions/server"
+  status = 200
