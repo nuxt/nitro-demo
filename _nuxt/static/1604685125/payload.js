@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/", {data:[{quote:{quote:"People often say that motivation doesn’t last. Well, neither does bathing.  That’s why we recommend it daily.",author:"Zig Ziglar"}}],fetch:[],mutations:void 0});
