@@ -9,7 +9,8 @@ export default {
     cache: {
       // TODO: remove with nuxt sls update
       ignore: [
-        'api/'
+        'api/',
+        'vercel.json'
       ]
     }
   },
