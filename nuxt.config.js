@@ -5,21 +5,13 @@ export default {
     '@nuxt/serverless'
   ],
 
-  generate: {
-    cache: {
-      // TODO: remove with nuxt sls update
-      ignore: [
-        'api/',
-        'vercel.json'
-      ]
-    }
+  router: {
+    base: process.env.NUXT_ROUTER_BASE || '/'
   },
-
 
   serverless: {
     static: [
       '/2'
-    ],
-    target: 'vercel',
+    ]
   }
 }

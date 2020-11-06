@@ -1070,10 +1070,10 @@
     serve-static "^1.14.1"
     server-destroy "^1.0.1"
 
-"@nuxt/serverless@^0.0.13":
-  version "0.0.13"
-  resolved "https://registry.yarnpkg.com/@nuxt/serverless/-/serverless-0.0.13.tgz#16c5909d9f3b895c2fbaf8d732fc2bb3dfacca5f"
-  integrity sha512-eyRPKeRoND3RpH7gdiz9Ws1sG0Ghv94oWPMwTgPT4tW5KM2GfSnOeE78xb/Yeo8aRKBmUb+7aDQt3hNd2BdDPQ==
+"@nuxt/serverless@^0.0.14":
+  version "0.0.14"
+  resolved "https://registry.yarnpkg.com/@nuxt/serverless/-/serverless-0.0.14.tgz#5c5b55a998fbc3ffc3d0319d6ef05314726fa646"
+  integrity sha512-fNK6WfaFZxGTgA2ZpmZNH3HGnw7g9fPpV9/glybl8eRQIl2VrDHo/8Pe9yd+C5h+3W2LkSgP1CPIyQ6+0NDgDw==
   dependencies:
     "@nuxt/devalue" "^1.2.4"
     "@rollup/plugin-alias" "^3.1.1"
@@ -1087,7 +1087,7 @@
     fs-extra "^9.0.1"
     globby "^11.0.1"
     gzip-size "^5.1.1"
-    hookable "^4.2.0"
+    hookable "^4.3.1"
     jiti "^0.1.12"
     pretty-bytes "^5.4.1"
     rollup "^2.33.1"
@@ -3994,10 +3994,10 @@ hmac-drbg@^1.0.0:
     minimalistic-assert "^1.0.0"
     minimalistic-crypto-utils "^1.0.1"
 
-hookable@^4.2.0:
-  version "4.2.0"
-  resolved "https://registry.yarnpkg.com/hookable/-/hookable-4.2.0.tgz#45cc57b1d9da1ad038c64238ac0bf55ad4cf2293"
-  integrity sha512-IrdgzqvSuqCBgJqL/dQgOF3vKNRc13Uud+wLD/8kB4LKlpVF1uhLHJDLenL89fscyXBqvto/AXR+rrRlmtz7lQ==
+hookable@^4.3.1:
+  version "4.3.1"
+  resolved "https://registry.yarnpkg.com/hookable/-/hookable-4.3.1.tgz#aabad1925197701d2b3ea8de1a0d36f69cddaee7"
+  integrity sha512-E4YA6bjSfXDT6QsFIjz9F1rjJ8RH6qax5HBosvP7dhTTlErVTfe4RpuwpPEKhJOCBJwaI+snBWufbKa26eZBoQ==
 
 hoopy@^0.1.4:
   version "0.1.4"
