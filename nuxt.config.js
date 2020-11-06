@@ -10,8 +10,6 @@ export default {
     static: [
       '/2'
     ],
-    outName: 'nuxt.js',
     target: 'vercel',
-    minify: false,
   }
 }

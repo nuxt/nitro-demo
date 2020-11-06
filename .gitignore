@@ -7,4 +7,3 @@ dist
 .netlify
 api/server.js
 api/_nuxt.js
-api/nuxt.js
