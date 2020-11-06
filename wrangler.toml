@@ -7,4 +7,4 @@ zone_id = ""
 
 [site]
 bucket = "./dist"
-entry-point = "./.sls/cloudflare/_nuxt.js"
+entry-point = "./.sls/cloudflare"
