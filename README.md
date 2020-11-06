@@ -1,2 +1,3 @@
+- Vercel: [pending]
 - Netlify: https://nuxt-sls.netlify.app/
-- Vercel: https://nuxt-sls.vercel.app/ (broken)
+- Github Pages: https://pi0.github.io/nuxt-sls/
