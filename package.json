@@ -3,7 +3,7 @@
   "scripts": {
     "dev": "nuxt dev",
     "start": "nuxt start",
-    "build": "yarn generate",
+    "build": "export && yarn generate",
     "generate": "nuxt generate"
   },
   "devDependencies": {
