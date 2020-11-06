@@ -7,7 +7,7 @@
     "generate": "nuxt generate"
   },
   "devDependencies": {
-    "@nuxt/serverless": "^0.0.15",
+    "@nuxt/serverless": "^0.0.16",
     "nuxt": "^2.14.7"
   }
 }
