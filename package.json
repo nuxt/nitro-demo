@@ -3,11 +3,11 @@
   "scripts": {
     "dev": "nuxt dev",
     "start": "nuxt start",
-    "build": "export && yarn generate",
+    "build": "yarn generate",
     "generate": "nuxt generate"
   },
   "devDependencies": {
-    "@nuxt/serverless": "^0.0.14",
+    "@nuxt/serverless": "^0.0.15",
     "nuxt": "^2.14.7"
   }
 }

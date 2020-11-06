@@ -1070,10 +1070,10 @@
     serve-static "^1.14.1"
     server-destroy "^1.0.1"
 
-"@nuxt/serverless@^0.0.14":
-  version "0.0.14"
-  resolved "https://registry.yarnpkg.com/@nuxt/serverless/-/serverless-0.0.14.tgz#5c5b55a998fbc3ffc3d0319d6ef05314726fa646"
-  integrity sha512-fNK6WfaFZxGTgA2ZpmZNH3HGnw7g9fPpV9/glybl8eRQIl2VrDHo/8Pe9yd+C5h+3W2LkSgP1CPIyQ6+0NDgDw==
+"@nuxt/serverless@^0.0.15":
+  version "0.0.15"
+  resolved "https://registry.yarnpkg.com/@nuxt/serverless/-/serverless-0.0.15.tgz#726e562ddded837cabe91a13fa66be131f6125f7"
+  integrity sha512-9xs3gWyco0HOK47vJ5IXeRQwzKRGZ71Xwo7HvszoJoAyQz5NjBvOllA5NJO4+TXXFwKS5AcMkILx84qxk1x/Qg==
   dependencies:
     "@nuxt/devalue" "^1.2.4"
     "@rollup/plugin-alias" "^3.1.1"
