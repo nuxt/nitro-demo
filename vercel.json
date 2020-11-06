@@ -20,7 +20,7 @@
     },
     {
       "src": "(.*)",
-      "dest": "/api/_nuxt"
+      "dest": "/api/nuxt"
     }
   ]
 }

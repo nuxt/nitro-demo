@@ -10,7 +10,7 @@ export default {
     static: [
       '/2'
     ],
-    // auto detected only for debug
+    outName: 'nuxt.js',
     target: 'vercel',
     minify: false,
   }
