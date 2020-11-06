@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/2", {data:[{t:new Date(1604672137783)}],fetch:[],mutations:void 0});
