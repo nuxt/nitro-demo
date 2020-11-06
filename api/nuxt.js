@@ -1,1 +1,1 @@
-module.exports = require('api/_nuxt')
+module.exports = require('./api/_nuxt')

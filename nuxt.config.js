@@ -5,6 +5,15 @@ export default {
     '@nuxt/serverless'
   ],
 
+  generate: {
+    cache: {
+      // TODO: remove with nuxt sls update
+      ignore: [
+        'api/'
+      ]
+    }
+  },
+
 
   serverless: {
     static: [
