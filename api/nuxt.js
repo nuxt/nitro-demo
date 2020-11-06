@@ -1,2 +1,3 @@
 console.log(__dirname)
-module.exports = require('./api/_nuxt')
+console.log(require('fs').readdirSync(process.cwd()))
+module.exports = require('./_nuxt')
