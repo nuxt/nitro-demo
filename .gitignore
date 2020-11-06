@@ -6,3 +6,4 @@ dist
 .sls
 .netlify
 api/server.js
+api/_nuxt.js

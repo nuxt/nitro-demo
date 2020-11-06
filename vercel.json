@@ -1,10 +1,5 @@
 {
   "version": 2,
-  "functions": {
-    "api/server.js": {
-      "includeFiles": ".sls/**/*.js"
-    }
-  },
   "routes": [
     {
       "src": "/sw.js",
@@ -25,7 +20,7 @@
     },
     {
       "src": "(.*)",
-      "dest": "/api/server"
+      "dest": "/api/_nuxt"
     }
   ]
 }
