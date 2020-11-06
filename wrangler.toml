@@ -1,0 +1,10 @@
+name = "playground"
+type = "javascript"
+account_id = "8ea39dfb7bb411de7fcff5444d7a5dbb"
+workers_dev = true
+route = ""
+zone_id = ""
+
+[site]
+bucket = "./dist"
+entry-point = "./.sls/cloudflare/_nuxt.js"
