@@ -22,5 +22,8 @@
       "src": "(.*)",
       "dest": "/api/_nuxt"
     }
-  ]
+  ],
+  "github": {
+    "silent": true
+  }
 }
