@@ -1,5 +1,10 @@
 {
   "version": 2,
+  "functions": {
+    "/api/nuxt.js": {
+      "includeFiles": "api/_*"
+    }
+  },
   "routes": [
     {
       "src": "/sw.js",
