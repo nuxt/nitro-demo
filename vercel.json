@@ -2,7 +2,7 @@
   "version": 2,
   "functions": {
     "api/nuxt.js": {
-      "includeFiles": "api/_*"
+      "includeFiles": "api/**/_*.*"
     }
   },
   "routes": [
