@@ -10,9 +10,6 @@ export default {
   },
 
   serverless: {
-    target: 'vercel',
-    targetDir: '.vercel_build_output/functions/node/_nuxt',
-    outName: 'index.js',
     static: [
       '/about'
     ]
