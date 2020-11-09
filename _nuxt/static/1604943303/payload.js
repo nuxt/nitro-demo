@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/", {data:[{quote:{quote:"Life is what we make it, always has been, always will be.",author:"Grandma Moses"}}],fetch:[],mutations:void 0});

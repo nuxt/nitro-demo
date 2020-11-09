@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/", {data:[{quote:{quote:"There are no traffic jams along the extra mile.",author:"Roger Staubach"}}],fetch:[],mutations:void 0});
