@@ -6,6 +6,7 @@
       <nLink to="/dynamic/1">Dynamic</nLink>
       |
       <a href="https://github.com/pi0/nuxt-sls">Github</a>
+      |
       <a href="https://nuxt-sls.pi0.vercel.app">Vercel</a>
       <a href="https://nuxt-sls.netlify.app">Netlify</a>
       <a href="https://pi0.github.io/nuxt-sls">Github Pages</a>
