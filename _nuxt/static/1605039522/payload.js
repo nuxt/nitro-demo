@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/", {data:[{quote:{quote:"When everything seems to be going against you, remember that the airplane takes off against the wind, not with it.",author:"Henry Ford"}}],fetch:[],mutations:void 0});

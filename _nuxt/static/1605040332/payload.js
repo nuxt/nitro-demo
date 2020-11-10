@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/", {data:[{quote:{quote:"You can’t fall if you don’t climb.  But there’s no joy in living your whole life on the ground.",author:"Unknown"}}],fetch:[],mutations:void 0});
