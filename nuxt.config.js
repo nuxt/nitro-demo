@@ -14,7 +14,6 @@ export default {
   },
 
   serverless: {
-    target: 'vercel',
     static: [
       '/about'
     ]
