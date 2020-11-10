@@ -3,14 +3,18 @@
     <div class="nav">
       <nLink to="/">Home</nLink>
       <nLink to="/about">About</nLink>
-      <nLink to="/perf">Perf</nLink>
       <nLink to="/dynamic/1">Dynamic</nLink>
     </div>
     <nuxt class="main" />
     <client-only>
-      <span class="text-muted">
-        <template v-if="ssr">Server Side Rendered {{ diff }} ({{ generated }})</template>
+      <span class="footer">
+        <template v-if="ssr">
+          Server Side Rendered {{ diff }} <br>
+          Cold Start: {{ coldStart }} Generate Time: {{ generateTime }} Response Time: {{ responseTime }}
+        </template>
         <template v-else>Client Side Rendered</template>
+        <br>
+        <a :href="$route.fullPath">(Reload)</a>
       </span>
     </client-only>
   </div>
@@ -18,6 +22,7 @@
 
 <script>
 import { format } from 'timeago.js'
+
 
 export default {
   head: {
@@ -30,19 +35,26 @@ export default {
     return {
       t: 0,
       ssr: false,
-      diff: '-'
+      diff: '...',
+      coldStart: '...',
+      responseTime: '...',
+      generateTime: '...'
     }
   },
   mounted() {
-    this.update()
-    this._timer = setInterval(() => this.update(), 1000)
     this.t = window.__NUXT__.renderedOn
     this.ssr =  window.__NUXT__.serverRendered
+
+    this.update()
+    this._timer = setInterval(() => this.update(), 1000)
+
     this.$router.beforeEach((_from, _to, next) => {
       this.ssr = false
       clearInterval(this._timer)
       next()
     })
+
+    this.bench().catch(console.error)
   },
   computed: {
     generated() {
@@ -51,9 +63,18 @@ export default {
   },
   methods: {
     update() {
-      const now = new Date()
-      const diff = now - this.t
+      const diff =  new Date() - this.t
       this.diff = diff < 10000 ? `${Math.round(diff/1000)} seconds ago` : format(this.t)
+    },
+    async bench() {
+      const start = Date.now()
+
+      const res = await fetch(location.href + '?' + Math.random())
+      this.coldStart = res.headers.get('x-nuxt-coldstart') || '-'
+      this.generateTime = res.headers.get('x-nuxt-responsetime') || '-' // TODO
+
+      await res.text()
+      this.responseTime = (Date.now() - start) + ' ms'
     }
   }
 }
@@ -80,8 +101,9 @@ a {
   color: white;
 }
 
-.text-muted {
+.footer{
   color: grey;
+  text-align: center;
 }
 </style>
 
