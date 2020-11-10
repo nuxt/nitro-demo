@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/", {data:[{quote:{quote:"The only way to do great work is to love what you do.",author:"Steve Jobs"}}],fetch:[],mutations:void 0});
