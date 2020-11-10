@@ -5,11 +5,16 @@ export default {
     '@nuxt/serverless'
   ],
 
+  plugins: [
+    './plugins/rendertime.server'
+  ],
+
   router: {
     base: process.env.NUXT_ROUTER_BASE || '/'
   },
 
   serverless: {
+    target: 'vercel',
     static: [
       '/about'
     ]

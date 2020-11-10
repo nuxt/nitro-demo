@@ -7,7 +7,12 @@
       <nLink to="/dynamic/1">Dynamic</nLink>
     </div>
     <nuxt class="main" />
-    <span class="text-muted">Generated {{ diff }} ({{ generated }})</span>
+    <client-only>
+      <span class="text-muted">
+        <template v-if="ssr">Server Side Rendered {{ diff }} ({{ generated }})</template>
+        <template v-else>Client Side Rendered</template>
+      </span>
+    </client-only>
   </div>
 </template>
 
@@ -23,15 +28,19 @@ export default {
   },
   data() {
     return {
-      t: new Date(),
+      t: 0,
+      ssr: false,
       diff: 0
     }
   },
   mounted() {
     this._timer = setInterval(() => this.update(), 100)
-  },
-  beforeDestroy() {
-    clearInterval(this._timer)
+    this.t = window.__NUXT__.renderedOn
+    this.ssr =  window.__NUXT__.serverRendered
+    this.$router.beforeEach(() => {
+      this.ssr = false
+      clearInterval(this._timer)
+    })
   },
   computed: {
     generated() {
