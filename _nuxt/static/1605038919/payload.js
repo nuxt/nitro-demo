@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/", {data:[{quote:{quote:"Ask and it will be given to you; search, and you will find; knock and the door will be opened for you.",author:"Jesus"}}],fetch:[],mutations:void 0});
