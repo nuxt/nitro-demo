@@ -34,7 +34,7 @@ export default {
     }
   },
   mounted() {
-    this._timer = setInterval(() => this.update(), 100)
+    this._timer = setInterval(() => this.update(), 1000)
     this.t = window.__NUXT__.renderedOn
     this.ssr =  window.__NUXT__.serverRendered
     this.$router.beforeEach((_from, _to, next) => {
@@ -52,7 +52,7 @@ export default {
     update() {
       const now = new Date()
       const diff = now - this.t
-      this.diff = diff < 10000 ? `${diff/1000} seconds ago` : format(this.t)
+      this.diff = diff < 10000 ? `${Math.round(diff/1000)} seconds ago` : format(this.t)
     }
   }
 }
