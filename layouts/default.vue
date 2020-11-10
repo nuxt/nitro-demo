@@ -37,9 +37,10 @@ export default {
     this._timer = setInterval(() => this.update(), 100)
     this.t = window.__NUXT__.renderedOn
     this.ssr =  window.__NUXT__.serverRendered
-    this.$router.beforeEach(() => {
+    this.$router.beforeEach((next) => {
       this.ssr = false
       clearInterval(this._timer)
+      next()
     })
   },
   computed: {
