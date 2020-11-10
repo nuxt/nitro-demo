@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/", {data:[{quote:{quote:"Everything you’ve ever wanted is on the other side of fear.",author:"George Addair"}}],fetch:[],mutations:void 0});
