@@ -1,4 +1,4 @@
-- Vercel: https://nuxt-sls.pi0.vercel.app/ (Almost ready!!)
+- Vercel: https://nuxt-sls.pi0.vercel.app/
 - Netlify: https://nuxt-sls.netlify.app/
 - Github Pages: https://pi0.github.io/nuxt-sls/
 - Cloudflare Workers: https://playground.pi0.workers.dev/
