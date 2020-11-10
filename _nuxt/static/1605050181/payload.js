@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/", {data:[{quote:{quote:"Definiteness of purpose is the starting point of all achievement.",author:"W. Clement Stone"}}],fetch:[],mutations:void 0});

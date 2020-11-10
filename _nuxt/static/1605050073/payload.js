@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/", {data:[{quote:{quote:"If you want to lift yourself up, lift up someone else.",author:"Booker T. Washington"}}],fetch:[],mutations:void 0});
