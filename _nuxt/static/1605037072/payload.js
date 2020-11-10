@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/", {data:[{quote:{quote:"Believe you can and you’re halfway there.",author:"Theodore Roosevelt"}}],fetch:[],mutations:void 0});
