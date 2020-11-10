@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/", {data:[{quote:{quote:"Our lives begin to end the day we become silent about things that matter.",author:"Martin Luther King Jr."}}],fetch:[],mutations:void 0});
