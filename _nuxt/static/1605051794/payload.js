@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/", {data:[{quote:{quote:"Remember that not getting what you want is sometimes a wonderful stroke of luck.",author:"Dalai Lama"}}],fetch:[],mutations:void 0});

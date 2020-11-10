@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/", {data:[{quote:{quote:"In order to succeed, your desire for success should be greater than your fear of failure.",author:"Bill Cosby"}}],fetch:[],mutations:void 0});
