@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/", {data:[{quote:{quote:"Whether you think you can or you think you can’t, you’re right.",author:"Henry Ford"}}],fetch:[],mutations:void 0});
