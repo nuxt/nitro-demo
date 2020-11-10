@@ -30,10 +30,11 @@ export default {
     return {
       t: 0,
       ssr: false,
-      diff: 0
+      diff: '-'
     }
   },
   mounted() {
+    this.update()
     this._timer = setInterval(() => this.update(), 1000)
     this.t = window.__NUXT__.renderedOn
     this.ssr =  window.__NUXT__.serverRendered
