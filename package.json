@@ -7,7 +7,7 @@
     "generate": "nuxt generate"
   },
   "devDependencies": {
-    "@nuxt/serverless": "^0.0.20",
+    "@nuxt/serverless": "^0.0.21",
     "nuxt": "^2.14.7",
     "timeago.js": "^4.0.2"
   }
