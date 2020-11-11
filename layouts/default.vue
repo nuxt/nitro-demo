@@ -8,7 +8,7 @@
       <a href="https://nuxt-serverless.vercel.app">Vercel</a>
       <a href="https://nuxt-serverless.netlify.app">Netlify</a>
       <a href="https://serverless-demo.nuxt.workers.dev">Cloudflare</a>
-      <a href="https://pi0.github.io/nuxt-sls">Github Pages (Service Worker)</a>
+      <a href="https://nuxt.github.io/serverless-demo">Github Pages (Service Worker)</a>
       |
       <a href="https://github.com/nuxt/serverless-demo">Github</a>
     </div>
