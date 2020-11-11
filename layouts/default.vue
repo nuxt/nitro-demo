@@ -38,7 +38,6 @@
         <template v-else>
           Client Side Rendered
         </template>
-        <br>
       </div>
     </footer>
   </div>
@@ -52,10 +51,10 @@ export default {
     return {
       t: 0,
       ssr: false,
-      diff: '...',
-      coldStart: '...',
-      responseTime: '...',
-      generateTime: '...'
+      diff: '',
+      coldStart: '',
+      responseTime: '',
+      generateTime: ''
     }
   },
   mounted () {
@@ -122,9 +121,14 @@ export default {
 }
 
 .perf {
+  position: absolute;
+  padding: 10px;
+  bottom: 0;
+  left: 0;
+  right: 0;
   color: greenyellow;
   text-align: center;
-  border-top: dotted 1px white;
+  background: rgba(0, 0, 0, 0.5);
 }
 
 .main {
