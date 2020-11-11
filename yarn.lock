@@ -1100,10 +1100,10 @@
     serve-static "^1.14.1"
     server-destroy "^1.0.1"
 
-"@nuxt/serverless@^0.0.30":
-  version "0.0.30"
-  resolved "https://registry.yarnpkg.com/@nuxt/serverless/-/serverless-0.0.30.tgz#1ada8eef092d8eb3ce486599594a5d752ba15235"
-  integrity sha512-Rdr7BFkyadpW+8cGcAo8Jz2mN3RtC050kYdTfpbXbz1MMzdP855ONR4/ClQg2ZPGAqCbPeGEIPZ+PEgVIhRNuA==
+"@nuxt/serverless@^0.0.31":
+  version "0.0.31"
+  resolved "https://registry.yarnpkg.com/@nuxt/serverless/-/serverless-0.0.31.tgz#2ccde1fd6a86b79aa83ea41ecb2ac4f064294f20"
+  integrity sha512-1FYtIDADvAlHsjJ9lL0rCzKVAHbkqOjiR0mjw9pcaN7uoNhkWBbA6UvL5oU+lSSiL/n2vEAeaYGH7SoeZXmlRA==
   dependencies:
     "@cloudflare/kv-asset-handler" "^0.0.12"
     "@nuxt/devalue" "^1.2.4"
@@ -1114,7 +1114,7 @@
     "@rollup/plugin-replace" "^2.3.4"
     chalk "^4.1.0"
     consola "^2.15.0"
-    defu "^3.1.0"
+    defu "^3.2.2"
     fs-extra "^9.0.1"
     globby "^11.0.1"
     gzip-size "^5.1.1"
@@ -3186,6 +3186,11 @@ defu@^3.1.0:
   version "3.1.0"
   resolved "https://registry.yarnpkg.com/defu/-/defu-3.1.0.tgz#a6b5104cacc06aa1efa01923becddbedd32505e8"
   integrity sha512-pc7vS4wbYFtsRL+OaLHKD72VcpOz9eYgzZeoLz9pCs+R8htyPdZnD1CxKP9ttZuT90CLPYFTSaTyc3/7v4gG9A==
+
+defu@^3.2.2:
+  version "3.2.2"
+  resolved "https://registry.yarnpkg.com/defu/-/defu-3.2.2.tgz#be20f4cc49b9805d54ee6b610658d53894942e97"
+  integrity sha512-8UWj5lNv7HD+kB0e9w77Z7TdQlbUYDVWqITLHNqFIn6khrNHv5WQo38Dcm1f6HeNyZf0U7UbPf6WeZDSdCzGDQ==
 
 depd@~1.1.2:
   version "1.1.2"
