@@ -20,7 +20,6 @@
         <a href="https://nuxt-serverless.netlify.app" rel="noreferrer">Netlify</a>
         <a href="https://serverless-demo.nuxt.workers.dev" rel="noreferrer">Cloudflare</a>
         <a href="https://nuxt.github.io/serverless-demo">Github Pages (Service Worker)</a>
-        <a href="" @click="reload">(Reload)</a>
       </div>
       <div class="perf">
         <template v-if="ssr">
@@ -37,6 +36,7 @@
         </template>
         <template v-else>
           Client Side Rendered
+          <a href="" @click="reload">(Reload)</a>
         </template>
       </div>
     </footer>
