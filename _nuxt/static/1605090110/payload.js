@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/", {data:[{quote:{quote:"Remember no one can make you feel inferior without your consent.",author:"Eleanor Roosevelt"}}],fetch:[],mutations:void 0});
