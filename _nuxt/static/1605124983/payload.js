@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/", {data:[{quote:{quote:"Strive not to be a success, but rather to be of value.",author:"Albert Einstein"}}],fetch:[],mutations:void 0});
