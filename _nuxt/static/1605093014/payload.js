@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/", {data:[{quote:{quote:"Dream big and dare to fail.",author:"Norman Vaughan"}}],fetch:[],mutations:void 0});
