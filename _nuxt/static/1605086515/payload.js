@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/", {data:[{quote:{quote:"A truly rich man is one whose children run into his arms when his hands are empty.",author:"Unknown"}}],fetch:[],mutations:void 0});
