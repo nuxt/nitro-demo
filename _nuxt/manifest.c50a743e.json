@@ -1,0 +1,10 @@
+{
+  "name": "",
+  "short_name": "",
+  "description": "## Deployment Previews",
+  "icons": [],
+  "start_url": "/serverless-demo/?standalone=true",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "lang": "en"
+}

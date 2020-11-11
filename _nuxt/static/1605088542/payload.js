@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/", {data:[{quote:{quote:"15.Life is 10% what happens to me and 90% of how I react to it.",author:"Charles Swindoll"}}],fetch:[],mutations:void 0});
