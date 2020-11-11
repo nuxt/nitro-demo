@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="page">
     <h1>
       "{{ quote.quote }}"
     </h1>
@@ -24,7 +24,7 @@ export default {
 </script>
 
 <style scoped>
-.container {
+.page {
   max-width: 60vw;
 }
 </style>
