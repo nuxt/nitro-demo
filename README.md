@@ -1,4 +1,9 @@
-- Vercel: https://nuxt-sls.pi0.vercel.app/
-- Netlify: https://nuxt-sls.netlify.app/
-- Github Pages: https://pi0.github.io/nuxt-sls/
-- Cloudflare Workers: https://playground.pi0.workers.dev/
+# Nuxt Serverless Demo
+
+## Deployment Previews
+
+- Vercel: https://nuxt-serverless.vercel.app/
+- Netlify: https://nuxt-serverless.netlify.app/
+- Cloudflare Workers: https://serverless-demo.nuxt.workers.dev
+- Github Pages (Service Worker): https://nuxt.github.io/serverless-demo/
+

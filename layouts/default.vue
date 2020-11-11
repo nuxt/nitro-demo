@@ -5,12 +5,12 @@
       <nLink to="/about">About</nLink>
       <nLink to="/dynamic/1">Dynamic</nLink>
       |
-      <a href="https://nuxt-sls.pi0.vercel.app">Vercel</a>
-      <a href="https://nuxt-sls.netlify.app">Netlify</a>
-      <a href="https://playground.pi0.workers.dev/">Cloudflare</a>
+      <a href="https://nuxt-serverless.vercel.app">Vercel</a>
+      <a href="https://nuxt-serverless.netlify.app">Netlify</a>
+      <a href="https://serverless-demo.nuxt.workers.dev">Cloudflare</a>
       <a href="https://pi0.github.io/nuxt-sls">Github Pages (Service Worker)</a>
       |
-      <a href="https://github.com/pi0/nuxt-sls">Github</a>
+      <a href="https://github.com/nuxt/serverless-demo">Github</a>
     </div>
     <nuxt class="main" />
     <client-only>
@@ -21,7 +21,7 @@
         </template>
         <template v-else>Client Side Rendered</template>
         <br>
-        <a :href="route">(Reload)</a>
+        <a :href="route" @click="reload">(Reload)</a>
       </span>
     </client-only>
   </div>
@@ -85,6 +85,9 @@ export default {
 
       await res.text()
       this.responseTime = (Date.now() - start) + ' ms'
+    },
+    reload() {
+      window.location.reload()
     }
   }
 }
