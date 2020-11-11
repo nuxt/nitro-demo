@@ -1,29 +1,49 @@
 <template>
   <div class="container">
     <div class="nav">
-      <nLink to="/">Home</nLink>
-      <nLink to="/about">About</nLink>
-      <nLink to="/dynamic/1">Dynamic</nLink>
+      <nLink to="/">
+        Home
+      </nLink>
+      <nLink to="/about">
+        About
+      </nLink>
+      <nLink to="/dynamic/1">
+        Dynamic
+      </nLink>
       |
-      <a href="https://nuxt-serverless.vercel.app">Vercel</a>
-      <a href="https://nuxt-serverless.netlify.app">Netlify</a>
-      <a href="https://serverless-demo.nuxt.workers.dev">Cloudflare</a>
-      <a href="https://nuxt.github.io/serverless-demo">Github Pages (Service Worker)</a>
-      |
-      <a href="https://github.com/nuxt/serverless-demo">Github</a>
+      <a href="https://github.com/nuxt/serverless-demo" target="_blank">Github</a>
     </div>
     <nuxt class="main" />
-    <client-only>
-      <span class="footer">
-        <template v-if="ssr">
-          Server Side Rendered {{ diff }} <br>
-          Cold Start: {{ coldStart }} Generate Time: {{ generateTime }} Response Time: {{ responseTime }}
-        </template>
-        <template v-else>Client Side Rendered</template>
-        <br>
-        <a :href="route" @click="reload">(Reload)</a>
-      </span>
-    </client-only>
+    <footer>
+      <client-only>
+        <div class="perf">
+          <template v-if="ssr">
+            Server Side Rendered <b>{{ diff }}</b>
+            <template v-if="coldStart">
+              | Cold Start: <b>{{ coldStart }}</b>
+            </template>
+            <template v-if="generateTime">
+              | Generate Time: <b>{{ generateTime }}</b>
+            </template>
+            <template v-if="responseTime">
+              | Response Time:<b>{{ responseTime }} </b>
+            </template>
+          </template>
+          <template v-else>
+            Client Side Rendered
+          </template>
+          <br>
+        </div>
+      </client-only>
+      <hr>
+      <div class="nav">
+        <a href="https://nuxt-serverless.vercel.app">Vercel</a>
+        <a href="https://nuxt-serverless.netlify.app">Netlify</a>
+        <a href="https://serverless-demo.nuxt.workers.dev">Cloudflare</a>
+        <a href="https://nuxt.github.io/serverless-demo">Github Pages (Service Worker)</a>
+        <a href="" @click="reload">(Reload)</a>
+      </div>
+    </footer>
   </div>
 </template>
 
@@ -31,13 +51,7 @@
 import { timeAgo } from '~/utils'
 
 export default {
-  head: {
-    title: 'Nuxt Serverless Demo',
-    meta: [
-      { name: 'viewport', content: 'width=device-width, initial-scale=1' }
-    ]
-  },
-  data() {
+  data () {
     return {
       t: 0,
       ssr: false,
@@ -47,9 +61,9 @@ export default {
       generateTime: '...'
     }
   },
-  mounted() {
+  mounted () {
     this.t = window.__NUXT__.renderedOn
-    this.ssr =  window.__NUXT__.serverRendered
+    this.ssr = window.__NUXT__.serverRendered
 
     this.update()
     this._timer = setInterval(() => this.update(), 1000)
@@ -60,63 +74,35 @@ export default {
       next()
     })
 
+    // eslint-disable-next-line no-console
     this.bench().catch(console.error)
   },
-  computed: {
-    generated() {
-      return this.t.toUTCString()
-    },
-    route() {
-      return (process.client && window.location.origin) + this.$route.fullPath
-    },
-  },
   methods: {
-    update() {
+    update () {
       this.diff = timeAgo(this.t)
     },
-    async bench() {
+    async bench () {
       const start = Date.now()
 
       const res = await fetch(location.href + '?' + Math.random())
-      this.coldStart = res.headers.get('x-nuxt-coldstart') || '-'
-      this.generateTime = res.headers.get('x-nuxt-responsetime') || '-' // TODO
+      this.coldStart = res.headers.get('x-nuxt-coldstart') || ''
+      this.generateTime = res.headers.get('x-nuxt-responsetime') || ''
 
       await res.text()
-      this.responseTime = (Date.now() - start) + ' ms'
+      this.responseTime = Date.now() - start + ' ms'
     },
-    reload() {
+    reload () {
       window.location.reload()
     }
+  },
+  head: {
+    title: 'Nuxt Serverless Demo',
+    meta: [
+      { name: 'viewport', content: 'width=device-width, initial-scale=1' }
+    ]
   }
 }
 </script>
-
-<style>
-body {
-  margin: 0;
-  background: #2f495e;
-  color: white;
-  font-family: Quicksand,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
-}
-
-.page-enter-active,
-.page-leave-active {
-  transition: opacity 0.1s;
-}
-.page-enter,
-.page-leave-to {
-  opacity: 0;
-}
-
-a {
-  color: white;
-}
-
-.footer{
-  color: grey;
-  text-align: center;
-}
-</style>
 
 <style scoped>
 .container {
@@ -134,7 +120,13 @@ a {
 }
 
 .nav {
-  margin-top: 10px;
+  margin: 10px;
+  text-align: center;
+}
+
+.perf {
+  color: grey;
+  text-align: center;
 }
 
 .main {
@@ -143,5 +135,29 @@ a {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+</style>
+
+<style>
+body {
+  margin: 0;
+  background: #2f495e;
+  color: white;
+  font-family: Quicksand, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+.page-enter-active,
+.page-leave-active {
+  transition: opacity 0.1s;
+}
+.page-enter,
+.page-leave-to {
+  opacity: 0;
+}
+
+a {
+  color: white;
 }
 </style>
