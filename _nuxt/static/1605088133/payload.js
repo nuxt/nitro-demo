@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/", {data:[{quote:{quote:"We must balance conspicuous consumption with conscious capitalism.",author:"Kevin Kruse"}}],fetch:[],mutations:void 0});
