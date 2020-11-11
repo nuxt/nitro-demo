@@ -74,7 +74,7 @@ export default {
   methods: {
     update() {
       const diff =  new Date() - this.t
-      this.diff = diff < 10000 ? `${Math.round(diff/1000)} seconds ago` : format(this.t)
+      this.diff = diff < 0 ? 'just now' : (diff < 10000 ? `${Math.round(diff/1000)} seconds ago` : format(this.t))
     },
     async bench() {
       const start = Date.now()
