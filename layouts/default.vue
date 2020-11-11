@@ -19,7 +19,7 @@
         <a href="https://nuxt-serverless.vercel.app" rel="noreferrer">Vercel</a>
         <a href="https://nuxt-serverless.netlify.app" rel="noreferrer">Netlify</a>
         <a href="https://serverless-demo.nuxt.workers.dev" rel="noreferrer">Cloudflare</a>
-        <a href="https://nuxt.github.io/serverless-demo">Github Pages (Service Worker)</a>
+        <a href="https://nuxt.github.io/serverless-demo">GH Pages (SW)</a>
       </div>
       <div class="perf">
         <template v-if="ssr">
@@ -120,12 +120,15 @@ export default {
   text-align: center;
 }
 
-.perf {
+footer  {
   position: absolute;
-  padding: 10px;
   bottom: 0;
   left: 0;
   right: 0;
+}
+
+.perf {
+  padding: 10px;
   color: greenyellow;
   text-align: center;
   background: rgba(0, 0, 0, 0.5);
