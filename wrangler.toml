@@ -1,4 +1,4 @@
-name = "playground"
+name = "serverless-demo"
 type = "javascript"
 account_id = "f1e84ebed8564d989bffd46d5a988296"
 workers_dev = true
