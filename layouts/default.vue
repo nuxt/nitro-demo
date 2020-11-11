@@ -19,29 +19,27 @@
         <a href="https://nuxt-serverless.vercel.app">Vercel</a>
         <a href="https://nuxt-serverless.netlify.app">Netlify</a>
         <a href="https://serverless-demo.nuxt.workers.dev">Cloudflare</a>
-        <a href="https://nuxt.github.io/serverless-demo">Github Pages (Service Worker)</a>
+        <a href="https://nuxt.github.io/serverless-demo" rel="noopener">Github Pages (Service Worker)</a>
         <a href="" @click="reload">(Reload)</a>
       </div>
-      <client-only>
-        <div class="perf">
-          <template v-if="ssr">
-            Server Side Rendered <b>{{ diff }}</b>
-            <template v-if="coldStart">
-              | Cold Start: <b>{{ coldStart }}</b>
-            </template>
-            <template v-if="generateTime">
-              | Generate Time: <b>{{ generateTime }}</b>
-            </template>
-            <template v-if="responseTime">
-              | Response Time:<b>{{ responseTime }} </b>
-            </template>
+      <div class="perf">
+        <template v-if="ssr">
+          Server Side Rendered <b>{{ diff }}</b>
+          <template v-if="coldStart">
+            | Cold Start: <b>{{ coldStart }}</b>
           </template>
-          <template v-else>
-            Client Side Rendered
+          <template v-if="generateTime">
+            | Generate Time: <b>{{ generateTime }}</b>
           </template>
-          <br>
-        </div>
-      </client-only>
+          <template v-if="responseTime">
+            | Response Time: <b>{{ responseTime }} </b>
+          </template>
+        </template>
+        <template v-else>
+          Client Side Rendered
+        </template>
+        <br>
+      </div>
     </footer>
   </div>
 </template>

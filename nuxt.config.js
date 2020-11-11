@@ -15,9 +15,7 @@ export default {
   },
 
   pwa: {
-    workbox: {
-      autoRegister: false // TODO
-    },
+    workbox: false, // TODO
     meta: {
       lang: 'en'
     }
