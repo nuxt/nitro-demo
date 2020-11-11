@@ -1,0 +1,53 @@
+{
+  "name": "",
+  "short_name": "",
+  "description": "## Deployment Previews",
+  "icons": [
+    {
+      "src": "/serverless-demo/_nuxt/icons/icon_64x64.0c3c3f.png",
+      "sizes": "64x64",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/serverless-demo/_nuxt/icons/icon_120x120.0c3c3f.png",
+      "sizes": "120x120",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/serverless-demo/_nuxt/icons/icon_144x144.0c3c3f.png",
+      "sizes": "144x144",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/serverless-demo/_nuxt/icons/icon_152x152.0c3c3f.png",
+      "sizes": "152x152",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/serverless-demo/_nuxt/icons/icon_192x192.0c3c3f.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/serverless-demo/_nuxt/icons/icon_384x384.0c3c3f.png",
+      "sizes": "384x384",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/serverless-demo/_nuxt/icons/icon_512x512.0c3c3f.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "start_url": "/serverless-demo/?standalone=true",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "lang": "en"
+}
