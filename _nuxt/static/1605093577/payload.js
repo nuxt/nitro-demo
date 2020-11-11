@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/", {data:[{quote:{quote:"I didn’t fail the test. I just found 100 ways to do it wrong.",author:"Benjamin Franklin"}}],fetch:[],mutations:void 0});
