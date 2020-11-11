@@ -5,12 +5,12 @@
       <nLink to="/about">About</nLink>
       <nLink to="/dynamic/1">Dynamic</nLink>
       |
-      <a href="https://github.com/pi0/nuxt-sls">Github</a>
-      |
       <a href="https://nuxt-sls.pi0.vercel.app">Vercel</a>
       <a href="https://nuxt-sls.netlify.app">Netlify</a>
-      <a href="https://pi0.github.io/nuxt-sls">Github Pages</a>
       <a href="https://playground.pi0.workers.dev/">Cloudflare</a>
+      <a href="https://pi0.github.io/nuxt-sls">Github Pages (Service Worker)</a>
+      |
+      <a href="https://github.com/pi0/nuxt-sls">Github</a>
     </div>
     <nuxt class="main" />
     <client-only>
@@ -21,7 +21,7 @@
         </template>
         <template v-else>Client Side Rendered</template>
         <br>
-        <a :href="$route.fullPath">(Reload)</a>
+        <a :href="route">(Reload)</a>
       </span>
     </client-only>
   </div>
@@ -66,7 +66,10 @@ export default {
   computed: {
     generated() {
       return this.t.toUTCString()
-    }
+    },
+    route() {
+      return (process.client && window.location.origin) + this.$route.fullPath
+    },
   },
   methods: {
     update() {
