@@ -11,6 +11,7 @@
   "devDependencies": {
     "@nuxt/serverless": "^0.0.28",
     "@nuxtjs/eslint-config": "^4.0.0",
+    "@nuxtjs/pwa": "^3.2.2",
     "eslint": "^7.13.0",
     "nuxt": "^2.14.7",
     "timeago.js": "^4.0.2"

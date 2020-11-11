@@ -15,6 +15,13 @@
     </div>
     <nuxt class="main" />
     <footer>
+      <div class="nav">
+        <a href="https://nuxt-serverless.vercel.app">Vercel</a>
+        <a href="https://nuxt-serverless.netlify.app">Netlify</a>
+        <a href="https://serverless-demo.nuxt.workers.dev">Cloudflare</a>
+        <a href="https://nuxt.github.io/serverless-demo">Github Pages (Service Worker)</a>
+        <a href="" @click="reload">(Reload)</a>
+      </div>
       <client-only>
         <div class="perf">
           <template v-if="ssr">
@@ -35,14 +42,6 @@
           <br>
         </div>
       </client-only>
-      <hr>
-      <div class="nav">
-        <a href="https://nuxt-serverless.vercel.app">Vercel</a>
-        <a href="https://nuxt-serverless.netlify.app">Netlify</a>
-        <a href="https://serverless-demo.nuxt.workers.dev">Cloudflare</a>
-        <a href="https://nuxt.github.io/serverless-demo">Github Pages (Service Worker)</a>
-        <a href="" @click="reload">(Reload)</a>
-      </div>
     </footer>
   </div>
 </template>
@@ -125,8 +124,9 @@ export default {
 }
 
 .perf {
-  color: grey;
+  color: greenyellow;
   text-align: center;
+  border-top: dotted 1px white;
 }
 
 .main {
