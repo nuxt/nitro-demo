@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/", {data:[{quote:{quote:"You become what you believe.",author:"Oprah Winfrey"}}],fetch:[],mutations:void 0});
