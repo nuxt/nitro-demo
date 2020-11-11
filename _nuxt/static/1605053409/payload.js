@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/", {data:[{quote:{quote:"Fall seven times and stand up eight.",author:"Japanese Proverb"}}],fetch:[],mutations:void 0});
