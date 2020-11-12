@@ -1,14 +1,7 @@
-[dev]
-  command = "yarn start"
-  framework = "#custom"
-  functions = ".sls/netlify"
-  port = 8888
-  targetPort = 3000
-
 [build]
   command = "yarn generate"
   publish = "dist"
-  functions = ".sls/netlify"
+  functions = ".nuxt/serverless/netlify"
 
 [[redirects]]
   from = "/*"
