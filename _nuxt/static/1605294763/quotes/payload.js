@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/quotes", {data:[{quote:{quote:"Life shrinks or expands in proportion to one’s courage.",author:"Anais Nin"}}],fetch:[],mutations:void 0});

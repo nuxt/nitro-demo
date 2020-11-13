@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/quotes", {data:[{quote:{quote:"Too many of us are not living our dreams because we are living our fears.",author:"Les Brown"}}],fetch:[],mutations:void 0});
