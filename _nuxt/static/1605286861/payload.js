@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/", {data:[{quote:{quote:"The two most important days in your life are the day you are born and the day you find out why.",author:"Mark Twain"}}],fetch:[],mutations:void 0});
