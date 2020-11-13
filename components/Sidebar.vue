@@ -1,5 +1,6 @@
 <template>
   <aside class="sidebar">
+    <h1><span>N</span>uxt <span>S</span>erverless</h1>
     <div class="perf">
       <template v-if="ssr">
         <h3>Server Side Rendered</h3>
@@ -16,18 +17,16 @@
       </template>
       <template v-else>
         <h3>Client Side Rendered</h3>
-        <a href="" @click="reload">(Reload)</a>
+        <a href="" @click="reload" class="white-button">Reload</a>
       </template>
     </div>
     <div class="hostings">
-      <ui-button href="https://nuxt-serverless.vercel.app" rel="noreferrer">Demo with Vercel</ui-button>
-      <ui-button href="https://nuxt-serverless.netlify.app" rel="noreferrer">Demo with Netlify</ui-button>
-      <ui-button href="https://serverless-demo.nuxt.workers.dev" rel="noreferrer">Demo with Cloudflare</ui-button>
-      <ui-button href="https://nuxt.github.io/serverless-demo">Demo with GH Pages (SW)</ui-button>
+      <h4>This demo is deployed on:</h4>
+      <ui-button href="https://nuxt-serverless.vercel.app" rel="noreferrer">Vercel</ui-button>
+      <ui-button href="https://nuxt-serverless.netlify.app" rel="noreferrer">Netlify</ui-button>
+      <ui-button href="https://serverless-demo.nuxt.workers.dev" rel="noreferrer">Cloudflare</ui-button>
+      <ui-button href="https://nuxt.github.io/serverless-demo">GH Pages (SW)</ui-button>
     </div>
-    <ui-button href="https://github.com/nuxt/serverless-demo" target="_blank" rel="noopener">
-      Source Code on GitHub
-    </ui-button>
   </aside>
 </template>
 
@@ -88,12 +87,21 @@ export default {
 
 <style>
 .sidebar {
+  color: #EFEFE6;
   width: 320px;
   padding: 20px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   background-color: #003C3C;
+}
+
+.sidebar h1 {
+  margin: 12px 0;
+}
+
+.sidebar h1 span {
+  color: #00DC82;
 }
 
 .sidebar h3 {
@@ -103,12 +111,6 @@ export default {
   padding-top: 4px;
   padding-bottom: 16px;
   border-bottom: 1px dashed #EFEFE6;
-}
-
-.hostings {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
 }
 
 .hostings a {
@@ -126,5 +128,19 @@ export default {
   margin: 0;
   padding-top: 8px;
   padding-bottom: 4px;
+}
+
+.white-button {
+ border: 1px solid #fff;
+ color: #fff;
+ padding: 8px 24px;
+ text-decoration: none;
+ margin-top: 16px;
+ display: inline-block;
+}
+
+.white-button:hover {
+  color: #00DC82;
+  border-color: #00DC82;
 }
 </style>
