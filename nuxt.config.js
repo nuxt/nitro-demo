@@ -27,7 +27,7 @@ export default {
 
   serverless: {
     static: [
-      '/'
+      '/about'
     ]
   }
 }
