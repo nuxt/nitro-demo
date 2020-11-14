@@ -10,9 +10,9 @@
 
 <script>
 async function timer (promise) {
-  const start = process.hrtime()
+  const start = global.process.hrtime()
   const res = await promise
-  const end = process.hrtime(start)
+  const end = global.process.hrtime(start)
   const time = ((end[0] * 1e9) + end[1]) / 1e6
   return [time, res]
 }
