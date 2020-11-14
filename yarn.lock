@@ -1100,10 +1100,10 @@
     serve-static "^1.14.1"
     server-destroy "^1.0.1"
 
-"@nuxt/serverless@^0.0.36":
-  version "0.0.36"
-  resolved "https://registry.yarnpkg.com/@nuxt/serverless/-/serverless-0.0.36.tgz#2bf4a5ac80048a5104e20cb6acd9cb08b97726bf"
-  integrity sha512-lvyiF2j83O5lrwNwnV1sLHBoWJx5g+Df8O6YboxygvlGQ1URK5lz5AcBv9ixZfk5+JoOUt9zHjbQt02u0TsOcA==
+"@nuxt/serverless@^0.0.37":
+  version "0.0.37"
+  resolved "https://registry.yarnpkg.com/@nuxt/serverless/-/serverless-0.0.37.tgz#3391c43c2cca409b38436c67af95168c9512373d"
+  integrity sha512-4s+gXw3QiD7c9m99DyKH0whQEKehGbZw0wjibFxL8fkI6I/+sH1GXFZ+o4A3CroflExOfuG+4DnPSzCpZn5OlA==
   dependencies:
     "@cloudflare/kv-asset-handler" "^0.0.12"
     "@nuxt/devalue" "^1.2.4"
@@ -1119,7 +1119,6 @@
     consola "^2.15.0"
     defu "^3.2.2"
     events "^3.2.0"
-    express "^4.17.1"
     fs-extra "^9.0.1"
     globby "^11.0.1"
     gzip-size "^5.1.1"
@@ -1127,6 +1126,7 @@
     hookable "^4.3.1"
     inherits "^2.0.4"
     jiti "^0.1.12"
+    node-fetch "^2.6.1"
     pretty-bytes "^5.4.1"
     process "^0.11.10"
     rollup "^2.33.1"
@@ -1135,6 +1135,7 @@
     terser "^5.3.8"
     util "^0.12.3"
     vue-bundle-renderer "^0.2.2"
+    vue-server-renderer "^2.6.12"
 
 "@nuxt/static@^1.0.0":
   version "1.0.0"
@@ -3881,7 +3882,7 @@ expand-brackets@^2.1.4:
     snapdragon "^0.8.1"
     to-regex "^3.0.1"
 
-express@^4.16.3, express@^4.17.1:
+express@^4.16.3:
   version "4.17.1"
   resolved "https://registry.yarnpkg.com/express/-/express-4.17.1.tgz#4491fc38605cf51f8629d39c2b5d026f98a4c134"
   integrity sha512-mHJ9O79RqluphRrcw2X/GTh3k9tVv8YcoyY4Kkh4WDMUYKRZUq0h1o0w2rrrxBqM7VoeUVqgb27xlEMXTnYt4g==
