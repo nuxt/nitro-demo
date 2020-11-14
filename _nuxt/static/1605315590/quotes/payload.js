@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/quotes", {data:[{quote:{quote:"Eighty percent of success is showing up.",author:"Woody Allen"}}],fetch:[],mutations:void 0});

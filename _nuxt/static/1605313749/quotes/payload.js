@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/quotes", {data:[{quote:{quote:"Challenges are what make life interesting and overcoming them is what makes life meaningful.",author:"Joshua J. Marine"}}],fetch:[],mutations:void 0});
