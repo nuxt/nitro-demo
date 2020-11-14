@@ -14,6 +14,10 @@ export default {
     base: process.env.NUXT_ROUTER_BASE || '/'
   },
 
+  serverMiddleware: {
+    '/api/hello': '~/api/hello'
+  },
+
   pwa: {
     workbox: false, // TODO
     meta: {

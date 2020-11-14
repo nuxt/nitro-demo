@@ -2,10 +2,13 @@
   <div class="navbar">
     <div class="links">
       <nLink to="/">
-        Pre-rendered
-      </nLink>
-      <nLink to="/quotes">
         Dynamic Render
+      </nLink>
+      <nLink to="/prerender">
+        Full Static
+      </nLink>
+      <nLink to="/api">
+        API Call
       </nLink>
     </div>
     <a href="https://github.com/nuxt/serverless-demo" target="_blank" rel="noopener" class="gh-button">
