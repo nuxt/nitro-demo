@@ -17,7 +17,7 @@ async function timer (promise) {
 
 export default {
   async asyncData () {
-    const [time, res] = await timer(fetch('http://localhost:3000/api/hello').then(r => r.text()))
+    const [time, res] = await timer(fetch('/api/hello').then(r => r.text()))
     return { time, res }
   }
 }
