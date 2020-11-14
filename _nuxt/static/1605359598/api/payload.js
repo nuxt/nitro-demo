@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/api", {data:[{time:.676108,res:"{\"api\":\"works!\"}"}],fetch:[],mutations:void 0});
