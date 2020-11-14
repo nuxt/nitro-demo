@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/", {data:[{quote:{quote:"The person who says it cannot be done should not interrupt the person who is doing it.",author:"Chinese Proverb"}}],fetch:[],mutations:void 0});
