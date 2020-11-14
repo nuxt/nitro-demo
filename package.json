@@ -4,7 +4,7 @@
     "build": "yarn generate",
     "dev": "nuxt dev",
     "generate": "nuxt generate",
-    "lint": "eslint .",
+    "lint": "eslint --ext .vue .",
     "start": "nuxt start",
     "test": "yarn lint --ext .vue"
   },

@@ -4,7 +4,7 @@
       <h1>"{{ quote.quote }}"</h1>
       <p>{{ quote.author }}</p>
     </div>
-    <img src="/drop_the_quote.svg" alt="Drop the quuote"/>
+    <img src="/drop_the_quote.svg" alt="Drop the quuote">
   </div>
 </template>
 

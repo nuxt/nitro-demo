@@ -15,12 +15,7 @@
 </template>
 
 <script>
-import uiButton from '@/components/Button'
-
 export default {
-  components: {
-    uiButton
-  } 
 }
 </script>
 

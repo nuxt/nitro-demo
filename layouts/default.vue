@@ -47,7 +47,6 @@ body {
   opacity: 0;
 }
 
-
 .container {
   display: flex;
   align-items: stretch;

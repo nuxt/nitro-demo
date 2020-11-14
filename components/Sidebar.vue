@@ -17,22 +17,30 @@
       </template>
       <template v-else>
         <h3>Client Side Rendered</h3>
-        <a href="" @click="reload" class="white-button">Reload</a>
+        <a href="" class="white-button" @click="reload">Reload</a>
       </template>
     </div>
     <div class="hostings">
       <h4>This demo is deployed on:</h4>
-      <ui-button href="https://nuxt-serverless.vercel.app" rel="noreferrer">Vercel</ui-button>
-      <ui-button href="https://nuxt-serverless.netlify.app" rel="noreferrer">Netlify</ui-button>
-      <ui-button href="https://serverless-demo.nuxt.workers.dev" rel="noreferrer">Cloudflare</ui-button>
-      <ui-button href="https://nuxt.github.io/serverless-demo">GH Pages (SW)</ui-button>
+      <ui-button href="https://nuxt-serverless.vercel.app" rel="noreferrer">
+        Vercel
+      </ui-button>
+      <ui-button href="https://nuxt-serverless.netlify.app" rel="noreferrer">
+        Netlify
+      </ui-button>
+      <ui-button href="https://serverless-demo.nuxt.workers.dev" rel="noreferrer">
+        Cloudflare
+      </ui-button>
+      <ui-button href="https://nuxt.github.io/serverless-demo">
+        GH Pages (SW)
+      </ui-button>
     </div>
   </aside>
 </template>
 
 <script>
-import { timeAgo } from '~/utils'
 import uiButton from '@/components/Button'
+import { timeAgo } from '~/utils'
 
 export default {
   components: {
