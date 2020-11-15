@@ -3,14 +3,15 @@
     <h1><span>N</span>uxt <span>S</span>erverless</h1>
     <div class="perf">
       <template v-if="ssr">
-        <h3>Server Side Rendered</h3>
-        <p>{{ diff }}</p>
+        <h3>✔️ Server Side Rendered</h3>
+        <p>🕒 {{ diff }}</p>
+        <h3> 🚀 Metrics</h3>
         <p v-for="(metric, index) in metrics" :key="index">
-          {{ metric[0] }}: <b>{{ metric[2].replace('functions/node/_nuxt/', '' /* vercel todo */) }} ms</b>
+          {{ metric[0].replace('functions/node/_nuxt/', '' /* vercel todo */) }}: <b>{{ metric[2] }}ms</b>
         </p>
       </template>
       <template v-else>
-        <h3>Client Side Rendered</h3>
+        <h3>⚠️ Client Side Rendered</h3>
         <a href="" class="white-button" @click="reload">Reload</a>
       </template>
     </div>
@@ -77,7 +78,7 @@ export default {
 
       await res.text()
 
-      this.metrics = [['fetch', 'val', Date.now() - start + ' ms']].concat(serverMetrics)
+      this.metrics = [['fetch', 'val', Date.now() - start]].concat(serverMetrics)
     },
     reload () {
       window.location.reload()
