@@ -7,7 +7,8 @@
         <p>🕒 {{ diff }}</p>
         <h3> 🚀 Metrics</h3>
         <p v-for="(metric, index) in metrics" :key="index">
-          {{ metric[0].replace('functions/node/_nuxt/', '' /* vercel todo */) }}: <b>{{ metric[2] }}ms</b>
+          {{ metric[0].replace('functions/node/_nuxt/', '' /* vercel todo */) }}:
+          <b>{{ metric[2] }}ms</b>
         </p>
       </template>
       <template v-else>
@@ -74,7 +75,7 @@ export default {
 
       const res = await fetch(location.href + '?' + Math.random())
       const serverTiming = res.headers.get('server-timing') || ''
-      const serverMetrics = serverTiming.split(',').map(entry => entry.trim().split(/[;=]/))
+      const serverMetrics = serverTiming.split(',').map(entry => entry.trim().split(/[;=]/)).filter(m => m[0].length)
 
       await res.text()
 
