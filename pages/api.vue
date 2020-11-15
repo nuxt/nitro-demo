@@ -1,10 +1,12 @@
 <template>
   <div>
     <br>
-    <code v-text="res" />
-    <div>Request to api took {{ time }} ms</div>
-    <hr>
-    This page is using <code>fetch('/api/hello')</code> (Yes it works unversally!)
+    <div>
+      Direct SSR calls makes fetch super fast!
+      <br>
+      <div><code>fetch('/api/hello')</code> {{ directTime }}ms</div>
+      <div><code>fetch('{{ url }}')</code> {{ urlTime }}ms</div>
+    </div>
   </div>
 </template>
 
@@ -18,9 +20,17 @@ async function timer (promise) {
 }
 
 export default {
-  async asyncData () {
-    const [time, res] = await timer(fetch('/api/hello').then(r => r.text()))
-    return { time, res }
+  async asyncData (ctx) {
+    const [directTime] = await timer(fetch('/api/hello').then(r => r.text()))
+
+    const url = 'https://nuxt-serverless.netlify.app/api/hello' // TODO
+    const [urlTime] = await timer(fetch(url)).then(r => r.text())
+
+    return {
+      directTime,
+      urlTime,
+      url
+    }
   }
 }
 </script>
