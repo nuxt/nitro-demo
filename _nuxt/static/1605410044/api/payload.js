@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/api", {data:[{directTime:.628904,urlTime:194.814113,url:"https:\u002F\u002Fnuxt-serverless.netlify.app\u002Fapi\u002Fhello"}],fetch:[],mutations:void 0});
