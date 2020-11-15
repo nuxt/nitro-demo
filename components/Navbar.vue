@@ -1,15 +1,15 @@
 <template>
   <div class="navbar">
     <div class="links">
-      <nLink to="/">
+      <a href="/">
         Dynamic
-      </nLink>
-      <nLink to="/about">
+      </a>
+      <a href="/about">
         Static
-      </nLink>
-      <nLink to="/api">
+      </a>
+      <a href="/api">
         API
-      </nLink>
+      </a>
     </div>
     <a href="https://github.com/nuxt/serverless-demo" target="_blank" rel="noopener" class="gh-button">
       GitHub (demo)
