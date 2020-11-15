@@ -6,7 +6,7 @@
         <h3>Server Side Rendered</h3>
         <p>{{ diff }}</p>
         <p v-for="(metric, index) in metrics" :key="index">
-          {{ metric[0] }}: <b>{{ metric[1] }} ms</b>
+          {{ metric[0] }}: <b>{{ metric[2] }} ms</b>
         </p>
       </template>
       <template v-else>
@@ -76,8 +76,9 @@ export default {
 
       await res.text()
 
-      this.metrics = serverTiming.split(',').map(entry => entry.trim().split(';'))
-        .concat(['fetch', Date.now() - start + ' ms'])
+      this.metrics = ['fetch', Date.now() - start + ' ms'].concat(
+        serverTiming.split(',').map(entry => entry.trim().split(/[;=]/))
+      )
     },
     reload () {
       window.location.reload()
