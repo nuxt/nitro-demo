@@ -1,13 +1,13 @@
 <template>
   <div class="navbar">
     <div class="links">
-      <a href="/">
+      <a href="./">
         Dynamic
       </a>
-      <a href="/about">
+      <a href="./about">
         Static
       </a>
-      <a href="/api">
+      <a href="./api">
         API
       </a>
     </div>
