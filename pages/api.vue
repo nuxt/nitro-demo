@@ -24,7 +24,7 @@ export default {
     const [directTime] = await timer(fetch('/api/hello').then(r => r.text()))
 
     const url = 'https://nuxt-serverless.netlify.app/api/hello' // TODO
-    const [urlTime] = await timer(fetch(url)).then(r => r.text())
+    const [urlTime] = await timer(fetch(url).then(r => r.text()))
 
     return {
       directTime,
