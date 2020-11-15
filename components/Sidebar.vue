@@ -6,7 +6,7 @@
         <h3>Server Side Rendered</h3>
         <p>{{ diff }}</p>
         <p v-for="(metric, index) in metrics" :key="index">
-          {{ metric[0] }}: <b>{{ metric[2] }} ms</b>
+          {{ metric[0] }}: <b>{{ metric[2].replace('functions/node/_nuxt/', '' /* vercel todo */) }} ms</b>
         </p>
       </template>
       <template v-else>
@@ -77,7 +77,7 @@ export default {
 
       await res.text()
 
-      this.metrics = ['fetch', Date.now() - start + ' ms'].concat(serverMetrics)
+      this.metrics = [['fetch', 'val', Date.now() - start + ' ms']].concat(serverMetrics)
     },
     reload () {
       window.location.reload()
