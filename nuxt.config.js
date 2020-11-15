@@ -18,6 +18,10 @@ export default {
     { path: '/api/hello', handle: '~/api/hello', lazy: true }
   ],
 
+  generate: {
+    fallback: '404.html'
+  },
+
   pwa: {
     workbox: false, // TODO
     meta: {
