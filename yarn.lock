@@ -1100,10 +1100,10 @@
     serve-static "^1.14.1"
     server-destroy "^1.0.1"
 
-"@nuxt/serverless@^0.0.38":
-  version "0.0.38"
-  resolved "https://registry.yarnpkg.com/@nuxt/serverless/-/serverless-0.0.38.tgz#ea180e87e83b02490ac93cb996154dcf77c54e57"
-  integrity sha512-XpXhiSSk4vlkIs85qrZ4NndbEc3bpxETENan5YNu3ia5/yuMLrTnIAjfN2wH/xDQNZ74pFzImXRIKcGgYzz+0Q==
+"@nuxt/serverless@^0.0.39":
+  version "0.0.39"
+  resolved "https://registry.yarnpkg.com/@nuxt/serverless/-/serverless-0.0.39.tgz#abe564ff6064ac3576e74704b2b4b19f2cdb909e"
+  integrity sha512-fg/kA74hjmZDhuY8td/3SXHMHfTJUMG55/LZ0yyKl4nk9GlE+5Te/i3pM2DltBCtzQ+W2ILlPMkbtL+AuHPGSg==
   dependencies:
     "@cloudflare/kv-asset-handler" "^0.0.12"
     "@nuxt/devalue" "^1.2.4"
