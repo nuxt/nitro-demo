@@ -5,14 +5,8 @@
       <template v-if="ssr">
         <h3>Server Side Rendered</h3>
         <p>{{ diff }}</p>
-        <p v-if="coldStart">
-          Cold Start: <b>{{ coldStart }}</b>
-        </p>
-        <p v-if="generateTime">
-          Generate Time: <b>{{ generateTime }}</b>
-        </p>
-        <p v-if="responseTime">
-          Response Time: <b>{{ responseTime }} </b>
+        <p v-for="(metric, index) in metrics" :key="index">
+          {{ metric[0] }}: <b>{{ metric[1] }} ms</b>
         </p>
       </template>
       <template v-else>
@@ -51,9 +45,7 @@ export default {
       t: 0,
       ssr: false,
       diff: '',
-      coldStart: '',
-      responseTime: '',
-      generateTime: ''
+      metrics: []
     }
   },
   mounted () {
@@ -80,11 +72,12 @@ export default {
       const start = Date.now()
 
       const res = await fetch(location.href + '?' + Math.random())
-      this.coldStart = res.headers.get('x-nuxt-coldstart') || ''
-      this.generateTime = res.headers.get('x-nuxt-responsetime') || ''
+      const serverTiming = res.headers.get('server-timing') || ''
 
       await res.text()
-      this.responseTime = Date.now() - start + ' ms'
+
+      this.metrics = serverTiming.split(',').map(entry => entry.trim().split(';'))
+        .concat(['fetch', Date.now() - start + ' ms'])
     },
     reload () {
       window.location.reload()
