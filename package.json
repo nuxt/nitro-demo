@@ -9,7 +9,7 @@
     "test": "yarn lint --ext .vue"
   },
   "devDependencies": {
-    "@nuxt/serverless": "^0.0.40",
+    "@nuxt/serverless": "^0.0.41",
     "@nuxtjs/eslint-config": "^4.0.0",
     "@nuxtjs/pwa": "^3.2.2",
     "eslint": "^7.13.0",

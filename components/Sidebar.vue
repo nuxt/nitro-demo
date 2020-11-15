@@ -73,12 +73,11 @@ export default {
 
       const res = await fetch(location.href + '?' + Math.random())
       const serverTiming = res.headers.get('server-timing') || ''
+      const serverMetrics = serverTiming.split(',').map(entry => entry.trim().split(/[;=]/))
 
       await res.text()
 
-      this.metrics = ['fetch', Date.now() - start + ' ms'].concat(
-        serverTiming.split(',').map(entry => entry.trim().split(/[;=]/))
-      )
+      this.metrics = ['fetch', Date.now() - start + ' ms'].concat(serverMetrics)
     },
     reload () {
       window.location.reload()
