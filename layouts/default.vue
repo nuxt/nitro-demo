@@ -1,9 +1,9 @@
 <template>
   <div class="container">
     <sidebar />
-    <main class="demo">
+    <main>
       <navbar />
-      <nuxt class="main" />
+      <nuxt class="page" />
     </main>
   </div>
 </template>
@@ -49,16 +49,18 @@ body {
 
 .container {
   display: flex;
-  align-items: stretch;
   min-height: 100vh;
   height: 100vh;
 }
 
-.demo {
-  width: 100%;
+main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
 }
 
-.main {
+.page {
+  flex: 1;
   display: flex;
   flex-direction: column;
   justify-content: center;

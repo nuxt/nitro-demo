@@ -10,6 +10,9 @@
       <NLink to="/api">
         API
       </NLink>
+      <NLink to="/graphql">
+        GraphQL
+      </NLink>
     </div>
     <a href="https://github.com/nuxt/sigma-demo" target="_blank" rel="noopener" class="gh-button">
       GitHub
