@@ -88,7 +88,8 @@ export default {
 
       this.metrics = metrics.concat(serverMetrics).map(([name, _, duration]) => ({
         name: (name[0].toUpperCase() + name.substr(1))
-          .replace('functions/node/_nuxt/', '' /* vercel todo */),
+          .replace('functions/node/_nuxt/', '' /* vercel todo */)
+          .replace('Chunks/', '<async> '),
         duration
       }))
     },
