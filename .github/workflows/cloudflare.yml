@@ -35,10 +35,10 @@ jobs:
         if: steps.cache.outputs.cache-hit != 'true'
         run: yarn
 
-      - name: Generate
+      - name: Build
         run: yarn build
         env:
-          NUXT_SLS_TARGET: cloudflare
+          SIGMA_PRESET: cloudflare
 
       - name: Publish to Cloudflare
         uses: cloudflare/wrangler-action@1.3.0

@@ -38,7 +38,7 @@ jobs:
       - name: Build
         run: yarn build
         env:
-          NUXT_SLS_TARGET: browser
+          SIGMA_PRESET: browser
           NUXT_ROUTER_BASE: /sigma-demo/
 
       - name: Deploy to Github Pages
