@@ -1,0 +1,1 @@
+self.importScripts('/server/index.js');
