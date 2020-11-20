@@ -1,5 +1,5 @@
 [dev]
-  command = "npm run start"
+  command = "sleep 999999999"
   framework = "#custom"
   functions = ".output/server"
   port = 8888
@@ -12,5 +12,5 @@
 
 [[redirects]]
   from = "/*"
-  to = "/.netlify/functions/server"
+  to = "/.netlify/functions/index.js"
   status = 200
