@@ -1,1 +1,1 @@
-self.importScripts('/server/index.js');
+self.importScripts('/_server/index.js');
