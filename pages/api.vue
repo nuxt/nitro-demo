@@ -4,8 +4,8 @@
     <div>
       Direct SSR calls makes fetch super fast!
       <br>
-      <div><code>fetch('/api/hello')</code> {{ directTime }}ms</div>
-      <div><code>fetch('{{ url }}')</code> {{ urlTime }}ms</div>
+      <div><code>$fetch('/api/hello')</code> {{ directTime }}ms</div>
+      <div><code>$fetch('{{ url }}')</code> {{ urlTime }}ms</div>
     </div>
   </div>
 </template>
