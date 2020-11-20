@@ -36,7 +36,7 @@ jobs:
         run: yarn
 
       - name: Generate
-        run: yarn nuxt generate
+        run: yarn build
         env:
           NUXT_SLS_TARGET: cloudflare
 
