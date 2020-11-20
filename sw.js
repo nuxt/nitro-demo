@@ -1,1 +1,1 @@
-self.importScripts('/_server/index.js');
+self.importScripts('/sigma-demo/_server/index.js');
