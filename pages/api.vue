@@ -19,9 +19,17 @@ async function timer (promise) {
   return [time, res]
 }
 
+const ORIGINS = {
+  vercel: 'https://sigma-demo.nuxt-js.vercel.app',
+  browser: 'https://nuxt.github.io/sigma-demo',
+  netlify: 'https://sigma-demo.netlify.app',
+  // cloudflare: 'https://sigma-demo.nuxt.workers.dev', // <-- they don't like it :(
+  default: process.client ? '' : 'https://sigma-demo.netlify.app'
+}
+
 export default {
   async asyncData (ctx) {
-    const origin = process.client ? '' : 'https://sigma-demo.nuxt.workers.dev'
+    const origin = ORIGINS[process.env.SIGMA_PRESET] || ORIGINS.default
     const path = '/api/hello'
 
     const [directTime] = await timer($fetch(path).then(r => r.text()))
