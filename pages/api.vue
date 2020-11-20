@@ -21,10 +21,10 @@ async function timer (promise) {
 
 export default {
   async asyncData (ctx) {
-    const [directTime] = await timer(fetch('/api/hello').then(r => r.text()))
+    const [directTime] = await timer($fetch('/api/hello').then(r => r.text()))
 
     const url = 'https://nuxt-sigma.netlify.app/api/hello' // TODO
-    const [urlTime] = await timer(fetch(url).then(r => r.text()))
+    const [urlTime] = await timer($fetch(url).then(r => r.text()))
 
     return {
       directTime,

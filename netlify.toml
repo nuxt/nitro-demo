@@ -12,5 +12,5 @@
 
 [[redirects]]
   from = "/*"
-  to = "/.netlify/functions/index.js"
+  to = "/.netlify/functions/index"
   status = 200

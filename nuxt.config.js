@@ -31,7 +31,7 @@ export default {
   },
 
   sigma: {
-    // minify: false
+    minify: false
     // analyze: true
   }
 
