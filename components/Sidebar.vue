@@ -45,7 +45,7 @@ export default {
   data () {
     return {
       t: 0,
-      ssr: false,
+      ssr: process.server,
       diff: '',
       metrics: []
     }
