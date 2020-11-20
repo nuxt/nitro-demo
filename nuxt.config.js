@@ -2,8 +2,8 @@ export default {
   target: 'static',
 
   buildModules: [
-    '@nuxt/serverless',
-    '@nuxtjs/pwa'
+    '@nuxt/sigma'
+    // '@nuxtjs/pwa'
   ],
 
   plugins: [
@@ -15,21 +15,21 @@ export default {
   },
 
   serverMiddleware: [
-    { path: '/api/hello', handle: '~/api/hello', lazy: true }
+    { path: '/api/hello', handle: '~/server/hello', lazy: true }
   ],
 
   generate: {
     fallback: '404.html'
   },
 
-  pwa: {
-    workbox: false, // TODO
-    meta: {
-      lang: 'en'
-    }
-  },
+  // pwa: {
+  //   workbox: false, // TODO
+  //   meta: {
+  //     lang: 'en'
+  //   }
+  // },
 
-  serverless: {
+  sigma: {
     static: [
       '/about'
     ]

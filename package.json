@@ -9,14 +9,11 @@
     "test": "yarn lint --ext .vue"
   },
   "devDependencies": {
-    "@nuxt/serverless": "^0.0.42",
+    "@nuxt/sigma": "^0.0.44",
     "@nuxtjs/eslint-config": "^4.0.0",
     "@nuxtjs/pwa": "^3.2.2",
     "eslint": "^7.13.0",
     "nuxt": "^2.14.7",
     "timeago.js": "^4.0.2"
-  },
-  "dependencies": {
-    "requrl": "^2.0.1"
   }
 }

@@ -1,16 +1,16 @@
 [dev]
-  command = "yarn nuxt start"
+  command = "npm run start"
   framework = "#custom"
-  functions = ".nuxt/serverless/netlify"
+  functions = ".output/server"
   port = 8888
   targetPort = 3000
 
 [build]
-  command = "yarn generate"
+  command = "npm run generate"
   publish = "dist"
-  functions = ".nuxt/serverless/netlify"
+  functions = ".output/server"
 
 [[redirects]]
   from = "/*"
-  to = "/.netlify/functions/_nuxt"
+  to = "/.netlify/functions/server"
   status = 200

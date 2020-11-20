@@ -1,4 +1,4 @@
-name = "serverless-demo"
+name = "sigma-demo"
 type = "javascript"
 account_id = "f1e84ebed8564d989bffd46d5a988296"
 workers_dev = true
@@ -7,4 +7,4 @@ zone_id = ""
 
 [site]
 bucket = "./dist"
-entry-point = "./.nuxt/serverless/cloudflare"
+entry-point = "./.output/server"

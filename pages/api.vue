@@ -23,7 +23,7 @@ export default {
   async asyncData (ctx) {
     const [directTime] = await timer(fetch('/api/hello').then(r => r.text()))
 
-    const url = 'https://nuxt-serverless.netlify.app/api/hello' // TODO
+    const url = 'https://nuxt-sigma.netlify.app/api/hello' // TODO
     const [urlTime] = await timer(fetch(url).then(r => r.text()))
 
     return {

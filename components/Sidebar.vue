@@ -1,14 +1,14 @@
 <template>
   <aside class="sidebar">
-    <h1><span>N</span>uxt <span>S</span>erverless</h1>
+    <h1><span>N</span>uxt + <span>S</span>igma</h1>
     <div class="perf">
       <template v-if="ssr">
         <h3>✔️ Server Side Rendered</h3>
         <p>🕒 {{ diff }}</p>
         <h3> 🚀 Metrics</h3>
         <p v-for="(metric, index) in metrics" :key="index">
-          {{ metric[0].replace('functions/node/_nuxt/', '' /* vercel todo */) }}:
-          <b>{{ metric[2] }}ms</b>
+          {{ metric.name }}:
+          <b>{{ metric.duration }} ms</b>
         </p>
       </template>
       <template v-else>
@@ -18,16 +18,16 @@
     </div>
     <div class="hostings">
       <h4>This demo is deployed on:</h4>
-      <ui-button href="https://nuxt-serverless.vercel.app" rel="noreferrer">
+      <ui-button href="https://nuxt-sigma.vercel.app" rel="noreferrer">
         Vercel
       </ui-button>
-      <ui-button href="https://nuxt-serverless.netlify.app" rel="noreferrer">
+      <ui-button href="https://nuxt-sigma.netlify.app" rel="noreferrer">
         Netlify
       </ui-button>
-      <ui-button href="https://serverless-demo.nuxt.workers.dev" rel="noreferrer">
+      <ui-button href="https://sigma-demo.nuxt.workers.dev" rel="noreferrer">
         Cloudflare
       </ui-button>
-      <ui-button href="https://nuxt.github.io/serverless-demo">
+      <ui-button href="https://nuxt.github.io/sigma-demo">
         GH Pages (SW)
       </ui-button>
     </div>
@@ -71,15 +71,24 @@ export default {
       this.diff = timeAgo(this.t)
     },
     async bench () {
+      const metrics = []
       const start = Date.now()
 
       const res = await fetch(location.href + '?' + Math.random())
-      const serverTiming = res.headers.get('server-timing') || ''
-      const serverMetrics = serverTiming.split(',').map(entry => entry.trim().split(/[;=]/)).filter(m => m[0].length)
-
+      metrics.push(['TTFB (client)', 'val', Date.now() - start])
       await res.text()
+      metrics.push(['Download (client)', 'val', Date.now() - start])
 
-      this.metrics = [['fetch', 'val', Date.now() - start]].concat(serverMetrics)
+      const serverTiming = res.headers.get('server-timing') || ''
+      const serverMetrics = serverTiming.split(',')
+        .map(entry => entry.trim().split(/[;=]/))
+        .filter(m => m[0].length)
+
+      this.metrics = metrics.concat(serverMetrics).map(([name, _, duration]) => ({
+        name: (name[0].toUpperCase() + name.substr(1))
+          .replace('functions/node/_nuxt/', '' /* vercel todo */),
+        duration
+      }))
     },
     reload () {
       window.location.reload()

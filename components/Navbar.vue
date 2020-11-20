@@ -11,8 +11,8 @@
         API
       </a>
     </div>
-    <a href="https://github.com/nuxt/serverless-demo" target="_blank" rel="noopener" class="gh-button">
-      GitHub (demo)
+    <a href="https://github.com/nuxt/sigma-demo" target="_blank" rel="noopener" class="gh-button">
+      GitHub
     </a>
   </div>
 </template>
