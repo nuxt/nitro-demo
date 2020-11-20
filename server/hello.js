@@ -1,4 +1,5 @@
 
-export default (_req, _res) => {
+export default (_req, res) => {
+  res.setHeader('Access-Control-Allow-Origin', '*')
   return { api: 'works!' }
 }
