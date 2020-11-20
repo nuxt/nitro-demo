@@ -1105,10 +1105,10 @@
     serve-static "^1.14.1"
     server-destroy "^1.0.1"
 
-"@nuxt/sigma@^0.0.44":
-  version "0.0.44"
-  resolved "https://registry.yarnpkg.com/@nuxt/sigma/-/sigma-0.0.44.tgz#daa9e263dfcde8a62da053067b47c22137db2e36"
-  integrity sha512-8aeJkXX87S6XGN1mVywiRJMez0oZAkrmB3IScqWhYBLoLEMhU07xmbaOUOcEEk9d9fjRVE9Py3Xy7ZBU4zUPBw==
+"@nuxt/sigma@^0.0.45":
+  version "0.0.45"
+  resolved "https://registry.yarnpkg.com/@nuxt/sigma/-/sigma-0.0.45.tgz#904e3cb7b97d5dc370b872d5d6da9a3edb518de7"
+  integrity sha512-Z4MTRePz+5hm6W0jSqAyF97ULPl/Gbkk0Q0F/pMe6y479Qj1fzWyV9JMmWSNnFqGD9rWzYECwxAgnY2r/rK7/Q==
   dependencies:
     "@cloudflare/kv-asset-handler" "^0.0.12"
     "@nuxt/devalue" "^1.2.4"
@@ -1133,7 +1133,7 @@
     fs-extra "^9.0.1"
     get-port-please "^1.1.0"
     globby "^11.0.1"
-    gzip-size "^5.1.1"
+    gzip-size "^6.0.0"
     hasha "^5.2.2"
     hookable "^4.3.1"
     http-proxy-middleware "^1.0.6"
@@ -1144,11 +1144,11 @@
     p-timeout "^3.2.0"
     pretty-bytes "^5.4.1"
     process "^0.11.10"
-    rollup "^2.33.1"
+    rollup "^2.33.3"
     rollup-plugin-analyzer "^3.3.0"
     rollup-plugin-terser "^7.0.2"
     serve-static "^1.14.1"
-    terser "^5.3.8"
+    terser "^5.5.0"
     upath "^2.0.1"
     util "^0.12.3"
     vue-bundle-renderer "^0.2.2"
@@ -3428,7 +3428,7 @@ dotenv@^8.2.0:
   resolved "https://registry.yarnpkg.com/dotenv/-/dotenv-8.2.0.tgz#97e619259ada750eea3e4ea3e26bceea5424b16a"
   integrity sha512-8sJ78ElpbDJBHNeBzUbUVLsqKdccaa/BXF1uPTw3GrvQTBgrQrtObr2mUrE38vzYd8cEv+m/JBfDLioYcfXoaw==
 
-duplexer@^0.1.1:
+duplexer@^0.1.1, duplexer@^0.1.2:
   version "0.1.2"
   resolved "https://registry.yarnpkg.com/duplexer/-/duplexer-0.1.2.tgz#3abe43aef3835f8ae077d136ddce0f276b0400e6"
   integrity sha512-jtD6YG370ZCIi/9GTaJKQxWTZD045+4R4hTk/x1UyoqadyJ9x9CgSi1RlVDQF8U2sxLLSnFkCaMihqljHIWgMg==
@@ -4428,13 +4428,20 @@ graceful-fs@^4.1.11, graceful-fs@^4.1.15, graceful-fs@^4.1.2, graceful-fs@^4.1.6
   resolved "https://registry.yarnpkg.com/graceful-fs/-/graceful-fs-4.2.4.tgz#2256bde14d3632958c465ebc96dc467ca07a29fb"
   integrity sha512-WjKPNJF79dtJAVniUlGGWHYGz2jWxT6VhN/4m1NdkbZ2nOsEF+cI1Edgql5zCRhs/VsQYRvrXctxktVXZUkixw==
 
-gzip-size@^5.0.0, gzip-size@^5.1.1:
+gzip-size@^5.0.0:
   version "5.1.1"
   resolved "https://registry.yarnpkg.com/gzip-size/-/gzip-size-5.1.1.tgz#cb9bee692f87c0612b232840a873904e4c135274"
   integrity sha512-FNHi6mmoHvs1mxZAds4PpdCS6QG8B4C1krxJsMutgxl5t3+GlRTzzI3NEkifXx2pVsOvJdOGSmIgDhQ55FwdPA==
   dependencies:
     duplexer "^0.1.1"
     pify "^4.0.1"
+
+gzip-size@^6.0.0:
+  version "6.0.0"
+  resolved "https://registry.yarnpkg.com/gzip-size/-/gzip-size-6.0.0.tgz#065367fd50c239c0671cbcbad5be3e2eeb10e462"
+  integrity sha512-ax7ZYomf6jqPTQ4+XCpUGyXKHk5WweS+e05MBO4/y3WJ5RkmPXNKvX+bx1behVILVwr6JSQvZAku021CHPXG3Q==
+  dependencies:
+    duplexer "^0.1.2"
 
 hable@^3.0.0:
   version "3.0.0"
@@ -7596,7 +7603,7 @@ rollup-plugin-terser@^7.0.2:
     serialize-javascript "^4.0.0"
     terser "^5.0.0"
 
-rollup@^2.33.1:
+rollup@^2.33.3:
   version "2.33.3"
   resolved "https://registry.yarnpkg.com/rollup/-/rollup-2.33.3.tgz#ae72ce31f992b09a580072951bfea76e9df17342"
   integrity sha512-RpayhPTe4Gu/uFGCmk7Gp5Z9Qic2VsqZ040G+KZZvsZYdcuWaJg678JeDJJvJeEQXminu24a2au+y92CUWVd+w==
@@ -8290,7 +8297,7 @@ terser@^4.1.2, terser@^4.6.12, terser@^4.6.3:
     source-map "~0.6.1"
     source-map-support "~0.5.12"
 
-terser@^5.0.0, terser@^5.3.8:
+terser@^5.0.0, terser@^5.5.0:
   version "5.5.0"
   resolved "https://registry.yarnpkg.com/terser/-/terser-5.5.0.tgz#1406fcb4d4bc517add3b22a9694284c040e33448"
   integrity sha512-eopt1Gf7/AQyPhpygdKePTzaet31TvQxXvrf7xYUvD/d8qkCJm4SKPDzu+GHK5ZaYTn8rvttfqaZc3swK21e5g==

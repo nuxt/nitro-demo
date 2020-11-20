@@ -35,8 +35,8 @@ jobs:
         if: steps.cache.outputs.cache-hit != 'true'
         run: yarn
 
-      - name: Generate
-        run: yarn nuxt generate
+      - name: Build
+        run: yarn nuxt Build
         env:
           NUXT_SLS_TARGET: browser
           NUXT_ROUTER_BASE: /sigma-demo/
