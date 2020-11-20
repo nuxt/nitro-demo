@@ -21,7 +21,7 @@ async function timer (promise) {
 
 export default {
   async asyncData (ctx) {
-    const origin = process.client ? '' : 'https://sigma-demo.nuxt-js.vercel.app'
+    const origin = process.client ? '' : 'https://sigma-demo.nuxt.workers.dev'
     const path = '/api/hello'
 
     const [directTime] = await timer($fetch(path).then(r => r.text()))
