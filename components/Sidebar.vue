@@ -72,10 +72,12 @@ export default {
     },
     async bench () {
       const metrics = []
-      const start = Date.now()
+      let start
 
+      start = Date.now()
       const res = await fetch(location.href + '?' + Math.random())
       metrics.push(['TTFB (client)', 'val', Date.now() - start])
+      start = Date.now()
       await res.text()
       metrics.push(['Download (client)', 'val', Date.now() - start])
 
