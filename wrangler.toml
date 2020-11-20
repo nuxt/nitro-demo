@@ -6,5 +6,5 @@ route = ""
 zone_id = ""
 
 [site]
-bucket = "./dist"
-entry-point = "./.output/server"
+bucket = ".output/public"
+entry-point = ".output"

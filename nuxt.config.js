@@ -19,8 +19,21 @@ export default {
   ],
 
   generate: {
-    fallback: '404.html'
+    fallback: '404.html',
+    // Hybdrid mode only for /about
+    crawler: false,
+    exclude: [
+      /.*/
+    ],
+    routes: [
+      '/about'
+    ]
   },
+
+  sigma: {
+    // minify: false
+    // analyze: true
+  }
 
   // pwa: {
   //   workbox: false, // TODO
@@ -28,10 +41,4 @@ export default {
   //     lang: 'en'
   //   }
   // },
-
-  sigma: {
-    static: [
-      '/about'
-    ]
-  }
 }
