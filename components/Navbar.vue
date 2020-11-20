@@ -1,15 +1,15 @@
 <template>
   <div class="navbar">
     <div class="links">
-      <a href="./">
+      <NLink to="/">
         Dynamic
-      </a>
-      <a href="./about">
+      </NLink>
+      <NLink to="/about">
         Static
-      </a>
-      <a href="./api">
+      </NLink>
+      <NLink to="/api">
         API
-      </a>
+      </NLink>
     </div>
     <a href="https://github.com/nuxt/sigma-demo" target="_blank" rel="noopener" class="gh-button">
       GitHub

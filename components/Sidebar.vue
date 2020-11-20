@@ -18,10 +18,10 @@
     </div>
     <div class="hostings">
       <h4>This demo is deployed on:</h4>
-      <ui-button href="https://nuxt-sigma.vercel.app" rel="noreferrer">
+      <ui-button href="https://sigma-demo.nuxt-js.vercel.app" rel="noreferrer">
         Vercel
       </ui-button>
-      <ui-button href="https://nuxt-sigma.netlify.app" rel="noreferrer">
+      <ui-button href="https://sigma-demo.netlify.app/" rel="noreferrer">
         Netlify
       </ui-button>
       <ui-button href="https://sigma-demo.nuxt.workers.dev" rel="noreferrer">
