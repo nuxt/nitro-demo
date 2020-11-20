@@ -1105,10 +1105,10 @@
     serve-static "^1.14.1"
     server-destroy "^1.0.1"
 
-"@nuxt/sigma@^0.0.45":
-  version "0.0.45"
-  resolved "https://registry.yarnpkg.com/@nuxt/sigma/-/sigma-0.0.45.tgz#904e3cb7b97d5dc370b872d5d6da9a3edb518de7"
-  integrity sha512-Z4MTRePz+5hm6W0jSqAyF97ULPl/Gbkk0Q0F/pMe6y479Qj1fzWyV9JMmWSNnFqGD9rWzYECwxAgnY2r/rK7/Q==
+"@nuxt/sigma@^0.0.46":
+  version "0.0.46"
+  resolved "https://registry.yarnpkg.com/@nuxt/sigma/-/sigma-0.0.46.tgz#6589cdef7c3d9dcc894207b39781bb94821f6744"
+  integrity sha512-q+aPRKT42CDc/BlZVQv3mZkxHk7niV+igJ+3ro7jVfDLTSno/JtGWKlxqHW+73TrSnuCvM2bZ+gPdZzFGFi5ig==
   dependencies:
     "@cloudflare/kv-asset-handler" "^0.0.12"
     "@nuxt/devalue" "^1.2.4"
