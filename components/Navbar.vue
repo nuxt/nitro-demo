@@ -1,18 +1,19 @@
 <template>
   <div class="navbar">
     <div class="links">
-      <NLink to="/">
+      <!-- TODO: fix router base for GH pages -->
+      <a href="/">
         Dynamic
-      </NLink>
-      <NLink to="/about">
+      </a>
+      <a href="/about">
         Static
-      </NLink>
-      <NLink to="/api">
+      </a>
+      <a href="/api">
         API
-      </NLink>
-      <!-- <NLink to="/graphql">
+      </a>
+      <!-- <a href="/graphql">
         GraphQL
-      </NLink> -->
+      </a> -->
     </div>
     <a href="https://github.com/nuxt/sigma-demo" target="_blank" rel="noopener" class="gh-button">
       GitHub

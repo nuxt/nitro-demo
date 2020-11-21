@@ -1080,10 +1080,10 @@
     html-minifier "^4.0.0"
     node-html-parser "^1.3.1"
 
-"@nuxt/h2@^0.0.10":
-  version "0.0.10"
-  resolved "https://registry.yarnpkg.com/@nuxt/h2/-/h2-0.0.10.tgz#34b65e334661ef1e025ecf67f03028cef7049e3d"
-  integrity sha512-r8k4prAvj/FDahj+8YIrTjQmeyDy9rveuZqJ71Z9iF2EBxQCOg5srYLLlVQThwn1QQD3siq9+fqsxJ5/1SBUgg==
+"@nuxt/h2@^0.0.11":
+  version "0.0.11"
+  resolved "https://registry.yarnpkg.com/@nuxt/h2/-/h2-0.0.11.tgz#f66631faf6a6d5414b3fddc7fe1cce9afb82bef6"
+  integrity sha512-Bp7k+KWH8OOKgW1FTaDG82LJw0Jv3O7O6KC7d+K50taO8XHBg8xyTSdv4TPUgd5hCLMx4IqdDoKfcC6vUJ2oTw==
 
 "@nuxt/loading-screen@^2.0.2":
   version "2.0.2"
@@ -1129,15 +1129,15 @@
     serve-static "^1.14.1"
     server-destroy "^1.0.1"
 
-"@nuxt/sigma@^0.0.59":
-  version "0.0.59"
-  resolved "https://registry.yarnpkg.com/@nuxt/sigma/-/sigma-0.0.59.tgz#ad6ff042caf53441d00f1956983d279376a8aa53"
-  integrity sha512-csflD24DbjjCVIi0G8ji+QkDglU2N0p1uqX1amUluNodsWvHibjNGb6zogAefR3dcu1u/yenYJdte55Ufhekzw==
+"@nuxt/sigma@^0.0.60":
+  version "0.0.60"
+  resolved "https://registry.yarnpkg.com/@nuxt/sigma/-/sigma-0.0.60.tgz#8102e85e6fe513deb5868d172c66719d9ecc67d9"
+  integrity sha512-OahQXYMPak7qw0etJqn6s1/4Xr3mpU9wNHWNeU4+LRGOsR3fPfoUEiub4FQUbku9tGBHj61BJlVLIhDBlEEoLQ==
   dependencies:
     "@cloudflare/kv-asset-handler" "^0.0.12"
     "@nuxt/devalue" "^1.2.4"
-    "@nuxt/h2" "^0.0.10"
-    "@nuxt/un" "^0.0.8"
+    "@nuxt/h2" "^0.0.11"
+    "@nuxt/un" "^0.0.9"
     "@rollup/plugin-alias" "^3.1.1"
     "@rollup/plugin-commonjs" "^16.0.0"
     "@rollup/plugin-inject" "^4.0.2"
@@ -1212,10 +1212,10 @@
     rc9 "^1.0.0"
     std-env "^2.2.1"
 
-"@nuxt/un@^0.0.8":
-  version "0.0.8"
-  resolved "https://registry.yarnpkg.com/@nuxt/un/-/un-0.0.8.tgz#ebde70697842c295c041ac70c3afacf062adff73"
-  integrity sha512-t/KNc4SFSMGMSVO2efyM/M9NwAp6/KA9Mb1qbjXfEdu/bHytygafeZdHpNSr3f1S0TA4A2k0SOMYaGrThkxH6g==
+"@nuxt/un@^0.0.9":
+  version "0.0.9"
+  resolved "https://registry.yarnpkg.com/@nuxt/un/-/un-0.0.9.tgz#2614d99fcea12888d2af60a8f21b1b6ac38545b0"
+  integrity sha512-W24TSYUCCDwVqmLYH5cOxjTTpHWe38+3nDPraI5ZoeskSWaoqm0wUgSU1rD6kJsqhLfpOHh0BIvB9gr8HhKZ5Q==
   dependencies:
     buffer "^6.0.2"
     defu "^3.2.2"

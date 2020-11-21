@@ -21,7 +21,7 @@
       <ui-button href="https://sigma-demo.nuxt-js.vercel.app" rel="noreferrer">
         Vercel
       </ui-button>
-      <ui-button href="https://sigma-demo.netlify.app/" rel="noreferrer">
+      <ui-button href="https://sigma-demo.netlify.app" rel="noreferrer">
         Netlify
       </ui-button>
       <ui-button href="https://sigma-demo.nuxt.workers.dev" rel="noreferrer">
@@ -63,35 +63,21 @@ export default {
       next()
     })
 
-    // eslint-disable-next-line no-console
-    this.bench().catch(console.error)
+    const nav = globalThis.performance.getEntriesByType('navigation')[0]
+    for (const entry of nav.serverTiming || []) {
+      this.metrics.push({
+        name: decodeURIComponent(entry.description || entry.name),
+        duration: entry.duration
+      })
+    }
+    this.metrics.push({
+      name: 'TTFB (client)',
+      duration: nav.duration
+    })
   },
   methods: {
     update () {
       this.diff = timeAgo(this.t)
-    },
-    async bench () {
-      const metrics = []
-      let start
-
-      start = Date.now()
-      const res = await fetch(location.href + '?' + Math.random())
-      metrics.push(['TTFB (client)', 'val', Date.now() - start])
-      start = Date.now()
-      await res.text()
-      metrics.push(['Download (client)', 'val', Date.now() - start])
-
-      const serverTiming = res.headers.get('server-timing') || ''
-      const serverMetrics = serverTiming.split(',')
-        .map(entry => entry.trim().split(/[;=]/))
-        .filter(m => m[0].length)
-
-      this.metrics = metrics.concat(serverMetrics).map(([name, _, duration]) => ({
-        name: (name[0].toUpperCase() + name.substr(1))
-          .replace('functions/node/_nuxt/', '' /* vercel todo */)
-          .replace('Chunks/', '<async> '),
-        duration
-      }))
     },
     reload () {
       window.location.reload()
