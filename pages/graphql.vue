@@ -8,14 +8,6 @@
   </div>
 </template>
 
-<style scoped>
-iframe {
-  border: 0;
-  align-self: stretch;
-  flex: 1;
-}
-</style>
-
 <script>
 export default {
   computed: {
@@ -25,3 +17,11 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+iframe {
+  border: 0;
+  align-self: stretch;
+  flex: 1;
+}
+</style>
