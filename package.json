@@ -1,7 +1,7 @@
 {
   "private": true,
   "scripts": {
-    "build": "nuxt generate 2>&1",
+    "build": "nuxt generate 1>&2",
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "lint": "eslint --ext .vue .",
