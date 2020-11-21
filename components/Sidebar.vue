@@ -72,7 +72,7 @@ export default {
     }
     this.metrics.push({
       name: 'TTFB (client)',
-      duration: nav.duration
+      duration: nav.responseStart
     })
   },
   methods: {
