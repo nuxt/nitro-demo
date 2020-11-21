@@ -42,7 +42,7 @@ jobs:
         run: yarn
 
       - name: Build
-        run: yarn build
+        run: npm run build
         env:
           SIGMA_PRESET: browser
           NUXT_ROUTER_BASE: /sigma-demo/
