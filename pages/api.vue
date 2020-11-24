@@ -23,7 +23,7 @@ const ORIGINS = {
   vercel: 'https://sigma-demo.nuxt-js.vercel.app',
   browser: 'https://nuxt.github.io/sigma-demo',
   netlify: 'https://sigma-demo.netlify.app',
-  // cloudflare: 'https://sigma-demo.nuxt.workers.dev', // <-- they don't like it :(
+  cloudflare: 'https://sigma-demo.nuxt.workers.dev', // <-- they don't like it :(
   default: process.client ? '' : 'https://sigma-demo.netlify.app'
 }
 
