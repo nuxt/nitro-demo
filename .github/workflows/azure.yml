@@ -10,7 +10,7 @@ on:
 
 env:
   AZURE_FUNCTIONAPP_NAME: nuxt-sigma
-  AZURE_FUNCTIONAPP_PACKAGE_PATH: 'dist'
+  AZURE_FUNCTIONAPP_PACKAGE_PATH: '.output'
 
 jobs:
   deploy:
