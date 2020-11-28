@@ -50,6 +50,9 @@ jobs:
         env:
           SIGMA_PRESET: azure
 
+      - name: Build
+        run: cat 'deploy.zip' > .output/.funcignore
+
       - name: 'Deploy to Azure Functions'
         uses: Azure/functions-action@v1
         with:
