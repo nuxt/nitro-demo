@@ -10,7 +10,7 @@ on:
 
 env:
   AZURE_FUNCTIONAPP_NAME: nuxt-sigma
-  AZURE_FUNCTIONAPP_PACKAGE_PATH: '.output'
+  AZURE_FUNCTIONAPP_PACKAGE_PATH: '.output/deploy.zip'
 
 jobs:
   deploy:
@@ -49,9 +49,6 @@ jobs:
         run: npm run build
         env:
           SIGMA_PRESET: azure
-
-      - name: Ignore deploy.zip
-        run: echo deploy.zip > .output/.funcignore
 
       - name: 'Deploy to Azure Functions'
         uses: Azure/functions-action@v1
