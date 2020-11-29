@@ -8,10 +8,6 @@ on:
     branches:
       - main
 
-env:
-  AZURE_FUNCTIONAPP_NAME: nuxt-sigma
-  AZURE_FUNCTIONAPP_PACKAGE_PATH: '.output'
-
 jobs:
   deploy:
     runs-on: ${{ matrix.os }}
@@ -50,12 +46,9 @@ jobs:
         env:
           SIGMA_PRESET: azure
 
-      - name: Ignore zip file
-        run: echo deploy.zip > .output/.funcignore
-
       - name: 'Deploy to Azure Functions'
         uses: Azure/functions-action@v1
         with:
-          app-name: ${{ env.AZURE_FUNCTIONAPP_NAME }}
-          package: ${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}
+          app-name: nuxt-sigma
+          package: .output/deploy.zip
           publish-profile: ${{ secrets.AZURE_FUNCTIONAPP_PUBLISH_PROFILE }}
