@@ -24,6 +24,7 @@ const ORIGINS = {
   browser: 'https://nuxt.github.io/sigma-demo',
   netlify: 'https://sigma-demo.netlify.app',
   cloudflare: 'https://sigma-demo.nuxt.workers.dev', // <-- they don't like it :(
+  azure: 'https://nuxt-sigma.azurewebsites.net/',
   default: process.client ? '' : 'https://sigma-demo.netlify.app'
 }
 
