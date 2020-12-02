@@ -34,6 +34,10 @@ export default {
   sigma: {
     // minify: false
     // analyze: true
+  },
+
+  publicRuntimeConfig: {
+    sigmaVersion: require('@nuxt/sigma/package.json').version
   }
 
   // pwa: {

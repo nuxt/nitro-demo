@@ -1,6 +1,6 @@
 <template>
   <aside class="sidebar">
-    <h1><span>N</span>uxt + <span>S</span>igma</h1>
+    <h1><span>N</span>uxt + <span>S</span>igma<sup><small>{{ $config.sigmaVersion }}</small></sup></h1>
     <div class="perf">
       <template v-if="ssr">
         <h3>✔️ Server Side Rendered</h3>
