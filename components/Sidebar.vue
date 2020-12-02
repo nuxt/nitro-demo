@@ -30,7 +30,7 @@
       <ui-button href="https://nuxt.github.io/sigma-demo">
         GH Pages (SW)
       </ui-button>
-      <ui-button href="https://nuxt-sigma.azurewebsites.net/" rel="noreferrer">
+      <ui-button href="https://nuxt-sigma.azurewebsites.net" rel="noreferrer">
         Azure
       </ui-button>
     </div>
