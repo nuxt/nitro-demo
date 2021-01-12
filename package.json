@@ -9,14 +9,14 @@
     "test": "yarn lint --ext .vue"
   },
   "devDependencies": {
-    "@nuxt/sigma": "^0.0.64",
+    "@nuxt/sigma": "^0.0.69",
     "@nuxtjs/eslint-config": "^5.0.0",
     "@nuxtjs/pwa": "^3.3.2",
     "apollo-server-core": "^2.19.0",
     "apollo-server-express": "^2.19.0",
     "eslint": "^7.13.0",
     "express": "^4.17.1",
-    "nuxt": "^2.14.9",
+    "nuxt-edge": "^2.15.0-26840219.3265e949",
     "timeago.js": "^4.0.2"
   }
 }
