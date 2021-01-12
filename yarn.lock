@@ -1127,10 +1127,10 @@
     serve-static "^1.14.1"
     server-destroy "^1.0.1"
 
-"@nuxt/sigma@^0.0.69":
-  version "0.0.69"
-  resolved "https://registry.yarnpkg.com/@nuxt/sigma/-/sigma-0.0.69.tgz#e887864b8034ac945b3c3da7dc2ba3bc3023015f"
-  integrity sha512-nGcxRpELvzrlfeIPQ7UZhEoPIMV3z9/XHbG7/kusnxnyEzzDh1wS335YTwYQuUNrJnY6HopwWrHSONLI+zSjYQ==
+"@nuxt/sigma@^0.0.70":
+  version "0.0.70"
+  resolved "https://registry.yarnpkg.com/@nuxt/sigma/-/sigma-0.0.70.tgz#ab60872eee4f07ffac1641f83bbeaeeef29f0925"
+  integrity sha512-4lTX/ih8gWk/ADPCfbHJzBbVNTKJRqN7pSnUsqcQTN7ZdEuIErifylkTG1J3VwF/ZIb68NdB2JoC9HcPe7Nfkw==
   dependencies:
     "@cloudflare/kv-asset-handler" "^0.1.0"
     "@nuxt/devalue" "^1.2.4"
@@ -1139,7 +1139,7 @@
     "@rollup/plugin-commonjs" "^17.0.0"
     "@rollup/plugin-inject" "^4.0.2"
     "@rollup/plugin-json" "^4.1.0"
-    "@rollup/plugin-node-resolve" "^11.0.1"
+    "@rollup/plugin-node-resolve" "npm:@pi0/rollup-plugin-node-resolve"
     "@rollup/plugin-replace" "^2.3.4"
     "@rollup/plugin-virtual" "^2.0.3"
     "@rollup/pluginutils" "^4.1.0"
@@ -1162,7 +1162,7 @@
     get-port-please "^2.1.0"
     globby "^11.0.2"
     gzip-size "^6.0.0"
-    h3 "^0.2.0"
+    h3 "^0.2.1"
     hasha "^5.2.2"
     hookable "^4.3.1"
     http-proxy "^1.18.1"
@@ -1459,10 +1459,10 @@
   dependencies:
     "@rollup/pluginutils" "^3.0.8"
 
-"@rollup/plugin-node-resolve@^11.0.1":
-  version "11.0.1"
-  resolved "https://registry.yarnpkg.com/@rollup/plugin-node-resolve/-/plugin-node-resolve-11.0.1.tgz#d3765eec4bccf960801439a999382aed2dca959b"
-  integrity sha512-ltlsj/4Bhwwhb+Nb5xCz/6vieuEj2/BAkkqVIKmZwC7pIdl8srmgmglE4S0jFlZa32K4qvdQ6NHdmpRKD/LwoQ==
+"@rollup/plugin-node-resolve@npm:@pi0/rollup-plugin-node-resolve":
+  version "11.0.2-pre"
+  resolved "https://registry.yarnpkg.com/@pi0/rollup-plugin-node-resolve/-/rollup-plugin-node-resolve-11.0.2-pre.tgz#55f16dd629ba3130ed846009a06e1c03e1f88dd7"
+  integrity sha512-IXYhkxNbP9SnvZ1kLGsi6oHOgGM84mfFm7RVC4UTMOcr2JOnHkbvXq44IEXUNwOVZ2bvLQrATKX91lqpMEJB+Q==
   dependencies:
     "@rollup/pluginutils" "^3.1.0"
     "@types/resolve" "1.17.1"
@@ -5276,7 +5276,7 @@ gzip-size@^6.0.0:
   dependencies:
     duplexer "^0.1.2"
 
-h3@^0.2.0:
+h3@^0.2.1:
   version "0.2.1"
   resolved "https://registry.yarnpkg.com/h3/-/h3-0.2.1.tgz#24a1b568bb11f42c2845de10a2a01cf0b2440e7e"
   integrity sha512-qnYGdHuENF0reu087FN2fZXGoWWBWcTFDJqzNtNBHITvjb1tqz2zz1eWWl7I8H6aLWNVJK7VP/sl10HxIBAGQQ==
