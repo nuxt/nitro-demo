@@ -11,12 +11,12 @@
   "devDependencies": {
     "@nuxt/sigma": "^0.0.70",
     "@nuxtjs/eslint-config": "^5.0.0",
-    "@nuxtjs/pwa": "^3.3.2",
-    "apollo-server-core": "^2.19.0",
-    "apollo-server-express": "^2.19.0",
-    "eslint": "^7.13.0",
+    "@nuxtjs/pwa": "^3.3.4",
+    "apollo-server-core": "^2.19.2",
+    "apollo-server-express": "^2.19.2",
+    "eslint": "^7.17.0",
     "express": "^4.17.1",
-    "nuxt-edge": "^2.15.0-26840219.3265e949",
+    "nuxt-edge": "^2.15.0-26843585.14f741d4",
     "timeago.js": "^4.0.2"
   }
 }
