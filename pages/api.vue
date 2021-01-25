@@ -20,17 +20,17 @@ async function timer (promise) {
 }
 
 const ORIGINS = {
-  vercel: 'https://sigma-demo.nuxt-js.vercel.app',
-  browser: 'https://nuxt.github.io/sigma-demo',
-  netlify: 'https://sigma-demo.netlify.app',
-  cloudflare: 'https://sigma-demo.netlify.app',
-  azure: 'https://nuxt-sigma.azurewebsites.net',
-  default: process.client ? '' : 'https://sigma-demo.netlify.app'
+  vercel: 'https://nitro-demo.nuxt-js.vercel.app',
+  browser: 'https://nuxt.github.io/nitro-demo',
+  netlify: 'https://nitro-demo.netlify.app',
+  cloudflare: 'https://nitro-demo.netlify.app',
+  azure: 'https://nuxt-nitro.azurewebsites.net',
+  default: process.client ? '' : 'https://nitro-demo.netlify.app'
 }
 
 export default {
   async asyncData (ctx) {
-    const origin = ORIGINS[process.env.SIGMA_PRESET] ?? ORIGINS.default
+    const origin = ORIGINS[process.env.NITRO_PRESET] ?? ORIGINS.default
     const path = '/api/hello'
 
     const [directTime] = await timer($fetch(path).then(r => r.text()))

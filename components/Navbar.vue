@@ -15,7 +15,7 @@
         GraphQL
       </a> -->
     </div>
-    <a href="https://github.com/nuxt/sigma-demo" target="_blank" rel="noopener" class="gh-button">
+    <a href="https://github.com/nuxt/nitro-demo" target="_blank" rel="noopener" class="gh-button">
       GitHub
     </a>
   </div>

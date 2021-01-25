@@ -1,6 +1,6 @@
 <template>
   <aside class="sidebar">
-    <h1><span>N</span>uxt + <span>S</span>igma<sup><small>{{ $config.sigmaVersion }}</small></sup></h1>
+    <h1><span>N</span>uxt + <span>S</span>igma<sup><small>{{ $config.nitroVersion }}</small></sup></h1>
     <div class="perf">
       <template v-if="ssr">
         <h3>✔️ Server Side Rendered</h3>
@@ -18,19 +18,19 @@
     </div>
     <div class="hostings">
       <h4>This demo is deployed on:</h4>
-      <ui-button href="https://sigma-demo.nuxt-js.vercel.app" rel="noreferrer">
+      <ui-button href="https://nitro-demo.nuxt-js.vercel.app" rel="noreferrer">
         Vercel
       </ui-button>
-      <ui-button href="https://sigma-demo.netlify.app" rel="noreferrer">
+      <ui-button href="https://nitro-demo.netlify.app" rel="noreferrer">
         Netlify
       </ui-button>
-      <ui-button href="https://sigma-demo.nuxt.workers.dev" rel="noreferrer">
+      <ui-button href="https://nitro-demo.nuxt.workers.dev" rel="noreferrer">
         Cloudflare
       </ui-button>
-      <ui-button href="https://nuxt.github.io/sigma-demo">
+      <ui-button href="https://nuxt.github.io/nitro-demo">
         GH Pages (SW)
       </ui-button>
-      <ui-button href="https://nuxt-sigma.azurewebsites.net" rel="noreferrer">
+      <ui-button href="https://nuxt-nitro.azurewebsites.net" rel="noreferrer">
         Azure
       </ui-button>
     </div>

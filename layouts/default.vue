@@ -18,7 +18,7 @@ export default {
     Navbar
   },
   head: {
-    title: 'Nuxt sigma Demo',
+    title: 'Nuxt nitro Demo',
     meta: [
       { name: 'viewport', content: 'width=device-width, initial-scale=1' }
     ]
