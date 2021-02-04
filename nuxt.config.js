@@ -2,7 +2,8 @@ export default {
   target: 'static',
 
   buildModules: [
-    '@nuxt/nitro/compat'
+    '@nuxt/nitro/compat',
+    '@nuxtjs/web-vitals'
     // '@nuxtjs/pwa'
   ],
 
