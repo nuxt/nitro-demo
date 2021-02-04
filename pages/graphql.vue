@@ -2,7 +2,7 @@
   <div>
     <p>
       This GraphQL Server is powered by Nuxt, <a role="noopener" target="_blank" href="https://www.apollographql.com/docs/apollo-server/">apollo-server-express</a>
-      and {{ sigmaPreset }}
+      and {{ nitroPreset }}
     </p>
     <iframe src="/api/graphql" />
   </div>
@@ -11,8 +11,8 @@
 <script>
 export default {
   computed: {
-    sigmaPreset () {
-      return process.env.SIGMA_PRESET || 'sigma'
+    nitroPreset () {
+      return process.env.NITRO_PRESET || 'nitro'
     }
   }
 }

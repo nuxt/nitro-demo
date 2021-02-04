@@ -14,8 +14,8 @@ jobs:
 
     strategy:
       matrix:
-        os: [ ubuntu-latest ]
-        node: [ 12 ]
+        os: [ubuntu-latest]
+        node: [12]
 
     steps:
       - uses: actions/setup-node@v2
@@ -44,11 +44,11 @@ jobs:
       - name: Build
         run: npm run build
         env:
-          SIGMA_PRESET: azure
+          NITRO_PRESET: azure_functions
 
-      - name: 'Deploy to Azure Functions'
+      - name: "Deploy to Azure Functions"
         uses: Azure/functions-action@v1
         with:
-          app-name: nuxt-sigma
+          app-name: nuxt-nitro
           package: .output/deploy.zip
           publish-profile: ${{ secrets.AZURE_FUNCTIONAPP_PUBLISH_PROFILE }}

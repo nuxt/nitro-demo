@@ -2,7 +2,7 @@ export default {
   target: 'static',
 
   buildModules: [
-    '@nuxt/sigma'
+    '@nuxt/nitro/compat'
     // '@nuxtjs/pwa'
   ],
 
@@ -31,13 +31,13 @@ export default {
     ]
   },
 
-  sigma: {
+  nitro: {
     // minify: false
     // analyze: true
   },
 
   publicRuntimeConfig: {
-    sigmaVersion: require('@nuxt/sigma/package.json').version
+    nitroVersion: require('@nuxt/nitro/package.json').version
   }
 
   // pwa: {

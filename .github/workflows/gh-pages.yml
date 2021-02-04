@@ -44,8 +44,8 @@ jobs:
       - name: Build
         run: npm run build
         env:
-          SIGMA_PRESET: browser
-          NUXT_ROUTER_BASE: /sigma-demo/
+          NITRO_PRESET: browser
+          NUXT_ROUTER_BASE: /nitro-demo/
 
       - name: Deploy to Github Pages
         uses: JamesIves/github-pages-deploy-action@3.7.1
