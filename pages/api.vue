@@ -26,7 +26,8 @@ const ORIGINS = {
   browser: 'https://nuxt.github.io/nitro-demo',
   netlify: 'https://nitro-demo.netlify.app',
   cloudflare: 'https://nitro-demo.netlify.app',
-  azure: 'https://nuxt-nitro.azurewebsites.net',
+  azure_functions: 'https://nuxt-sigma.azurewebsites.net',
+  azure: 'https://nitro-azure-demo.nuxtjs.org',
   default: process.client ? '' : 'https://nitro-demo.netlify.app'
 }
 

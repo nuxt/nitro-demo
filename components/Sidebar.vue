@@ -30,8 +30,11 @@
       <ui-button href="https://nuxt.github.io/nitro-demo">
         GH Pages (SW)
       </ui-button>
-      <ui-button href="https://nuxt-nitro.azurewebsites.net" rel="noreferrer">
-        Azure
+      <ui-button href="https://nuxt-sigma.azurewebsites.net" rel="noreferrer">
+        Azure Functions
+      </ui-button>
+      <ui-button href="https://nitro-azure-demo.nuxtjs.org" rel="noreferrer">
+        Azure SWA
       </ui-button>
     </div>
   </aside>
