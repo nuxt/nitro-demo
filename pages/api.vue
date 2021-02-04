@@ -20,7 +20,7 @@ async function timer (promise) {
 }
 
 const ORIGINS = {
-  vercel: 'https://nitro-demo.nuxt-js.vercel.app',
+  vercel: 'https://nitro-demo.vercel.app',
   browser: 'https://nuxt.github.io/nitro-demo',
   netlify: 'https://nitro-demo.netlify.app',
   cloudflare: 'https://nitro-demo.netlify.app',

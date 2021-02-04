@@ -18,7 +18,7 @@
     </div>
     <div class="hostings">
       <h4>This demo is deployed on:</h4>
-      <ui-button href="https://nitro-demo.nuxt-js.vercel.app" rel="noreferrer">
+      <ui-button href="https://nitro-demo.vercel.app" rel="noreferrer">
         Vercel
       </ui-button>
       <ui-button href="https://nitro-demo.netlify.app" rel="noreferrer">
