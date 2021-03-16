@@ -5,7 +5,7 @@
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "lint": "eslint --ext .vue .",
-    "start": "node .out/server",
+    "start": "node .output/server",
     "test": "yarn lint --ext .vue"
   },
   "devDependencies": {
