@@ -10,7 +10,7 @@
   },
   "devDependencies": {
     "@nuxt/nitro": "^0.1.11",
-    "@nuxtjs/eslint-config": "^5.0.0",
+    "@nuxtjs/eslint-config": "^6.0.0",
     "@nuxtjs/pwa": "^3.3.5",
     "apollo-server-core": "^2.22.1",
     "apollo-server-express": "^2.22.1",
