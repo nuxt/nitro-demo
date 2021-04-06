@@ -14,10 +14,10 @@
 
 <script>
 async function timer (promise) {
-  const start = global.process.hrtime()
+  const start = Date.now()
   const res = await promise
-  const end = global.process.hrtime(start)
-  const time = (end[0] * 1e9 + end[1]) / 1e6
+  const end = Date.now()
+  const time = end - start
   return [time, res]
 }
 
@@ -28,7 +28,7 @@ const ORIGINS = {
   cloudflare: 'https://nitro-demo.netlify.app',
   azure_functions: 'https://nuxt-sigma.azurewebsites.net',
   azure: 'https://nitro-azure-demo.nuxtjs.org',
-  default: process.client ? '' : 'https://nitro-demo.netlify.app'
+  default: process.client ? '' : (process.dev ? 'http://localhost:3000' : 'https://nitro-demo.netlify.app')
 }
 
 export default {
