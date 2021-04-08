@@ -1,5 +1,5 @@
 
 export default (_req, res) => {
   res.setHeader('Access-Control-Allow-Origin', '*')
-  return { api: 'works!' }
+  return { api: `generated at ${Date.now()}` }
 }
