@@ -18,6 +18,7 @@ const resolvers = {
 const server = new ApolloServer({
   typeDefs,
   resolvers,
+  introspection: true,
   tracing: true,
   playground: {
     settings: {

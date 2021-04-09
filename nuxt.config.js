@@ -15,8 +15,8 @@ export default {
   },
 
   serverMiddleware: [
-    { path: '/api/hello', handle: '~/server/hello' }
-    // { path: '/api/graphql', handle: '~/server/graphql' }
+    { path: '/api/hello', handle: '~/server/hello' },
+    { path: '/api/graphql', handle: '~/server/graphql' }
   ],
 
   generate: {
