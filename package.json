@@ -9,15 +9,15 @@
     "test": "yarn lint --ext .vue"
   },
   "devDependencies": {
-    "@nuxt/nitro": "^0.3.0",
+    "@nuxt/nitro": "^0.6.2",
     "@nuxtjs/eslint-config": "^6.0.0",
     "@nuxtjs/pwa": "^3.3.5",
-    "apollo-server-core": "^2.22.2",
-    "apollo-server-express": "^2.22.2",
+    "apollo-server-core": "^2.23.0",
+    "apollo-server-express": "^2.23.0",
     "encoding": "^0.1.13",
-    "eslint": "^7.23.0",
+    "eslint": "^7.25.0",
     "express": "^4.17.1",
-    "nuxt-edge": "^2.16.0-26964023.9212d34e",
+    "nuxt-edge": "^2.16.0-26992818.8e2cad5a",
     "timeago.js": "^4.0.2"
   }
 }
