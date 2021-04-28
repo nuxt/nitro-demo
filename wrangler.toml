@@ -8,3 +8,7 @@ zone_id = ""
 [site]
 bucket = "./.output/public"
 entry-point = "./.output"
+
+[build]
+command = "true"
+upload.format = "service-worker"
