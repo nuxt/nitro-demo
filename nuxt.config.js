@@ -1,3 +1,5 @@
+import { version as nitroVersion } from '@nuxt/nitro/package.json'
+
 export default {
   target: 'static',
 
@@ -37,7 +39,7 @@ export default {
   },
 
   publicRuntimeConfig: {
-    nitroVersion: require('@nuxt/nitro/package.json').version
+    nitroVersion: nitroVersion.split('.').pop()
   }
 
   // pwa: {
