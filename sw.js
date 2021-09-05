@@ -1,1 +1,1 @@
-self.importScripts('/nitro-demo/_server/index.js');
+self.importScripts('/nitro-demo/_server/index.mjs');
