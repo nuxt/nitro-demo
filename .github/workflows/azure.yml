@@ -3,7 +3,8 @@ name: azure
 on:
   push:
     branches:
-      - main
+      #- main
+      - azure
 
 jobs:
   deploy:
