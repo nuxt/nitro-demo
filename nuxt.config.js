@@ -4,6 +4,7 @@ export default {
   target: 'static',
 
   buildModules: [
+    '@nuxtjs/composition-api/module',
     '@nuxt/bridge'
     // '@nuxtjs/pwa'
   ],
