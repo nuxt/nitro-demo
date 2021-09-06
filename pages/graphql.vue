@@ -8,9 +8,14 @@
   </div>
 </template>
 
-<script setup>
-import { computed } from '@nuxtjs/composition-api'
-const nitroPreset = computed(() => process.env.NITRO_PRESET || 'nitro')
+<script>
+export default {
+  computed: {
+    nitroPreset() {
+      return process.env.NITRO_PRESET || 'nitro'
+    }
+  }
+}
 </script>
 
 <style scoped>

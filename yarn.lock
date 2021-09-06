@@ -82,7 +82,7 @@
     eslint-visitor-keys "^2.1.0"
     semver "^6.3.0"
 
-"@babel/generator@^7.15.0", "@babel/generator@^7.15.4":
+"@babel/generator@^7.15.4":
   version "7.15.4"
   resolved "https://registry.yarnpkg.com/@babel/generator/-/generator-7.15.4.tgz#85acb159a267ca6324f9793986991ee2022a05b0"
   integrity sha512-d3itta0tu+UayjEORPNz6e1T3FtvWlP5N4V5M+lhp/CxT4oAA7/NcScnpRyspUMLK6tu9MNHmQHxRykuN2R7hw==
@@ -298,7 +298,7 @@
     chalk "^2.0.0"
     js-tokens "^4.0.0"
 
-"@babel/parser@^7.13.10", "@babel/parser@^7.15.0", "@babel/parser@^7.15.3", "@babel/parser@^7.15.4", "@babel/parser@^7.15.5":
+"@babel/parser@^7.13.10", "@babel/parser@^7.15.0", "@babel/parser@^7.15.4", "@babel/parser@^7.15.5":
   version "7.15.5"
   resolved "https://registry.yarnpkg.com/@babel/parser/-/parser-7.15.5.tgz#d33a58ca69facc05b26adfe4abebfed56c1c2dac"
   integrity sha512-2hQstc6I7T6tQsWzlboMh3SgMRPaS4H6H7cPQsJkdzTzEGqQrpLDsE2BGASU5sBPoEQyHzeqU6C8uKbFeEk6sg==
@@ -948,7 +948,7 @@
     "@babel/parser" "^7.15.4"
     "@babel/types" "^7.15.4"
 
-"@babel/traverse@^7.13.0", "@babel/traverse@^7.15.0", "@babel/traverse@^7.15.4":
+"@babel/traverse@^7.13.0", "@babel/traverse@^7.15.4":
   version "7.15.4"
   resolved "https://registry.yarnpkg.com/@babel/traverse/-/traverse-7.15.4.tgz#ff8510367a144bfbff552d9e18e28f3e2889c22d"
   integrity sha512-W6lQD8l4rUbQR/vYgSuCAE75ADyyQvOpFVsvPPdkhf6lATXAsQIG9YdtOcu8BB1dZ0LKu+Zo3c1wEcbKeuhdlA==
@@ -1562,20 +1562,6 @@
     webpack-hot-middleware "^2.25.0"
     webpack-node-externals "^3.0.0"
     webpackbar "^4.0.0"
-
-"@nuxtjs/composition-api@^0.28.0":
-  version "0.28.0"
-  resolved "https://registry.yarnpkg.com/@nuxtjs/composition-api/-/composition-api-0.28.0.tgz#ba384eecff094820adbc534d69157b8c878e24d6"
-  integrity sha512-YSchyQsOrpADtFXFxFjsQuYSQSuAjnidzPpF+bxeVLj1/yhwzy2CQGIBabKJbkMPoDFwive7dKf6LdkbPQL4RQ==
-  dependencies:
-    "@vue/composition-api" "^1.1.4"
-    defu "^5.0.0"
-    estree-walker "^2.0.2"
-    fs-extra "^9.1.0"
-    magic-string "^0.25.7"
-    ufo "^0.7.9"
-    unplugin-vue2-script-setup "^0.5.6"
-    upath "^2.0.1"
 
 "@nuxtjs/eslint-config@latest":
   version "6.0.1"
@@ -2233,17 +2219,6 @@
   dependencies:
     "@vue/shared" "3.2.8"
 
-"@vue/ref-transform@^3.2.6":
-  version "3.2.8"
-  resolved "https://registry.yarnpkg.com/@vue/ref-transform/-/ref-transform-3.2.8.tgz#a527047bab43ce50ef3d400ce71312ab30f825dc"
-  integrity sha512-9LdADd4JM3klt+b2qNT8a7b7JvBETNBy2Btv5rDzyPrAVS4Vrw+1WWay6gZBgnxfJ9TPSvG8f/9zu6gNGHmJLA==
-  dependencies:
-    "@babel/parser" "^7.15.0"
-    "@vue/compiler-core" "3.2.8"
-    "@vue/shared" "3.2.8"
-    estree-walker "^2.0.2"
-    magic-string "^0.25.7"
-
 "@vue/runtime-core@3.2.8":
   version "3.2.8"
   resolved "https://registry.yarnpkg.com/@vue/runtime-core/-/runtime-core-3.2.8.tgz#8a2342c0baa0fee192f819a3bdc19547d7430b88"
@@ -2273,11 +2248,6 @@
   version "3.2.8"
   resolved "https://registry.yarnpkg.com/@vue/shared/-/shared-3.2.8.tgz#2f918e330aeb3f56ab1031ca60a5b30672512457"
   integrity sha512-E2DQQnG7Qr4GwTs3GlfPPlHliGVADoufTnhpwfoViw7JlyLMmYtjfnTwM6nXAwvSJWiF7D+7AxpnWBBT3VWo6Q==
-
-"@vue/shared@^3.2.6":
-  version "3.2.9"
-  resolved "https://registry.yarnpkg.com/@vue/shared/-/shared-3.2.9.tgz#44e44dbd82819997f192fb7dbdb90af5715dbf52"
-  integrity sha512-+CifxkLVhjKT14g/LMZil8//SdCzkMkS8VfRX0cqNJiFKK4AWvxj0KV1dhbr8czikY0DZUGQew3tRMRRChMGtA==
 
 "@webassemblyjs/ast@1.9.0":
   version "1.9.0"
@@ -10974,31 +10944,6 @@ unpipe@1.0.0, unpipe@~1.0.0:
   resolved "https://registry.yarnpkg.com/unpipe/-/unpipe-1.0.0.tgz#b2bf4ee8514aae6165b4817829d21b2ef49904ec"
   integrity sha1-sr9O6FFKrmFltIF4KdIbLvSZBOw=
 
-unplugin-vue2-script-setup@^0.5.6:
-  version "0.5.6"
-  resolved "https://registry.yarnpkg.com/unplugin-vue2-script-setup/-/unplugin-vue2-script-setup-0.5.6.tgz#c411f83a5f2607153b3998721ad55e8e691ce16f"
-  integrity sha512-aVbkP+hNRV5KqrzhqBx8sHr6/vuM6NOo6MOsIqquXq4NxGFY1/TsOqXScYKrPYcgaEF05mpNHKStaHgvDwz5DA==
-  dependencies:
-    "@babel/core" "^7.15.0"
-    "@babel/generator" "^7.15.0"
-    "@babel/parser" "^7.15.3"
-    "@babel/traverse" "^7.15.0"
-    "@babel/types" "^7.15.0"
-    "@vue/ref-transform" "^3.2.6"
-    "@vue/shared" "^3.2.6"
-    defu "^5.0.0"
-    htmlparser2 "^6.1.0"
-    magic-string "^0.25.7"
-    unplugin "^0.2.7"
-
-unplugin@^0.2.7:
-  version "0.2.7"
-  resolved "https://registry.yarnpkg.com/unplugin/-/unplugin-0.2.7.tgz#40072145287943abbc552185ee7df1525932133d"
-  integrity sha512-KcMTl+aF+UhNOUvUdxwxHiOhvIoFe++foE2GgblFmXsnjdRYYggd2Tg7wopljCnOyiv5IspQRKfAvpyc4qtzuw==
-  dependencies:
-    upath "^2.0.1"
-    webpack-virtual-modules "^0.4.3"
-
 unquote@~1.1.1:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/unquote/-/unquote-1.1.1.tgz#8fded7324ec6e88a0ff8b905e7c098cdc086d544"
@@ -11412,11 +11357,6 @@ webpack-sources@^1.0.1, webpack-sources@^1.1.0, webpack-sources@^1.4.0, webpack-
   dependencies:
     source-list-map "^2.0.0"
     source-map "~0.6.1"
-
-webpack-virtual-modules@^0.4.3:
-  version "0.4.3"
-  resolved "https://registry.yarnpkg.com/webpack-virtual-modules/-/webpack-virtual-modules-0.4.3.tgz#cd597c6d51d5a5ecb473eea1983a58fa8a17ded9"
-  integrity sha512-5NUqC2JquIL2pBAAo/VfBP6KuGkHIZQXW/lNKupLPfhViwh8wNsu0BObtl09yuKZszeEUfbXz8xhrHvSG16Nqw==
 
 webpack@^4.46.0:
   version "4.46.0"
