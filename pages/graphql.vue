@@ -11,7 +11,7 @@
 <script>
 export default {
   computed: {
-    nitroPreset() {
+    nitroPreset () {
       return process.env.NITRO_PRESET || 'nitro'
     }
   }
