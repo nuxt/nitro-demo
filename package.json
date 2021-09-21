@@ -5,11 +5,11 @@
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "lint": "eslint --ext .vue .",
-    "start": "node .output/server",
+    "start": "node .output/server/index.mjs",
     "test": "yarn lint --ext .vue"
   },
   "devDependencies": {
-    "@nuxt/bridge": "npm:@nuxt/bridge-edge@0.0.0-27181326.9c14b88",
+    "@nuxt/bridge": "npm:@nuxt/bridge-edge@0.0.0-27183684.49f7b39",
     "@nuxtjs/eslint-config": "latest",
     "@nuxtjs/pwa": "latest",
     "apollo-server-core": "latest",
