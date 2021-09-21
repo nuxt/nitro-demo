@@ -50,16 +50,13 @@ export default {
   },
   data () {
     return {
-      t: 0,
-      ssr: process.server,
+      t: process.server ? 0 : window.__NUXT__.renderedOn,
+      ssr: process.server || window.__NUXT__.serverRendered,
       diff: '',
       metrics: []
     }
   },
   mounted () {
-    this.t = window.__NUXT__.renderedOn
-    this.ssr = window.__NUXT__.serverRendered
-
     this.update()
     this._timer = setInterval(() => this.update(), 1000)
 
