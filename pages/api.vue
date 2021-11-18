@@ -28,7 +28,8 @@ const ORIGINS = {
   cloudflare: 'https://nitro-demo.netlify.app',
   azure_functions: 'https://nuxt-sigma.azurewebsites.net',
   azure: 'https://nitro-azure-demo.nuxtjs.org',
-  default: process.client ? '' : (process.dev ? 'http://localhost:3000' : 'https://nitro-demo.netlify.app')
+  flashdrive: 'https://nitro-demo.us09.fldrv.com',
+  default: process.client ? '' : (process.dev ? 'http://localhost:8080' : 'https://nitro-demo.us09.fldrv.com')
 }
 
 export default {
