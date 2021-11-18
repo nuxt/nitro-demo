@@ -1,10 +1,10 @@
 const { Server } = require('http')
-const { middleware } = require('../.vercel_build_output/functions/node/_nuxt')
+const { middleware } = require('../functions/node/_nuxt')
 const { log, error } = console
 
 const app = new Server(middleware)
 
-const port = process.env.PORT || 4000
+const port = process.env.PORT || 8080
 
 app.listen(port, (err) => {
   if (err) {
