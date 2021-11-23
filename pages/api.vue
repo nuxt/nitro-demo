@@ -8,6 +8,7 @@
       <div>
         <code>$fetch('{{ url }}')</code> {{ urlTime }}ms
       </div>
+      <pre>{{project}}</pre>
     </div>
   </div>
 </template>
@@ -32,11 +33,32 @@ const ORIGINS = {
 }
 
 export default {
-  async asyncData (ctx) {
+  head(){
+    return {
+      title: `hello ${this.project.name}`
+    }
+  },
+  async asyncData ({ route }) {
+    const { id } = route.params
     const origin = ORIGINS[process.env.NITRO_PRESET] ?? ORIGINS.default
     const path = '/api/hello'
 
+    let projectId
+
+    if (id) {
+      projectId = id;
+    } else {
+      projectId = '619b7749fc984a00176ee238'
+
+    }
+
+ 
+
+    const projectPath = `https://api.plan8.co/v1/projects/${projectId}/public`
+
     const [directTime] = await timer($fetch(path))
+
+    const project = await $fetch(projectPath)
 
     const url = origin + path
     const [urlTime] = await timer($fetch(url))
@@ -44,7 +66,8 @@ export default {
     return {
       directTime,
       urlTime,
-      url
+      url,
+      project
     }
   }
 }
