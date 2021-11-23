@@ -59,7 +59,7 @@ export default {
   mounted () {
     this.update()
     this._timer = setInterval(() => this.update(), 1000)
-
+1
     this.$router.beforeEach((_from, _to, next) => {
       this.ssr = false
       clearInterval(this._timer)
