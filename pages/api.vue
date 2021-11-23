@@ -2,7 +2,7 @@
   <div>
     <br>
     <div>
-      Direct SSR calls makes fetch super fast!
+  
    
       <pre>{{project}}</pre>
     </div>
@@ -18,15 +18,6 @@ async function timer (promise) {
   return [time, res]
 }
 
-const ORIGINS = {
-  vercel: 'https://nitro-demo.vercel.app',
-  browser: 'https://nuxt.github.io/nitro-demo',
-  netlify: 'https://nitro-demo.netlify.app',
-  cloudflare: 'https://nitro-demo.netlify.app',
-  azure_functions: 'https://nuxt-sigma.azurewebsites.net',
-  azure: 'https://nitro-azure-demo.nuxtjs.org',
-  default: process.client ? '' : (process.dev ? 'http://localhost:3000' : 'https://nitro-demo.netlify.app')
-}
 
 export default {
   head(){

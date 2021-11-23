@@ -12,6 +12,9 @@ export default {
   plugins: [
     './plugins/rendertime.server'
   ],
+  css: [
+    '~/assets/scss/main.scss'
+  ],
 
   router: {
     base: process.env.NUXT_ROUTER_BASE || '/'

@@ -1,0 +1,62 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+@import "./mixins.scss";
+
+
+:root {
+  --bgColor: #fff;
+  --textColor: #333;
+  --primaryColor: hsl(163, 100%, 36%);
+  --primaryColorDarker: hsl(163, 100%, 26%);
+  --primaryContrast: var(--bgColor);
+}
+
+body {
+  margin: 0;
+  background-color: var(--bgColor);
+  color: var(--textColor);
+  font-family: Roboto, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-weight: 400;
+}
+
+.title {
+  font-weight: 700;
+}
+
+.is-size-1 {
+  font-size: 3rem;
+}
+
+.is-size-3 {
+  font-size: 2rem;
+}
+
+.is-size-4 {
+  font-size: 1.4rem;
+}
+
+.is-size-6 {
+  font-size: 1rem;
+}
+
+.section {
+  padding: 3rem 1.5rem;
+
+  .container {
+    flex-grow: 1;
+    margin: 0 auto;
+    position: relative;
+    width: auto;
+
+    @include breakpoint(md) {
+      max-width: 960px;
+    }
+
+     @include breakpoint(lg) {
+      max-width: 1152px;
+    }
+
+    
+  }
+}
