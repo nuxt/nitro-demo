@@ -3,11 +3,7 @@
     <br>
     <div>
       Direct SSR calls makes fetch super fast!
-      <br>
-      <div><code>$fetch('/api/hello')</code> {{ directTime }}ms</div>
-      <div>
-        <code>$fetch('{{ url }}')</code> {{ urlTime }}ms
-      </div>
+   
       <pre>{{project}}</pre>
     </div>
   </div>
@@ -40,8 +36,6 @@ export default {
   },
   async asyncData ({ route }) {
     const { id } = route.params
-    const origin = ORIGINS[process.env.NITRO_PRESET] ?? ORIGINS.default
-    const path = '/api/hello'
 
     let projectId
 
@@ -52,21 +46,10 @@ export default {
 
     }
 
- 
-
     const projectPath = `https://api.plan8.co/v1/projects/${projectId}/public`
-
-    const [directTime] = await timer($fetch(path))
-
     const project = await $fetch(projectPath)
-
-    const url = origin + path
-    const [urlTime] = await timer($fetch(url))
-
     return {
-      directTime,
-      urlTime,
-      url,
+
       project
     }
   }

@@ -2,15 +2,10 @@
   <div class="navbar">
     <div class="links">
       <!-- TODO: fix router base for GH pages -->
-      <a href="/">
-        Dynamic
-      </a>
-      <a href="/about">
-        Static
-      </a>
-      <a href="/api">
-        API
-      </a>
+      <n-link to="/">Test</n-link>
+      <n-link to="/about">static</n-link>
+      <n-link to="/api">api</n-link>
+     
       <!-- <a href="/graphql">
         GraphQL
       </a> -->
