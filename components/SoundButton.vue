@@ -4,65 +4,41 @@
       class="sound-button"
       ref="item"
       :class="{ 'is-active': isActiveItem }"
-      @mousedown="setItem"
-      @touchstart="setItem"
+      @mousedown="handleMouse"
+      @touchstart="handleTouch"
     >
-      <div class="progress" :style="{ left: `${progress}%` }"></div>
-      <div class="controls" v-if="!useTone">
-        <PlayerPlayButton :itemdata="itemData" />
+      <div class="controls">
+        <PlayerPlayButton :itemdata="itemData" v-if="!useTone" />
+        <svg
+          width="18"
+          height="20"
+          viewBox="0 0 18 20"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M16.75 8.70096C17.75 9.27831 17.75 10.7217 16.75 11.299L3.25 19.0933C2.25 19.6706 1 18.9489 1 17.7942L1 2.20577C1 1.05107 2.25 0.329382 3.25 0.906733L16.75 8.70096Z"
+            fill="white"
+            stroke="white"
+          />
+        </svg>
       </div>
 
-      <div v-if="isLoaded">
-        <div class="item-info">
-          {{ itemData.originalName  }}
-        </div>
-        
+      <div v-if="isLoaded" class="item-info">
+        {{ itemData.originalName }}
       </div>
       <div v-else>
         <div class="item-info">Loading</div>
       </div>
-      <div class="button-footer" v-if="useTone">
-        <div class="stop" @click="stopButton">
-          <svg
-            width="39"
-            height="39"
-            viewBox="0 0 39 39"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <!-- <rect x="11" y="11" width="17" height="17" fill="#C4C4C4" /> -->
-            <rect
-              x="1.5"
-              y="1.5"
-              width="36"
-              height="36"
-              stroke="#C4C4C4"
-              stroke-width="0"
-            />
-          </svg>
-        </div>
-        <!-- <div class="volume-wrapper" v-if="buttonVolume">
-          <b-slider
-            v-model="volume"
-            :min="controls.volume.min"
-            :max="controls.volume.max"
-            :step="controls.volume.step"
-            @input="setVolume"
-            :tooltip="false"
-            rounded
-            size="is-small"
-          ></b-slider>
-        </div> -->
 
-      </div>
+      <div class="progress" :style="{ width: `${progress}%` }"></div>
     </div>
   </div>
 </template>
 
 <script>
-import { Player, getContext, gainToDb } from "tone";
+import { Player, getContext, gainToDb, start, now } from "tone";
 import { mapState } from "vuex";
-
 
 export default {
   props: ["itemData"],
@@ -72,7 +48,7 @@ export default {
       show: false,
       isPlaying: false,
       duration: 0,
-      progress: 110,
+      progress: 0,
       isLooped: false,
       isLoaded: false,
       startTime: 0,
@@ -93,7 +69,6 @@ export default {
     ...mapState({
       project: (state) => state.project,
       item: (state) => state.player.item,
- 
     }),
     isActiveItem() {
       return this.item.id == this.itemData.id;
@@ -126,7 +101,7 @@ export default {
 
   mounted() {
     if (this.useTone) {
-      console.log('this.useTone: ', this.useTone,this.itemData);
+      console.log("this.useTone: ", this.useTone, this.itemData);
       this.tonePlayer = new Player({
         url: `${this.$config.previewURL}${this.itemData.key}.mp3`,
 
@@ -134,9 +109,8 @@ export default {
           this.isLoaded = true;
         },
         onstop: () => {
-          
           // this.clearTimer();
-          this.progress = 110;
+          this.progress = 0;
         },
       }).connect(this.$masterChannel.master);
 
@@ -170,12 +144,22 @@ export default {
     clearTimer() {
       clearInterval(this.progressTimer);
     },
-    setItem(e) {
+    async setItem(e) {
       if (this.useTone) {
+        await start();
         this.togglePlay(e);
       } else {
         this.$store.commit("player/SET_ITEM", this.itemData);
       }
+    },
+    handleMouse(e) {
+      if (e.type != "mousedown") return;
+      console.log("e: ", e);
+      this.setItem(e);
+    },
+    handleTouch(e) {
+      if (e.type == "click") return;
+      this.setItem(e);
     },
     toggleLoop(e) {
       e.preventDefault();
@@ -193,14 +177,16 @@ export default {
     togglePlay(e) {
       e.preventDefault();
       e.stopPropagation();
+
       if (!this.isLoaded) return;
       this.isPlaying = true;
       this.clearTimer();
 
-      this.tonePlayer.start();
-      this.$nuxt.$emit("nowplaying", this.itemData);
-
       this.startTime = getContext().now();
+      console.log("startTime: ", this.startTime);
+
+      this.tonePlayer.start(now());
+      this.$nuxt.$emit("nowplaying", this.itemData);
 
       this.setTimer();
 
@@ -219,7 +205,7 @@ export default {
     stop(e) {
       this.tonePlayer.stop();
       this.isPlaying = false;
-      this.progress = 110;
+      this.progress = 0;
       this.clearTimer();
     },
 
@@ -232,7 +218,6 @@ export default {
       e.stopPropagation();
       this.stop();
     },
-
   },
 };
 </script>
@@ -240,213 +225,76 @@ export default {
 <style lang="scss" scoped>
 @import "@/assets/scss/mixins.scss";
 
-
-
 .sound-button-wrapper {
   margin-right: 0.5rem;
   margin-bottom: 0.5rem;
   position: relative;
   overflow: hidden;
-  background: var(--bgColor);
-  color: var(--textColor);
-  border: 3px solid var(--textColor);
-  
+  background-color: var(--primaryColor);
+  color: var(--primaryContrast);
+  border-radius: 30px;
+  height: 60px;
+
   font-size: 1rem;
   display: inline-block;
   cursor: pointer;
 
   width: 100%;
 
-  svg {
-    width: 100%;
-    height: auto;
+  @include breakpoint(sm) {
+    width: calc((100% / 2) - 0.5rem);
   }
 
-  @include breakpoint(sm) {
+  @include breakpoint(md) {
     width: calc((100% / 4) - 0.5rem);
   }
 
-  transition: 0.4s;
-
-  .info {
-    user-select: none;
-  }
-
-  .button-footer {
+  .sound-button {
+    width: 100%;
+    height: 100%;
     display: flex;
-    justify-content: space-between;
     align-items: center;
 
-    .volume-wrapper {
-      width: 80%;
-      z-index: 2;
+    transition: 0.4s;
 
-      .b-slider {
-        width: 40%;
-        margin: 0;
-      }
-    }
-  }
+    .controls {
+      z-index: 1;
+      width: 52px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
 
-  &.small {
-    font-size: 0.6rem;
-    padding: 0.4rem;
-    margin-right: 0;
-    margin-bottom: 0;
-  }
-
-
-
-  .controls {
-    // background-color: #eee;
-    // display: flex;
-    // align-items: center;
-    // padding: 4px;
-    // justify-content: space-between;
-  }
-
-  .like {
-    position: absolute;
-    top: 5px;
-    left: 5px;
-    font-size: 0.8rem;
-
-    &.is-liked {
       svg {
-        path {
-          fill: red;
-          stroke: none;
-        }
+        width: 20px;
+        height: auto;
       }
     }
 
-    svg {
-      height: 16px;
-      width: 16px;
+    .item-info {
+      z-index: 1;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
 
-      path {
-        fill: none;
+      @include breakpoint(sm) {
+        max-width: 280px;
       }
-    }
-  }
 
-
-
-  .loop {
-    height: 19px;
-    width: 19px;
-
-    // position: absolute;
-    background-color: none;
-    // bottom: 6px;
-    // right: 6px;
-    opacity: 1;
-
-    &.active {
-      svg {
-        path {
-          fill:  var(--textColor);
-        }
+      @include breakpoint(md) {
+        max-width: 204px;
       }
     }
 
-    svg {
-      path {
-        fill:  var(--textColor);
-      }
+    .progress {
+      height: 100%;
+      width: 0;
+      z-index: 0;
+      position: absolute;
+      background-color: var(--primaryColorDarker);
+      top: 0;
+      left: 0;
+      opacity: 1;
     }
-  }
-
-  .stop {
-    height: 16px;
-    width: 16px;
-
-    // position: absolute;
-    background-color: none;
-    // bottom: 6px;
-    // left: 6px;
-    opacity: 1;
-
-    svg {
-      transition: 0.2s all;
-    }
-
-    &:hover {
-      svg {
-        rect {
-          fill: var(--textColor);
-        }
-      }
-    }
-
-    svg {
-      rect {
-        fill: var(--textColor);
-      }
-    }
-  }
-
-  .progress {
-    height: 100%;
-    width: 2px;
-
-    position: absolute;
-    background-color: var(--textColor);
-    top: 0;
-    left: 0;
-    opacity: 1;
   }
 }
-
-// .item-button {
-//   @include round-border;
-//   cursor: pointer;
-
-//   display: flex;
-//   align-items: center;
-//   height: 60px;
-//   width: 100%;
-//   --wfWidth: 200px;
-//   padding: 8px 12px;
-//   //justify-content: space-between;
-//   &.is-downloaded {
-//     color: var(--primaryColor);
-//   }
-
-//   &:hover {
-//     @include active-mi;
-//   }
-
-//   &.is-active {
-//     @include active-mi;
-//   }
-
-//   .controls {
-//     flex: 0 0 40px;
-//     display: flex;
-//     align-items: center;
-//     margin-right: var(--gap);
-//   }
-
-//   .item-wf {
-//     flex: 1 1 var(--wfWidth);
-//     max-width: var(--wfWidth);
-//   }
-
-//   .item-info {
-//     display: flex;
-//     flex-direction: column;
-//     .item-title {
-//       display: inline;
-//     }
-//   }
-
-//   .item-actions {
-//     margin-left: auto;
-//   }
-
-//   .no-preview {
-//     text-decoration: line-through;
-//   }
-// }
 </style>

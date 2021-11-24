@@ -17,6 +17,14 @@
          </div>
       </div>
     </section>
+
+    <section class="section">
+      <div class="container">
+         <PlayerMasterController />
+           
+  
+      </div>
+    </section>
   </div>
 </template>
 

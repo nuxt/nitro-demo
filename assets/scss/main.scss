@@ -1,27 +1,71 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
-@import "./mixins.scss";
+@import "./_mixins.scss";
+@import "./_reset.scss";
 
 
 :root {
-  --bgColor: #fff;
+  --bgColor: #E4E4CF;
   --textColor: #333;
   --primaryColor: hsl(163, 100%, 36%);
   --primaryColorDarker: hsl(163, 100%, 26%);
-  --primaryContrast: var(--bgColor);
+  --primaryContrast: #fff;
+  --fontFamily: Roboto, sans-serif;
+  --borderSize: 3px;
+  --borderRadius: 5px;
 }
 
 body {
   margin: 0;
   background-color: var(--bgColor);
   color: var(--textColor);
-  font-family: Roboto, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji",
-    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-family: var(--fontFamily);
   font-weight: 400;
+}
+
+
+.btn {
+  all: initial;
+  font-family: var(--fontFamily);
+  background-color: var(--bgColor);
+  border:  var(--borderSize) solid var(--textColor);
+  color: var(--textColor);
+  padding: 0.5em 1rem;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.2s ease-in-out;
+  border-radius: var(--borderRadius);
+  font-size: 1rem;
+
+  &.primary {
+    background-color: var(--bgColor);
+  border:  var(--borderSize) solid var(--primaryColor);
+  color: var(--primaryColor);
+
+  &:hover {
+    background-color: var(--primaryColor);
+    color: var(--primaryContrast);
+  }
+
+  }
+
+  &:hover {
+    background-color: var(--textColor);
+    color: var(--bgColor);
+  }
+
+  
+
+  &.extended {
+    width: 100%;
+  }
+
 }
 
 .title {
   font-weight: 700;
+  margin-bottom: 1rem;
 }
 
 .is-size-1 {
@@ -41,9 +85,10 @@ body {
 }
 
 .section {
-  padding: 3rem 1.5rem;
+  padding: 3rem 1.5em;
 
   &.top {
+    padding-top: 4rem;
     padding-bottom: 0;
   }
 

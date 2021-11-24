@@ -1,5 +1,5 @@
 <template>
-  <div class="footer-main" :class="{ active: item.id }">
+  <div class="footer-main" :class="{ active: isActive }">
     <section class="section">
       <div class="container no-padding">
         <PlayerAudioPlayer />
@@ -60,7 +60,11 @@ export default {
       currentStem: (state) => state.player.currentStem,
       // useTone: (state) => state.player.useTone,
       previewapiURL: (state) => state.previewapiURL,
+      showFooter: (state) => {state.showFooter}
     }),
+    isActive(){
+      return this.showFooter && item.id
+    },
     useTone: {
       get() {
         return this.$store.state.player.useTone;

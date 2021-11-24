@@ -11,7 +11,8 @@ const defaultProject = {
         toneOptions: {
 
         }
-    }
+    },
+    showFooter: false
 };
 
 export const processItemData = (data) => {
