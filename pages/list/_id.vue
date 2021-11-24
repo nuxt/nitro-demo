@@ -49,10 +49,13 @@ export default {
     }
   },
   
-  async asyncData({ route, store }) {
+  async asyncData({ route, store, app }) {
+
     try {
       const { id } = route.params;
       console.log("id: ", id);
+
+      const apiRoot = process.env.NODE_ENV == 'production' ? 'https://hqapi.plan8.co/v1' : 'http://localhost:3000/v1';
 
       let projectId;
 
@@ -61,7 +64,7 @@ export default {
       } else {
         projectId = "619b7749fc984a00176ee238";
       }
-      const projectPath = `https://api.plan8.co/v1/projects/${projectId}/public`;
+      const projectPath = `${apiRoot}/projects/${projectId}/public`;
       const project = await $fetch(projectPath);
 
       store.commit('SET_ISLOADING', false)
@@ -70,7 +73,13 @@ export default {
         project,
       };
     } catch (error) {
-      console.log("error: ", error);
+      console.log("error!: ", error);
+
+      return {
+        project: {
+          name: 'Not Found'
+        }
+      }
     }
 
   },
