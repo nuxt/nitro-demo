@@ -11,6 +11,9 @@ export const state = () => ({
         stems: []
     },
     itemsCue: [],
+    currentStem: {
+        key: '0'
+    },
     useTone: false
 });
 
@@ -43,8 +46,10 @@ export const mutations = {
     },
 
     SET_ITEM(state, payload) {
+        console.log('payload: ', payload);
         state.item = payload;
-        this.state.items.currentStem = payload.stems[0]
+        state.currentStem = payload.stems[0]
+      
     },
 
     SET_USETONE(state, payload) {

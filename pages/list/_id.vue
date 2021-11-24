@@ -31,25 +31,22 @@ export default {
   },
   data(){
       return {
-          project: {
-              name: ''
-          },
+          // project: {
+          //     name: ''
+          // },
       }
   },
   computed: {
-    ...mapState(['isLoading'])
+    ...mapState(['isLoading', 'project'])
   },
   mounted(){
     console.log(this.project);
   },
 
-  watch: {
-    project(){
-      this.isLoaded = true;
-    }
-  },
+
   
   async asyncData({ route, store, app }) {
+
 
     try {
       const { id } = route.params;
@@ -68,17 +65,21 @@ export default {
       const project = await $fetch(projectPath);
 
       store.commit('SET_ISLOADING', false)
+
+      store.commit('SET_PROJECT', project)
+
+
       
-      return {
-        project,
-      };
+      // return {
+      //   project,
+      // };
     } catch (error) {
       console.log("error!: ", error);
 
       return {
-        project: {
-          name: 'Not Found'
-        }
+        // project: {
+        //   name: 'Not Found'
+        // }
       }
     }
 

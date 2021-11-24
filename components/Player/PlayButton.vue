@@ -52,6 +52,7 @@
 import { mapState } from "vuex";
 
 export default {
+  props: ['itemdata'],
   data() {
     return {
       // isPlaying: false,
@@ -59,7 +60,7 @@ export default {
   },
   computed: {
     ...mapState({
-      item: (state) => state.items.item,
+
       playerItem: (state) => state.player.item,
       playbackState: (state) => state.player.playBackState,
       playbackStates: (state) => state.player.playbackStates,

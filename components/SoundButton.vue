@@ -1,7 +1,9 @@
 <template>
   <div class="sound-button-wrapper">
     <div class="sound-button">
-      <div class="controls"></div>
+      <div class="controls">
+        <PlayButton :itemdata="item" />
+      </div>
       <div class="info">
         <p>{{ item.originalName }}</p>
       </div>
@@ -11,11 +13,12 @@
 
 <script>
 import { mapState, mapGetters } from "vuex";
+import PlayButton from "./Player/PlayButton.vue";
 
 export default {
   props: ["item"],
-
   mounted() {},
+  components: { PlayButton },
 };
 </script>
 
@@ -25,7 +28,7 @@ export default {
   display: inline-block;
   margin-bottom: 1rem;
   width: 100%;
-//   transition: all 1.4s ease-in-out;
+  //   transition: all 1.4s ease-in-out;
 
   @include breakpoint(sm) {
     width: calc(50% - 1rem);
@@ -50,9 +53,12 @@ export default {
     align-items: center;
 
     .controls {
-        width: 66px;
+      display: flex;
+      width: 66px;
+      align-items: center;
+      justify-content: center;
       @include breakpoint(sm) {
-        width: calc(25%);
+        width: 80px;
       }
     }
 

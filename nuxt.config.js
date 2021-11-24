@@ -7,6 +7,28 @@ const meta = {
   url: 'https://clients.plan8.co'
 }
 
+const environments = {
+  production: {
+    // previewUrl: 'https://d2rcsgqjie6nxs.cloudfront.net/',
+    apiURL: 'https://hqapi.plan8.co/v1',
+    previewUrl: 'https://plan8-api-preview.s3.eu-central-1.amazonaws.com/',
+    uploadBucket: 'https://plan8-api-uploads-frankfurt-prod.s3.eu-central-1.amazonaws.com'
+
+  },
+  development: {
+    apiURL: 'http://localhost:3000/v1',
+    
+    previewUrl: 'https://plan8-api-preview-dev.s3.eu-central-1.amazonaws.com/',
+    uploadBucket: 'https://plan8-api-uploads-frankfurt.s3.eu-central-1.amazonaws.com'
+
+  },
+  migration: {
+    apiURL: 'http://localhost:3000/v1',
+    previewUrl: 'https://migration-plan8-api-preview.s3.eu-central-1.amazonaws.com/',
+    uploadBucket: 'https://migration-plan8-api-uploads-frankfurt.s3.eu-central-1.amazonaws.com'
+  }
+}
+
 export default {
   components: true,
   target: 'static',
@@ -81,7 +103,9 @@ export default {
 
   publicRuntimeConfig: {
     nitroVersion: nitroVersion.split('.').pop(),
-    apiEndpoint: process.env.NODE_ENV == 'production' ? 'https://hqapi.plan8.co/v1' : 'http://localhost:3000/v1'
+    apiEndpoint: process.env.NODE_ENV == 'production' ? 'https://hqapi.plan8.co/v1' : 'http://localhost:3000/v1',
+    previewURL: environments[process.env.NODE_ENV].previewUrl,
+    uploadBucket: environments[process.env.NODE_ENV].uploadBucket,
   }
 
   // pwa: {

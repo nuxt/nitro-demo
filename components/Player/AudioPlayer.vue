@@ -21,11 +21,11 @@ export default {
     ...mapState({
       item: (state) => state.player.item,
       useTone: (state) => state.player.useTone,
-      currentStem: (state) => state.items.currentStem,
+      currentStem: (state) => state.player.currentStem,
       playbackStates: (state) => state.player.playbackStates,
     }),
     currentSource() {
-      return ''
+
       return `${this.$config.previewURL}${this.currentStem.key}.mp3`;
     },
   },
@@ -40,15 +40,18 @@ export default {
 
     this.simplePlayer = new Audio();
     this.simplePlayer.preload = true;
-    //this.simplePlayer.autoplay = true;
+    //this.simplePlayer.autoplay = true;2
+
+    console.log('this.currentStem.key: ', this.currentStem.key);
 
     this.addListeners();
   },
   watch: {
-    currentSource(e) {
+    // currentSource(e) {
+    //   console.log('e: ', e);
       
-      this.simplePlayer.src = e
-    },
+    //   this.simplePlayer.src = e
+    // },
     item(e) {
       
       if (this.useTone) {
@@ -63,10 +66,10 @@ export default {
         this.simplePlayer.src = this.currentSource;
 
         this.toggle()
-        this.$analyticsHandler.track("Play Item", {
-          itemId: this.item.id,
-          itemName: this.item.originalName,
-        });
+        // this.$analyticsHandler.track("Play Item", {
+        //   itemId: this.item.id,
+        //   itemName: this.item.originalName,
+        // });
       }
     },
     useTone(val) {

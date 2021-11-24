@@ -14,6 +14,64 @@ const defaultProject = {
     }
 };
 
+export const processItemData = (data) => {
+    if (data.key) {
+      // this data has already been processed so returning that.
+      return data;
+    }
+  
+    const revisions = data.revisions || [];
+  
+    const newData = {
+  
+      id: data.id || data._id,
+      originalName: data.originalName,
+      displayName: data.displayName,
+      duration: data.duration,
+  
+      // useindprojects: [projectIDs]
+      uid: data.uid,
+      tags: data.tags,
+      settings: data.settings,
+      revisions: revisions.map((r) => processItemData(r)),
+      isRevision: data.isRevision,
+      revisionCount: revisions.length,
+      revisionOf: data.revisionOf,
+      stems: data.stems,
+      sequenceNumber: data.sequenceNumber,
+      
+     
+      rating: data.rating,
+      soundType: data.soundType,
+      loop: data.loop
+    };
+  
+    if (data.stems && data.stems.length) {
+      newData.stems = data.stems;
+  
+      newData.key = data.stems[0].key || 0;
+    }
+  
+    if (data.metaData) {
+      newData.metaData = data.metaData;
+    } else {
+      newData.metaData = {
+        info: ''
+      }
+    }
+  
+    if (data.projectData) {
+      newData.projectData = data.projectData;
+    }
+  
+    // const fileWithDuration = data.mediaItem.files
+    //   .find(file => !!file.meta?.duration);
+  
+    // newData.duration = fileWithDuration ? fileWithDuration.meta.duration : 0;
+  
+    return newData;
+  };
+
 export const processProjectData = (data) => {
 
 

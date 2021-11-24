@@ -1,5 +1,5 @@
 <template>
-  <div class="footer-main active" :class="{ active: item.id }">
+  <div class="footer-main" :class="{ active: item.id }">
     <section class="section">
       <div class="container no-padding">
         <PlayerAudioPlayer />
@@ -8,13 +8,13 @@
             <PlayerPlayButton :itemdata="item" :isFooter="true" />
           </div>
           <div class="wf">
-            <!-- <PlayerWaveForm
+            <PlayerWaveForm
               :mediaItemKey="currentStem.key"
               :isFooter="true"
               :bars="100"
 
 
-            /> -->
+            />
           </div>
           
           <div v-if="!settings.isClient" class="footer-info">
@@ -62,7 +62,7 @@ export default {
   computed: {
     ...mapState({
       item: (state) => state.player.item,
-      currentStem: (state) => state.items.currentStem,
+      currentStem: (state) => state.player.currentStem,
       // useTone: (state) => state.player.useTone,
       previewapiURL: (state) => state.previewapiURL,
     }),
