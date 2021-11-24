@@ -8,6 +8,7 @@ export const state = () => ({
     },
     currentTume: 0,
     item: {
+        id:1,
         stems: []
     },
     itemsCue: [],

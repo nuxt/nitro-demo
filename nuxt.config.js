@@ -69,7 +69,8 @@ export default {
   ],
 
   plugins: [
-    './plugins/rendertime.server'
+    // './plugins/rendertime.server'
+    { src: '~/plugins/masterChannel.js', mode: 'client' }
   ],
   css: [
     '~/assets/scss/main.scss'

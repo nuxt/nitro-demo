@@ -20,6 +20,7 @@
   "dependencies": {
     "@nuxtjs/axios": "^5.13.6",
     "sass": "^1.43.4",
-    "sass-loader": "^10"
+    "sass-loader": "^10",
+    "tone": "^14.7.77"
   }
 }

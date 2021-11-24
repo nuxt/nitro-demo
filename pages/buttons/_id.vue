@@ -10,7 +10,7 @@
          <div v-for="sp in project.subProjects" :key="sp.id">
           <p class="title is-size-4"> {{sp.name}}</p>
           <div class="button-container">
-               <SoundButton v-for="item in sp.items" :key="item.id" :item="item" />
+               <SoundButton v-for="item in sp.items" :key="item.id" :itemData="item" />
           </div>
        
            
