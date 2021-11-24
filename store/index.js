@@ -49,6 +49,7 @@ export const processProjectData = (data) => {
 export const state = () => ({
     showPasswordDialog: false,
     project: defaultProject,
+    isLoading: true
 
 });
 
@@ -76,6 +77,10 @@ export const mutations = {
 
     SET_SHOWPASSWORDDIALOG(state, payload) {
         state.showPasswordDialog = payload;
+    },
+
+    SET_ISLOADING(state, payload) {
+        state.isLoading = payload;
     },
 };
 

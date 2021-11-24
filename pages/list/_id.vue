@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div v-if="!isLoading">
     <section class="section">
       <div class="container">
          <div class="is-size-3 title">{{project.name}}</div>
@@ -26,21 +26,30 @@ import { mapState, mapGetters } from "vuex";
 export default {
   head() {
     return {
-      title: `hello ${this.project.name}`,
+      title: `${this.project.name} | Plan8`,
     };
   },
   data(){
       return {
           project: {
               name: ''
-          }
+          },
       }
+  },
+  computed: {
+    ...mapState(['isLoading'])
   },
   mounted(){
     console.log(this.project);
   },
+
+  watch: {
+    project(){
+      this.isLoaded = true;
+    }
+  },
   
-  async asyncData({ route }) {
+  async asyncData({ route, store }) {
     try {
       const { id } = route.params;
       console.log("id: ", id);
@@ -54,6 +63,9 @@ export default {
       }
       const projectPath = `https://api.plan8.co/v1/projects/${projectId}/public`;
       const project = await $fetch(projectPath);
+
+      store.commit('SET_ISLOADING', false)
+      
       return {
         project,
       };

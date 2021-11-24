@@ -25,6 +25,7 @@ export default {
   display: inline-block;
   margin-bottom: 1rem;
   width: 100%;
+//   transition: all 1.4s ease-in-out;
 
   @include breakpoint(sm) {
     width: calc(50% - 1rem);

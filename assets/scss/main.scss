@@ -48,6 +48,7 @@ body {
     margin: 0 auto;
     position: relative;
     width: auto;
+    
 
     @include breakpoint(md) {
       max-width: 960px;

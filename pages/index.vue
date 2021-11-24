@@ -1,10 +1,8 @@
 <template>
-  <div class="quote">
-    <div class="sentence">
-      <h1>"{{ quote.quote }}"</h1>
-      <p>{{ quote.author }}</p>
+  <div class="section">
+    <div class="container">
+      <p class="title is-size-3">Nothing to see here, move along...</p>
     </div>
-    <img src="~/assets/drop_the_quote.svg" alt="Drop the quuote">
   </div>
 </template>
 
@@ -24,24 +22,5 @@ export default {
 </script>
 
 <style>
-.quote {
-  max-width: 60%;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: row;
-  margin-top: 120px;
-}
 
-.quote .sentence {
-  width: 60%;
-  padding-right: 32px;
-}
-
-.quote img {
-  width: 40%;
-}
-
-.sentence p {
-  text-align: right;
-}
 </style>
