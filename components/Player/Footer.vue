@@ -17,13 +17,8 @@
             />
           </div>
           
-          <div v-if="!settings.isClient" class="footer-info">
-            <!-- Use Tone.js <input type="checkbox" v-model="useTone" /> -->
-            <n-link :to="{ name: 'item-id', params: { id: item.id } }">{{
-              item.originalName 
-            }}</n-link>
-          </div>
-          <div v-else class="footer-info client">
+        
+          <div class="footer-info client">
             {{ item.originalName }}
           </div>
 
@@ -134,17 +129,12 @@ export default {
       // width: 100%;
       color: var(--textColor);
       margin-left: auto;
-      max-width: 120px;
-      overflow: hidden;
-      text-overflow: ellipsis;
+    max-width: 104px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 
-      a {
-        color: var(--textColor);
-        width: 50px;
-        overflow: hidden;
-        white-space: nowrap;
-        text-overflow: ellipsis;
-      }
+   
 
       @include breakpoint(sm) {
         margin-left: auto;

@@ -35,6 +35,7 @@ export default {
   }
 
   @include breakpoint(md) {
+
     width: calc(25% - 1rem);
   }
 
@@ -54,7 +55,7 @@ export default {
 
     .controls {
       display: flex;
-      width: 66px;
+      width: 80px;
       align-items: center;
       justify-content: center;
       @include breakpoint(sm) {

@@ -43,6 +43,10 @@ body {
 .section {
   padding: 3rem 1.5rem;
 
+  &.top {
+    padding-bottom: 0;
+  }
+
   .container {
     flex-grow: 1;
     margin: 0 auto;
