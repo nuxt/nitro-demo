@@ -106,7 +106,18 @@ export default {
     apiEndpoint: process.env.NODE_ENV == 'production' ? 'https://hqapi.plan8.co/v1' : 'http://localhost:3000/v1',
     previewURL: environments[process.env.NODE_ENV].previewUrl,
     uploadBucket: environments[process.env.NODE_ENV].uploadBucket,
-  }
+  },
+  axios: {
+    //baseUrl: process.env.API_URL || "http://localhost:3000/v1",
+    //baseUrl: 'https://plan8-api.onrender.com/v1',
+    //baseUrl: 'http://172.105.69.69:3000/v1',
+    baseUrl: environments[process.env.NODE_ENV].apiURL,
+    common: {
+      'Cache-Control': 'no-cache',
+      'Pragma': 'no-cache',
+      'Expires': '0',
+    },
+  },
 
   // pwa: {
   //   workbox: false, // TODO

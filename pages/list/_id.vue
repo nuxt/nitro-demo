@@ -9,8 +9,8 @@
       <div class="container">
          <div v-for="sp in project.subProjects" :key="sp.id">
           <p class="title is-size-4"> {{sp.name}}</p>
-          <div class="button-container">
-               <SoundButton v-for="item in sp.items" :key="item.id" :item="item" />
+          <div class="list-container">
+               <StandardItem v-for="item in sp.items" :key="item.id" :item="item" />
           </div>
        
            
@@ -63,6 +63,10 @@ export default {
       }
       const projectPath = `${apiRoot}/projects/${projectId}/public`;
       const project = await $fetch(projectPath);
+
+      // const project = store.dispatch('getPublicProject', {
+      //   projectId: id
+      // })
 
       store.commit('SET_ISLOADING', false)
 

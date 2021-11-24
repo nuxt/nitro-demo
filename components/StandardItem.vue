@@ -1,9 +1,18 @@
 <template>
-  <div class="sound-button-wrapper">
-    <div class="sound-button">
+  <div class="item-wrapper">
+    <div class="standard-item">
       <div class="controls">
-        <!-- <PlayButton :itemdata="item" /> -->
+        <PlayButton :itemdata="item" />
       </div>
+      <div class="wf">
+            <PlayerWaveForm
+              :mediaItemKey="item.stems[0].key"
+              :isFooter="true"
+              :bars="100"
+
+
+            />
+          </div>
       <div class="info">
         <p>{{ item.originalName }}</p>
       </div>
@@ -24,33 +33,24 @@ export default {
 
 <style lang="scss">
 @import "@/assets/scss/mixins.scss";
-.sound-button-wrapper {
+.item-wrapper {
   display: inline-block;
   margin-bottom: 1rem;
   width: 100%;
   //   transition: all 1.4s ease-in-out;
 
-  @include breakpoint(sm) {
-    width: calc(50% - 1rem);
-  }
 
-  @include breakpoint(lg) {
-
-    width: calc(25% - 1rem);
-  }
 
   &:not(:last-child) {
     margin-right: 1rem;
   }
 
-  .sound-button {
+  .standard-item {
     display: flex;
+    width: 100%;
 
-    background-color: var(--primaryColor);
-
-    background-color: var(--primaryColor);
     height: 80px;
-    border-radius: 50px;
+
     align-items: center;
 
     .controls {
@@ -61,6 +61,10 @@ export default {
       @include breakpoint(sm) {
         width: 80px;
       }
+    }
+
+    .wf {
+      width: 100%;
     }
 
     .info {

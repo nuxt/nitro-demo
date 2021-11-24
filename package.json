@@ -4,7 +4,6 @@
     "build": "nuxt generate",
     "dev": "nuxt dev",
     "generate": "nuxt generate",
-
     "start": "node .output/server/index.mjs",
     "test": "yarn lint --ext .vue"
   },
@@ -19,6 +18,7 @@
     "timeago.js": "latest"
   },
   "dependencies": {
+    "@nuxtjs/axios": "^5.13.6",
     "sass": "^1.43.4",
     "sass-loader": "^10"
   }
