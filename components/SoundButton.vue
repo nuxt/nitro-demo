@@ -10,6 +10,7 @@
       <div class="controls">
         <PlayerPlayButton :itemdata="itemData" v-if="!useTone" />
         <svg
+          v-if="!isPlaying"
           width="18"
           height="20"
           viewBox="0 0 18 20"
@@ -22,6 +23,12 @@
             stroke="white"
           />
         </svg>
+        <svg v-else width="14" height="18" viewBox="0 0 14 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M2.5 2.5L2.5 15.5M11.5 2.5L11.5 15.5" stroke="white" stroke-width="5" stroke-linecap="round"/>
+<path d="M2.5 2.5L2.5 15.5M11.5 2.5L11.5 15.5" stroke="white" stroke-width="5" stroke-linecap="round"/>
+<path d="M2.5 2.5L2.5 15.5M11.5 2.5L11.5 15.5" stroke="white" stroke-width="5" stroke-linecap="round"/>
+</svg>
+
       </div>
 
       <div v-if="isLoaded" class="item-info">
@@ -110,7 +117,15 @@ export default {
         },
         onstop: () => {
           // this.clearTimer();
-          this.progress = 0;
+          //this.progress = 0;
+          console.log(this.tonePlayer);
+          this.isPlaying = false;
+        },
+         onstart: () => {
+          // this.clearTimer();
+          //this.progress = 0;
+          console.log('start');
+          this.isPlaying = true;
         },
       }).connect(this.$masterChannel.master);
 
@@ -179,7 +194,7 @@ export default {
       e.stopPropagation();
 
       if (!this.isLoaded) return;
-      this.isPlaying = true;
+      
       this.clearTimer();
 
       this.startTime = getContext().now();
@@ -189,6 +204,7 @@ export default {
       this.$nuxt.$emit("nowplaying", this.itemData);
 
       this.setTimer();
+      this.isPlaying = true;
 
       // if (p) {
       //   if (p.duration > 0 && p.paused)r {
@@ -204,7 +220,7 @@ export default {
 
     stop(e) {
       this.tonePlayer.stop();
-      this.isPlaying = false;
+      //this.isPlaying = false;
       this.progress = 0;
       this.clearTimer();
     },
@@ -265,8 +281,8 @@ export default {
       justify-content: center;
 
       svg {
-        width: 20px;
-        height: auto;
+        width: auto;
+        height: 20px;
       }
     }
 
