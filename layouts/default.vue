@@ -3,6 +3,7 @@
     <main>
       <nuxt class="page" />
     </main>
+    <PlayerFooter :settings="{ isClient: true }" />
   </div>
 </template>
 
