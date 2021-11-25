@@ -32,6 +32,10 @@ const environments = {
 export default {
   components: true,
   target: 'static',
+  loading: {
+    color: 'blue',
+    height: '5px'
+  },
 
   head: {
     title: meta.title,
