@@ -4,10 +4,10 @@
       class="sound-button"
       ref="item"
       :class="{ 'is-active': isActiveItem }"
-      @mousedown="handleMouse"
+      @click="handleMouse"
       @touchstart="handleTouch"
     >
-      <div class="controls">
+      <div class="controls" @click="handleControls">
         <PlayerPlayButton :itemdata="itemData" v-if="!useTone" />
         <svg
           v-if="!isPlaying"
@@ -23,10 +23,8 @@
             stroke="white"
           />
         </svg>
-        <svg v-else width="14" height="18" viewBox="0 0 14 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M2.5 2.5L2.5 15.5M11.5 2.5L11.5 15.5" stroke="white" stroke-width="5" stroke-linecap="round"/>
-<path d="M2.5 2.5L2.5 15.5M11.5 2.5L11.5 15.5" stroke="white" stroke-width="5" stroke-linecap="round"/>
-<path d="M2.5 2.5L2.5 15.5M11.5 2.5L11.5 15.5" stroke="white" stroke-width="5" stroke-linecap="round"/>
+        <svg v-else width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="18" height="18" rx="3" fill="white"/>
 </svg>
 
       </div>
@@ -108,7 +106,6 @@ export default {
 
   mounted() {
     if (this.useTone) {
-      console.log("this.useTone: ", this.useTone, this.itemData);
       this.tonePlayer = new Player({
         url: `${this.$config.previewURL}${this.itemData.key}.mp3`,
 
@@ -116,15 +113,13 @@ export default {
           this.isLoaded = true;
         },
         onstop: () => {
-          // this.clearTimer();
+          //this.clearTimer();
           //this.progress = 0;
-          console.log(this.tonePlayer);
-          this.isPlaying = false;
         },
-         onstart: () => {
+        onstart: () => {
           // this.clearTimer();
           //this.progress = 0;
-          console.log('start');
+
           this.isPlaying = true;
         },
       }).connect(this.$masterChannel.master);
@@ -151,6 +146,9 @@ export default {
         let now = getContext().now();
         let duration = this.tonePlayer.buffer.duration;
         this.progress = ((now - this.startTime) / duration) * 100;
+        if (this.progress > 100) {
+          this.isPlaying = false;
+        }
         if (this.isLooped && this.progress > 100) {
           this.startTime = now;
         }
@@ -162,18 +160,28 @@ export default {
     async setItem(e) {
       if (this.useTone) {
         await start();
-        this.togglePlay(e);
+        this.play(e);
       } else {
         this.$store.commit("player/SET_ITEM", this.itemData);
       }
     },
+    handleControls(e) {
+      e.stopPropagation();
+
+      if (this.isPlaying) {
+        this.stop();
+      } else {
+        this.play(e);
+      }
+    },
     handleMouse(e) {
-      if (e.type != "mousedown") return;
-      console.log("e: ", e);
+      if (e.type != "click") return;
+
       this.setItem(e);
     },
     handleTouch(e) {
       if (e.type == "click") return;
+      console.log("handle touch");
       this.setItem(e);
     },
     toggleLoop(e) {
@@ -189,38 +197,26 @@ export default {
       }
     },
 
-    togglePlay(e) {
-      e.preventDefault();
-      e.stopPropagation();
+    togglePlay(e) {},
 
+    play() {
       if (!this.isLoaded) return;
-      
+
       this.clearTimer();
 
       this.startTime = getContext().now();
-      console.log("startTime: ", this.startTime);
+      console.log("this.startTime: ", this.startTime);
 
       this.tonePlayer.start(now());
       this.$nuxt.$emit("nowplaying", this.itemData);
 
       this.setTimer();
       this.isPlaying = true;
-
-      // if (p) {
-      //   if (p.duration > 0 && p.paused)r {
-      //     p.currentTime = 0;
-      //     p.play();
-      //     this.isPlaying = true;
-      //   } else {
-      //     p.pause();
-      //     this.isPlaying = false;
-      //   }
-      // }
     },
 
     stop(e) {
       this.tonePlayer.stop();
-      //this.isPlaying = false;
+      this.isPlaying = false;
       this.progress = 0;
       this.clearTimer();
     },
@@ -242,7 +238,6 @@ export default {
 @import "@/assets/scss/mixins.scss";
 
 .sound-button-wrapper {
-  margin-right: 0.5rem;
   margin-bottom: 0.5rem;
   position: relative;
   overflow: hidden;
@@ -256,6 +251,10 @@ export default {
   cursor: pointer;
 
   width: 100%;
+
+  &:not(:last-child) {
+    margin-right: 0.5rem;
+  }
 
   @include breakpoint(sm) {
     width: calc((100% / 2) - 0.5rem);
@@ -274,7 +273,7 @@ export default {
     transition: 0.4s;
 
     .controls {
-      z-index: 1;
+      z-index: 3;
       width: 52px;
       display: flex;
       align-items: center;

@@ -1,28 +1,24 @@
 <template>
   <div v-if="!isLoading">
-    <section class="section top">
+    <TopHeader/>
+    <section class="section">
       <div class="container">
-         <div class="is-size-3 title">{{project.name}}</div>
-      </div>
-    </section>
-     <section class="section">
-      <div class="container">
-         <div v-for="sp in project.subProjects" :key="sp.id">
-          <p class="title is-size-4"> {{sp.name}}</p>
+        <div v-for="sp in project.subProjects" :key="sp.id">
+          <p class="title is-size-4">{{ sp.name }}</p>
           <div class="button-container">
-               <SoundButton v-for="item in sp.items" :key="item.id" :itemData="item" />
+            <SoundButton
+              v-for="item in sp.items"
+              :key="item.id"
+              :itemData="item"
+            />
           </div>
-       
-           
-         </div>
+        </div>
       </div>
     </section>
 
     <section class="section">
       <div class="container">
-         <PlayerMasterController />
-           
-  
+        <PlayerMasterController />
       </div>
     </section>
   </div>
@@ -37,34 +33,30 @@ export default {
       title: `${this.project.name} | Plan8`,
     };
   },
-  data(){
-      return {
-          // project: {
-          //     name: ''
-          // },
-      }
+  data() {
+    return {
+      // project: {
+      //     name: ''
+      // },
+    };
   },
   computed: {
-    ...mapState(['isLoading', 'project'])
+    ...mapState(["isLoading", "project"]),
   },
-  mounted(){
+  mounted() {
     console.log(this.project);
-     setInterval(() => {
-       this.$store.commit('SET_ISLOADING', false)
-     }, 200);
+    setInterval(() => {
+      this.$store.commit("SET_ISLOADING", false);
+    }, 200);
   },
 
-
-  
   async asyncData({ route, store, app }) {
-
-
     try {
       const { id } = route.params;
       console.log("id: ", id);
 
       const apiRoot = process.env.NODE_ENV == 'production' ? 'https://hqapi.plan8.co/v1' : 'http://localhost:3000/v1';
-      //const apiRoot = 'https://hqapi.plan8.co/v1'
+
 
       let projectId;
 
@@ -78,10 +70,8 @@ export default {
 
       // store.commit('SET_ISLOADING', false)
 
-      store.commit('SET_PROJECT', project)
+      store.commit("SET_PROJECT", project);
 
-
-      
       // return {
       //   project,
       // };
@@ -92,9 +82,8 @@ export default {
         // project: {
         //   name: 'Not Found'
         // }
-      }
+      };
     }
-
   },
 };
 </script>

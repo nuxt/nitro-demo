@@ -37,6 +37,10 @@ export default {
     height: '5px'
   },
 
+  server: {
+    port: 4000
+  },
+
   head: {
     title: meta.title,
     meta: [
@@ -85,7 +89,7 @@ export default {
   },
 
   serverMiddleware: [
-    { path: '/api/hello', handle: '~/server/hello' }
+    // { path: '/api/hello', handle: '~/server/hello' }
     // { path: '/api/graphql', handle: '~/server/graphql' }
   ],
 

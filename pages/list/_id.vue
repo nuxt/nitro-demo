@@ -1,10 +1,6 @@
 <template>
   <div v-if="!isLoading">
-    <section class="section top">
-      <div class="container">
-         <div class="is-size-3 title">{{project.name}}</div>
-      </div>
-    </section>
+        <TopHeader/>
      <section class="section">
       <div class="container">
          <div v-for="sp in project.subProjects" :key="sp.id">

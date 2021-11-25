@@ -2,7 +2,7 @@
   "private": true,
   "scripts": {
     "build": "nuxt generate",
-    "dev": "nuxt dev",
+    "dev": "PORT=4000 nuxt dev",
     "generate": "nuxt generate",
     "start": "node .output/server/index.mjs",
     "test": "yarn lint --ext .vue"

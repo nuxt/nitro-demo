@@ -2,9 +2,8 @@
 @import "./_mixins.scss";
 @import "./_reset.scss";
 
-
 :root {
-  --bgColor: #E4E4CF;
+  --bgColor: #e4e4cf;
   --textColor: #333;
   --primaryColor: hsl(163, 100%, 36%);
   --primaryColorDarker: hsl(163, 100%, 26%);
@@ -22,14 +21,13 @@ body {
   font-weight: 400;
 }
 
-
 .btn {
   all: initial;
   font-family: var(--fontFamily);
   background-color: var(--bgColor);
-  border:  var(--borderSize) solid var(--textColor);
+  border: var(--borderSize) solid var(--textColor);
   color: var(--textColor);
-  padding: 0.5em 1rem;
+  padding: 0.8em 1.2rem;
   cursor: pointer;
   display: flex;
   justify-content: center;
@@ -37,17 +35,17 @@ body {
   transition: all 0.2s ease-in-out;
   border-radius: var(--borderRadius);
   font-size: 1rem;
+  box-sizing: border-box;
 
   &.primary {
     background-color: var(--bgColor);
-  border:  var(--borderSize) solid var(--primaryColor);
-  color: var(--primaryColor);
+    border: var(--borderSize) solid var(--primaryColor);
+    color: var(--primaryColor);
 
-  &:hover {
-    background-color: var(--primaryColor);
-    color: var(--primaryContrast);
-  }
-
+    &:hover {
+      background-color: var(--primaryColor);
+      color: var(--primaryContrast);
+    }
   }
 
   &:hover {
@@ -55,13 +53,9 @@ body {
     color: var(--bgColor);
   }
 
-  
-
   &.extended {
-    display: block;
     width: 100%;
   }
-
 }
 
 .title {
@@ -98,16 +92,101 @@ body {
     margin: 0 auto;
     position: relative;
     width: auto;
-    
 
     @include breakpoint(md) {
       max-width: 960px;
     }
 
-     @include breakpoint(lg) {
+    @include breakpoint(lg) {
       max-width: 1152px;
     }
-
-    
   }
+}
+
+
+input[type=range] {
+  -webkit-appearance: none;
+  margin: 22px 0;
+  width: 100%;
+}
+input[type=range]:focus {
+  outline: none;
+}
+input[type=range]::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 3px;
+  cursor: pointer;
+
+  background: var(--primaryColor);
+  border-radius: 1.3px;
+
+}
+input[type=range]::-webkit-slider-thumb {
+
+
+  height: 20px;
+  width: 4px;
+
+  background: var(--primaryColor);
+  cursor: pointer;
+  -webkit-appearance: none;
+  margin-top: -8px;
+
+}
+input[type=range]:focus::-webkit-slider-runnable-track {
+  background:  var(--primaryColor);
+}
+input[type=range]::-moz-range-track {
+  width: 100%;
+  height: 8.4px;
+  cursor: pointer;
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+  background: #3071a9;
+  border-radius: 1.3px;
+  border: 0.2px solid #010101;
+}
+input[type=range]::-moz-range-thumb {
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+  border: 1px solid #000000;
+  height: 36px;
+  width: 16px;
+  border-radius: 3px;
+  background: #ffffff;
+  cursor: pointer;
+}
+input[type=range]::-ms-track {
+  width: 100%;
+  height: 8.4px;
+  cursor: pointer;
+  background: transparent;
+  border-color: transparent;
+  border-width: 16px 0;
+  color: transparent;
+}
+input[type=range]::-ms-fill-lower {
+  background: #2a6495;
+  border: 0.2px solid #010101;
+  border-radius: 2.6px;
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+}
+input[type=range]::-ms-fill-upper {
+  background: #3071a9;
+  border: 0.2px solid #010101;
+  border-radius: 2.6px;
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+}
+input[type=range]::-ms-thumb {
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+  border: 1px solid #000000;
+  height: 36px;
+  width: 16px;
+  border-radius: 3px;
+  background: #ffffff;
+  cursor: pointer;
+}
+input[type=range]:focus::-ms-fill-lower {
+  background: #3071a9;
+}
+input[type=range]:focus::-ms-fill-upper {
+  background: #367ebd;
 }

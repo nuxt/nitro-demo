@@ -4,7 +4,9 @@
         <button class="btn primary extended"  @click="$nuxt.$emit('stop-all')">Stop All</button>
       </div>
 
-      <div label="Volume">
+     <div class="sliders">
+        <div label="Volume">
+        <label for="">Volume</label>
         <input
           v-model="volume"
           type="range"
@@ -18,6 +20,7 @@
         ></input>
       </div>
       <div label="Reverb">
+         <label for="">Reverb</label>
         <input
         type="range"
           v-model="reverb"
@@ -32,6 +35,7 @@
       </div>
 
       <div label="Delay">
+           <label for="">Delay</label>
         <input
         expanded
           v-model="delay"
@@ -45,6 +49,7 @@
           size="is-medium"
         ></input>
       </div>
+     </div>
 
 
 
@@ -114,6 +119,13 @@ export default {
 
 .controls-wrapper {
   // margin: 0 2rem;
+  label {
+    color: var(--primaryColor);
+  }
+
+  .sliders {
+    margin-top:2rem;
+  }
 }
 
 </style>
