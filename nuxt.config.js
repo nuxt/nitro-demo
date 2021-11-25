@@ -55,8 +55,8 @@ export default {
   },
   pwa: {
     icon: {
-      source: "static/icon.png",
-      filename: "icon.png"
+      source: "static/app-icon.png",
+      filename: "app-icon.png"
     },
     meta: {
       description: meta.desc,

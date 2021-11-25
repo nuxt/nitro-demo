@@ -16,7 +16,7 @@
       </div>
     </section>
 
-    <section class="section">
+    <section class="section" v-if="project.settings.toneOptions.showFx">
       <div class="container">
         <PlayerMasterController />
       </div>
