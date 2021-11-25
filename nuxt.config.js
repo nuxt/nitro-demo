@@ -48,7 +48,7 @@ export default {
       { name: "viewport", content: "width=device-width, initial-scale=1 ,maximum-scale=1, user-scalable=no" },
       { hid: "description", name: "description", content: meta.desc }
     ],
-    // link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }],
+    link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }],
     // script: [{
     //   src: '/js/iospwa.js'
     // }]
