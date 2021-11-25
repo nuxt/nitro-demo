@@ -49,6 +49,7 @@ export default {
   },
   mounted(){
     console.log(this.project);
+     this.$store.commit('SET_ISLOADING', false)
   },
 
 
@@ -61,6 +62,7 @@ export default {
       console.log("id: ", id);
 
       const apiRoot = process.env.NODE_ENV == 'production' ? 'https://hqapi.plan8.co/v1' : 'http://localhost:3000/v1';
+      //const apiRoot = 'https://hqapi.plan8.co/v1'
 
       let projectId;
 
@@ -72,7 +74,7 @@ export default {
       const projectPath = `${apiRoot}/projects/${projectId}/public`;
       const project = await $fetch(projectPath);
 
-      store.commit('SET_ISLOADING', false)
+      // store.commit('SET_ISLOADING', false)
 
       store.commit('SET_PROJECT', project)
 
