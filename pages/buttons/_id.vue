@@ -49,7 +49,9 @@ export default {
   },
   mounted(){
     console.log(this.project);
-     this.$store.commit('SET_ISLOADING', false)
+     setInterval(() => {
+       this.$store.commit('SET_ISLOADING', false)
+     }, 200);
   },
 
 
