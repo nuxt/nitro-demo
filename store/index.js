@@ -12,7 +12,7 @@ const defaultProject = {
 
         }
     },
-    showFooter: false
+    
 };
 
 export const processItemData = (data) => {
