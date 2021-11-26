@@ -38,7 +38,7 @@ export default {
   },
 
   server: {
-    port: 4000§
+    port: 4000
   },
 
   head: {
