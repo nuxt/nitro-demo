@@ -4,11 +4,11 @@
       class="sound-button"
       ref="item"
       :class="{ 'is-active': isActiveItem }"
-      @click="handleMouse"
+      @mousedown="handleMouse"
       @touchstart="handleTouch"
     >
       <div class="controls" @click="handleControls">
-        <PlayerPlayButton :itemdata="itemData" v-if="!useTone" />
+      
         <svg
           v-if="!isPlaying"
           width="18"
@@ -23,10 +23,16 @@
             stroke="white"
           />
         </svg>
-        <svg v-else width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-<rect width="18" height="18" rx="3" fill="white"/>
-</svg>
-
+        <svg
+          v-else
+          width="18"
+          height="18"
+          viewBox="0 0 18 18"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <rect width="18" height="18" rx="3" fill="white" />
+        </svg>
       </div>
 
       <div v-if="isLoaded" class="item-info">
@@ -74,6 +80,7 @@ export default {
     ...mapState({
       project: (state) => state.project,
       item: (state) => state.player.item,
+      useTone: state => state.player.useTone
     }),
     isActiveItem() {
       return this.item.id == this.itemData.id;
@@ -87,9 +94,7 @@ export default {
       return this.project.settings.toneOptions.soloMode;
     },
 
-    useTone() {
-      return this.project.settings.useTone;
-    },
+    
 
     // isDownloaded() {
     //   return this.estore.get(this.itemData.id);
@@ -175,7 +180,7 @@ export default {
       }
     },
     handleMouse(e) {
-      if (e.type != "click") return;
+      if (e.type != "mousedown") return;
 
       this.setItem(e);
     },

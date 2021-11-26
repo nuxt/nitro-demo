@@ -37,6 +37,8 @@ export default {
   },
   mounted(){
     console.log(this.project);
+
+          this.$store.commit('player/SET_SHOWFOOTER', true)
   },
 
 
@@ -67,6 +69,8 @@ export default {
       store.commit('SET_ISLOADING', false)
 
       store.commit('SET_PROJECT', project)
+
+
 
 
       

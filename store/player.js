@@ -8,19 +8,24 @@ export const state = () => ({
     },
     currentTume: 0,
     item: {
-        id:1,
+        id:0,
         stems: []
     },
     itemsCue: [],
     currentStem: {
         key: '0'
     },
-    useTone: false
+    useTone: false,
+    showFooter: false
 });
 
 export const mutations = {
     SET_PLAYBACKSTATE(state, payload) {
         state.playBackState = payload;
+    },
+
+    SET_SHOWFOOTER(state, payload) {
+        state.showFooter = payload;
     },
 
     SET_PREVIOUS(state, payload) {

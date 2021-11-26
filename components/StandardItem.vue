@@ -5,14 +5,12 @@
         <PlayButton :itemdata="item" />
       </div>
       <div class="wf">
-            <PlayerWaveForm
-              :mediaItemKey="item.stems[0].key"
-              :isFooter="true"
-              :bars="100"
-
-
-            />
-          </div>
+        <PlayerWaveForm
+          :mediaItemKey="item.stems[0].key"
+          :isFooter="true"
+          :bars="100"
+        />
+      </div>
       <div class="info">
         <p>{{ item.originalName }}</p>
       </div>
@@ -39,8 +37,6 @@ export default {
   width: 100%;
   //   transition: all 1.4s ease-in-out;
 
-
-
   &:not(:last-child) {
     margin-right: 1rem;
   }
@@ -49,34 +45,45 @@ export default {
     display: flex;
     width: 100%;
 
-    height: 80px;
+    height: 60px;
 
     align-items: center;
+    color: var(--textColor);
+    //justify-content: space-between;
 
     .controls {
       display: flex;
-      width: 80px;
+      width: 54px;
       align-items: center;
-      justify-content: center;
+      justify-content: flex-start;
       @include breakpoint(sm) {
         width: 80px;
       }
     }
 
     .wf {
-      width: 100%;
+      width: 200px;
+
+       @include breakpoint(sm) {
+        width: 480px;
+      }
     }
 
     .info {
       white-space: nowrap;
-      max-width: 60%;
+
+      margin-left: auto;
 
       p {
         overflow: hidden;
         text-overflow: ellipsis;
-        color: var(--primaryContrast);
+        width: 150px;
+        text-align: right;
         // font-family: monospace;
         font-size: 1rem;
+         @include breakpoint(sm) {
+        width: 280px;
+      }
       }
     }
   }

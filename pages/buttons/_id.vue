@@ -45,7 +45,7 @@ export default {
   },
   mounted() {
     console.log(this.project);
-    setInterval(() => {
+    setTimeout(() => {
       this.$store.commit("SET_ISLOADING", false);
     }, 200);
   },
@@ -71,6 +71,8 @@ export default {
       // store.commit('SET_ISLOADING', false)
 
       store.commit("SET_PROJECT", project);
+
+      store.commit('player/SET_USETONE', true)
 
       // return {
       //   project,

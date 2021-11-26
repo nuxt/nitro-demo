@@ -1,5 +1,5 @@
 <template>
-  <div class="footer-main" :class="{ active: isActive }">
+  <div class="footer-main" :class="{ 'active': isActive }">
     <section class="section">
       <div class="container no-padding">
         <PlayerAudioPlayer />
@@ -22,16 +22,7 @@
             {{ item.originalName }}
           </div>
 
-          <!-- <div v-if="useTone">
-            <input
-              type="range"
-              min="0"
-              max="1"
-              step="0.01"
-              v-model="reverbValue"
-              @input="changeEffect"
-            />
-          </div> -->
+         
         </div>
       </div>
     </section>
@@ -60,10 +51,11 @@ export default {
       currentStem: (state) => state.player.currentStem,
       // useTone: (state) => state.player.useTone,
       previewapiURL: (state) => state.previewapiURL,
-      showFooter: (state) => {state.showFooter}
+      showFooter: (state) => state.player.showFooter
     }),
     isActive(){
-      return this.showFooter && item.id
+      
+      return this.showFooter && this.item.id
     },
     useTone: {
       get() {
@@ -106,7 +98,7 @@ export default {
   position: fixed;
   transform: translateY(80px);
   bottom: 0;
-  border-top: 1px solid var(--primaryColorDarker);
+  border-top: 1px solid var(--primaryColor);
   width: 100%;
   background: var(--bgColor);
   height: 80px;
@@ -117,7 +109,7 @@ export default {
 
   .section {
     width: 100%;
-    padding: 0 0.6rem;
+    // padding: 0 0.6rem;
   }
 
   &.active {
