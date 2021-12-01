@@ -1,15 +1,9 @@
 <template>
   <div class="sound-button-wrapper">
-    <div
-      class="sound-button"
-      ref="item"
-      :class="{ 'is-active': isActiveItem }"
-      @mousedown="handleMouse"
-      @touchstart="handleTouch"
-    >
-      <div class="controls" @click="handleControls">
-      
+    <div class="sound-button" ref="item" :class="{ 'is-active': isActiveItem }">
+      <div class="controls onlycontrol" @click="handleControls">
         <svg
+          class="onlycontrol"
           v-if="!isPlaying"
           width="18"
           height="20"
@@ -25,6 +19,7 @@
         </svg>
         <svg
           v-else
+          class="onlycontrol"
           width="18"
           height="18"
           viewBox="0 0 18 18"
@@ -34,12 +29,13 @@
           <rect width="18" height="18" rx="3" fill="white" />
         </svg>
       </div>
-
-      <div v-if="isLoaded" class="item-info">
-        {{ itemData.originalName }}
-      </div>
-      <div v-else>
-        <div class="item-info">Loading</div>
+      <div class="right" @mousedown="handleMouse" @touchstart="handleTouch">
+        <div v-if="isLoaded" class="item-info">
+          {{ itemData.originalName }}
+        </div>
+        <div v-else>
+          <div class="item-info">Loading</div>
+        </div>
       </div>
 
       <div class="progress" :style="{ width: `${progress}%` }"></div>
@@ -80,7 +76,7 @@ export default {
     ...mapState({
       project: (state) => state.project,
       item: (state) => state.player.item,
-      useTone: state => state.player.useTone
+      useTone: (state) => state.player.useTone,
     }),
     isActiveItem() {
       return this.item.id == this.itemData.id;
@@ -93,8 +89,6 @@ export default {
     soloMode() {
       return this.project.settings.toneOptions.soloMode;
     },
-
-    
 
     // isDownloaded() {
     //   return this.estore.get(this.itemData.id);
@@ -163,6 +157,8 @@ export default {
       clearInterval(this.progressTimer);
     },
     async setItem(e) {
+      console.log("target: ", e.target.className);
+
       if (this.useTone) {
         await start();
         this.play(e);
@@ -171,7 +167,10 @@ export default {
       }
     },
     handleControls(e) {
+      e.preventDefault();
       e.stopPropagation();
+      // e.stopPropagation();
+      // e.preventDefault()
 
       if (this.isPlaying) {
         this.stop();
@@ -180,19 +179,20 @@ export default {
       }
     },
     handleMouse(e) {
+      e.preventDefault();
+      e.stopPropagation();
       if (e.type != "mousedown") return;
 
       this.setItem(e);
     },
     handleTouch(e) {
+      e.preventDefault();
+      e.stopPropagation();
       if (e.type == "click") return;
       console.log("handle touch");
       this.setItem(e);
     },
     toggleLoop(e) {
-      e.preventDefault();
-      e.stopPropagation();
-
       if (this.isLooped) {
         this.tonePlayer.loop = false;
         this.isLooped = false;
@@ -231,8 +231,6 @@ export default {
     },
 
     stopButton(e) {
-      e.preventDefault();
-      e.stopPropagation();
       this.stop();
     },
   },
@@ -279,7 +277,9 @@ export default {
 
     .controls {
       z-index: 3;
-      width: 52px;
+      position: relative;
+      width: 80px;
+      height: 100%;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -290,8 +290,15 @@ export default {
       }
     }
 
-    .item-info {
-      z-index: 1;
+    .right {
+      height: 100%;
+      width: 100%;
+      display: flex;
+      align-items: center;
+          z-index: 10;
+
+       .item-info {
+  
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
@@ -304,6 +311,9 @@ export default {
         max-width: 204px;
       }
     }
+    }
+
+   
 
     .progress {
       height: 100%;
