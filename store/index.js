@@ -141,6 +141,10 @@ export const mutations = {
     SET_ISLOADING(state, payload) {
         state.isLoading = payload;
     },
+
+    TOGGLE_SETTINGS(state, payload) {
+        state.project.settings.toneOptions.showFx = !state.project.settings.toneOptions.showFx;
+    },
 };
 
 export const actions = {

@@ -20,20 +20,19 @@ body {
   color: var(--textColor);
   font-family: var(--fontFamily);
   font-weight: normal;
-
- 
 }
 
-html, body {
+html,
+body {
   background-color: var(--bgColor);
 
   &.theme-blue {
-    --bgColor: #E1E1DF;
-    --textColor: #066B7D;
+    --bgColor: #e1e1df;
+    --textColor: #066b7d;
     --primaryColor: hsl(189, 90%, 46%);
-    --primaryColorDarker: #066B7D;
+    --primaryColorDarker: #066b7d;
     --primaryContrast: #fff;
-    
+
     --borderSize: 3px;
     --borderRadius: 5px;
   }
@@ -77,7 +76,6 @@ html, body {
 }
 
 .title {
-  
   margin-bottom: 2rem;
 }
 
@@ -86,7 +84,6 @@ html, body {
 }
 
 .field {
-
   label {
     margin-right: 1rem;
   }
@@ -94,7 +91,6 @@ html, body {
   &.inline {
     display: flex;
     align-items: center;
-
   }
 }
 

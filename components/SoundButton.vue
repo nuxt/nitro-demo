@@ -274,7 +274,7 @@ export default {
     height: 100%;
     display: flex;
     align-items: center;
-
+    font-family: Mono;
     transition: 0.4s;
 
     .controls {

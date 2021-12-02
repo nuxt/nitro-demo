@@ -19,6 +19,8 @@
   },
   "dependencies": {
     "@nuxtjs/axios": "^5.13.6",
+    "file-saver": "^2.0.5",
+    "jszip": "^3.7.1",
     "sass": "^1.43.4",
     "sass-loader": "^10",
     "tone": "^14.7.77"

@@ -104,6 +104,7 @@ export default {
 <style scoped lang="scss">
 .controls-wrapper {
   // margin: 0 2rem;
+  font-family: Mono;
   label {
     color: var(--primaryColor);
   }

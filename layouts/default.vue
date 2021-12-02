@@ -3,7 +3,7 @@
     <main>
       <nuxt class="page" />
     </main>
-
+    <FooterInfo />
     <PlayerFooter :settings="{ isClient: true }" />
   </div>
 </template>
@@ -31,6 +31,8 @@ export default {
       theme: state => state.project.settings.theme
     }),
 
+  
+
     currentTheme(){
       switch (this.theme) {
         case 0:
@@ -49,4 +51,8 @@ export default {
 </script>
 
 <style lang="scss">
+
+.page {
+  margin-bottom: 5rem;
+}
 </style>
