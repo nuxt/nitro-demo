@@ -6,7 +6,7 @@
         <p class="subtitle">Created by {{ project.uid.name }}</p>
 
         <div class="actions">
-          <div class="icon" @click="toggleSettings()">
+          <div class="icon" v-if="showSettingsButton" @click="toggleSettings()">
             <svg
               width="48"
               height="48"
@@ -103,9 +103,14 @@ export default {
     ...mapState({
       project: (state) => state.project,
     }),
+    showSettingsButton(){
+      return this.$route.name == 'buttons-id'
+    }
   },
 
-  mounted() {},
+  mounted() {
+    console.log(this.$route);
+  },
   watch: {},
   beforeDestroy() {},
   methods: {

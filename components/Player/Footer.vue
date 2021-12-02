@@ -57,15 +57,15 @@ export default {
       
       return this.showFooter && this.item.id
     },
-    useTone: {
-      get() {
-        return this.$store.state.player.useTone;
-      },
+    // useTone: {
+    //   get() {
+    //     return this.$store.state.player.useTone;
+    //   },
 
-      set(val) {
-        this.$store.commit("player/SET_USETONE", val);
-      },
-    },
+    //   set(val) {
+    //     this.$store.commit("player/SET_USETONE", val);
+    //   },
+    // },
     
   },
   props: {

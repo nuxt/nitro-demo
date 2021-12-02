@@ -38,6 +38,10 @@ export default {
   mounted(){
     console.log(this.project);
 
+    
+
+    
+
           this.$store.commit('player/SET_SHOWFOOTER', true)
   },
 

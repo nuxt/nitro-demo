@@ -64,7 +64,7 @@ export default {
     .wf {
       width: 200px;
 
-       @include breakpoint(sm) {
+      @include breakpoint(sm) {
         width: 480px;
       }
     }
@@ -72,18 +72,23 @@ export default {
     .info {
       white-space: nowrap;
 
-      margin-left: auto;
+      margin-left: 1rem;
+
+      @include breakpoint(sm) {
+        margin-left: auto;
+        }
 
       p {
         overflow: hidden;
         text-overflow: ellipsis;
         width: 150px;
-        text-align: right;
+        text-align: left;
         // font-family: monospace;
         font-size: 1rem;
-         @include breakpoint(sm) {
-        width: 280px;
-      }
+        @include breakpoint(sm) {
+          text-align: right;
+          width: 280px;
+        }
       }
     }
   }
