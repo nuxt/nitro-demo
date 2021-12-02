@@ -1,7 +1,11 @@
 <template>
   <section class="section top">
     <div class="container top-header">
-      <div class="is-size-3 title">{{ project.name }}</div>
+      <div>
+          <p class="is-size-3 title  is-bold">{{ project.name }}</p>
+      <p class="subtitle">Created by {{project.uid.name}}</p>
+      </div>
+    
       <div class="logo">
         <svg
           width="34"

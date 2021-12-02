@@ -239,6 +239,7 @@ export default {
 
 <style lang="scss" scoped>
 @import "@/assets/scss/mixins.scss";
+@import "@/assets/scss/typography.scss";
 
 .sound-button-wrapper {
   margin-bottom: 0.5rem;
@@ -248,6 +249,7 @@ export default {
   color: var(--primaryContrast);
   border-radius: 30px;
   height: 60px;
+  // font-family: Mono;
 
   font-size: 1rem;
   display: inline-block;
@@ -295,25 +297,22 @@ export default {
       width: 100%;
       display: flex;
       align-items: center;
-          z-index: 10;
+      z-index: 10;
 
-       .item-info {
-  
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
+      .item-info {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
 
-      @include breakpoint(sm) {
-        max-width: 280px;
-      }
+        @include breakpoint(sm) {
+          max-width: 280px;
+        }
 
-      @include breakpoint(md) {
-        max-width: 204px;
+        @include breakpoint(md) {
+          max-width: 140px;
+        }
       }
     }
-    }
-
-   
 
     .progress {
       height: 100%;

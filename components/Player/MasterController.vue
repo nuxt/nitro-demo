@@ -1,11 +1,13 @@
 <template>
   <div class="controls-wrapper">
     <div>
-        <button class="btn primary extended"  @click="$nuxt.$emit('stop-all')">Stop All</button>
-      </div>
+      <button class="btn primary extended" @click="$nuxt.$emit('stop-all')">
+        Stop All
+      </button>
+    </div>
 
-     <div class="sliders">
-        <div label="Volume">
+    <div class="sliders">
+      <div class="field inline">
         <label for="">Volume</label>
         <input
           v-model="volume"
@@ -14,53 +16,37 @@
           :max="controls.volume.max"
           :step="controls.volume.step"
           @input="setVolume"
-          :tooltip="false"
-          rounded
-          size="is-medium"
-        ></input>
+        />
       </div>
-      <div label="Reverb">
-         <label for="">Reverb</label>
+      <div class="field inline">
+        <label for="">Reverb</label>
         <input
-        type="range"
+          type="range"
           v-model="reverb"
           :min="controls.reverb.min"
           :max="controls.reverb.max"
           :step="controls.reverb.step"
           @input="setReverb"
-          :tooltip="false"
-          rounded
-          size="is-medium"
-        ></input>
+        />
       </div>
 
-      <div label="Delay">
-           <label for="">Delay</label>
+      <div class="field inline">
+        <label for="">Delay</label>
         <input
-        expanded
           v-model="delay"
           type="range"
           :min="controls.delay.min"
           :max="controls.delay.max"
           :step="controls.delay.step"
           @input="setDelay"
-          :tooltip="false"
-          rounded
-          size="is-medium"
-        ></input>
+        />
       </div>
-     </div>
-
-
-
-
+    </div>
   </div>
 </template>
 
 <script>
-
 import { mapState } from "vuex";
-
 
 export default {
   data() {
@@ -116,7 +102,6 @@ export default {
 </script>
 
 <style scoped lang="scss">
-
 .controls-wrapper {
   // margin: 0 2rem;
   label {
@@ -124,8 +109,7 @@ export default {
   }
 
   .sliders {
-    margin-top:2rem;
+    margin-top: 2rem;
   }
 }
-
 </style>

@@ -1,5 +1,6 @@
 //@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
 @import "./_mixins.scss";
+@import "./_typography.scss";
 @import "./_reset.scss";
 
 :root {
@@ -8,7 +9,7 @@
   --primaryColor: hsl(163, 100%, 36%);
   --primaryColorDarker: hsl(163, 100%, 26%);
   --primaryContrast: #fff;
-  --fontFamily: Roboto, sans-serif;
+  --fontFamily: Harmonia, sans-serif;
   --borderSize: 3px;
   --borderRadius: 5px;
 }
@@ -18,7 +19,7 @@ body {
   background-color: var(--bgColor);
   color: var(--textColor);
   font-family: var(--fontFamily);
-  font-weight: 400;
+  font-weight: normal;
 
  
 }
@@ -32,7 +33,7 @@ html, body {
     --primaryColor: hsl(189, 90%, 46%);
     --primaryColorDarker: #066B7D;
     --primaryContrast: #fff;
-    --fontFamily: Roboto, sans-serif;
+    
     --borderSize: 3px;
     --borderRadius: 5px;
   }
@@ -76,8 +77,29 @@ html, body {
 }
 
 .title {
-  font-weight: 700;
-  margin-bottom: 1rem;
+  
+  margin-bottom: 2rem;
+}
+
+.subtitle {
+  margin-top: -1rem;
+}
+
+.field {
+
+  label {
+    margin-right: 1rem;
+  }
+
+  &.inline {
+    display: flex;
+    align-items: center;
+
+  }
+}
+
+.is-bold {
+  font-weight: bold;
 }
 
 .is-size-1 {

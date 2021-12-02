@@ -211,9 +211,9 @@ export default {
 
     drawWaveform() {
       this.dataLoaded = true;
-      const NUMBER_OF_BUCKETS = this.bars; // number of "bars" the waveform should have
-      const SPACE_BETWEEN_BARS = 0.1; // from 0 (no gaps between bars) to 1 (only gaps - bars won't be visible)
       let decodedAudioData = normalizeData(this.jsonData);
+       const NUMBER_OF_BUCKETS = decodedAudioData.length < this.bars ? decodedAudioData.length : this.bars;  // number of "bars" the waveform should have
+      const SPACE_BETWEEN_BARS = 0.1; // from 0 (no gaps between bars) to 1 (only gaps - bars won't be visible)
       
 
       let bucketDataSize = Math.floor(
