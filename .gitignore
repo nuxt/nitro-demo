@@ -6,3 +6,4 @@ dist
 .netlify
 .vercel_build_output
 .output
+.layer0
