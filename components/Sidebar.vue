@@ -36,6 +36,9 @@
       <ui-button href="https://nitro-azure-demo.nuxtjs.org" rel="noreferrer">
         Azure SWA
       </ui-button>
+      <ui-button href="https://layer0-docs-layer0-nitro-demo-default.layer0-limelight.link" rel="noreferrer">
+        Layer0
+      </ui-button>
     </div>
   </aside>
 </template>
